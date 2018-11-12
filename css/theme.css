@@ -216,6 +216,16 @@ a:active {
 .type--body-font {
   font-family: 'Open Sans', 'Helvetica';
 }
+
+.event-track {
+  width: 50%;
+}
+
+.event-time {
+  font-style: italic;
+  font-weight: bold;
+}
+
 /**! 03. Position **/
 body {
   overflow-x: hidden;
