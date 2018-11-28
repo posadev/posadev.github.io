@@ -1,27 +1,28 @@
 {
-  "name": "dev-fest",
-  "version": "0.0.1",
-  "description": "Landing Devfest",
-  "main": "main.js",
+  "name": "pataconf",
+  "version": "1.0.0",
+  "description": "Sitio web para el evento pataconf",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "gulp dist"
-  },
-  "author": "Monoku",
-  "license": "MIT",
-  "dependencies": {
-    "browser-sync": "^2.8.2",
-    "express": "^4.13.3",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-sass": "^2.0.4",
-    "gulp-concat": "^2.6.0",
-    "gulp-uglify": "^1.4.2"
+    "start": "echo \"Colombia-dev\" && exit 1",
+    "add": "all-contributors add",
+    "generate": "all-contributors generate"
   },
   "devDependencies": {
+    "all-contributors-cli": "^4.3.0"
   },
-  "engines": {
-    "node": "0.12.7"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colombia-dev/pataconf.git"
+  },
+  "keywords": [
+    "pataconf",
+    "colombia-dev"
+  ],
+  "author": "Colombia-dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colombia-dev/pataconf/issues"
+  },
+  "homepage": "https://github.com/colombia-dev/pataconf#readme"
 }

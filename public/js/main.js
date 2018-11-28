@@ -1,1 +1,0 @@
-console.log(9),$(document).on("click",".show-description",function(i){return $(this).removeClass("show-description").addClass("hide-description").siblings(".full-description").slideDown(),!1}),$(document).on("click",".hide-description",function(i){return $(this).removeClass("hide-description").addClass("show-description").siblings(".full-description").slideUp(),!1});
