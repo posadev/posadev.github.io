@@ -218,7 +218,7 @@ a:active {
 }
 
 .event-track {
-  width: 50%;
+  width: 18%;
 }
 
 .event-time {
@@ -938,8 +938,8 @@ div[data-overlay] ul {
 }
 .btn--primary,
 .btn--primary:visited {
-  background: #fed92e;
-  border-color: #fed92e;
+  background: #ff0053;
+  border-color: #333333;
 }
 .btn--primary .btn__text,
 .btn--primary:visited .btn__text {
@@ -2713,10 +2713,10 @@ a {
   color: #fff;
 }
 .color--dark {
-  color: #58220f;
+  color: #000000;
 }
 .bg--dark {
-  background: #58220f;
+  background: #000000;
 }
 .bg--dark:not(.nav-bar):not(.bar) {
   color: #ffffff;
@@ -2743,6 +2743,9 @@ a {
 }
 .bg--primary {
   background: #fed92e;
+}
+.bg--tertiary {
+ background: #ffffff; 
 }
 .bg--primary p,
 .bg--primary span,
@@ -3202,14 +3205,14 @@ form[action*='list-manage.com'] .small-meta {
   }
   .bar--transparent:not(.pos-fixed) .menu-horizontal > li > a,
   .bar--transparent:not(.pos-fixed) .menu-horizontal > li > span {
-    color: #ffd92d;
+    color: #ff2d2d;
     font-weight: bold;
   }
   .bar--transparent:not(.pos-fixed) .btn:not([class*='primary']) {
     border-color: rgba(255, 255, 255, 0.3);
   }
   .bar--transparent:not(.pos-fixed) .btn:not([class*='primary']) .btn__text {
-    color: #ffd92d;
+    color: #ff2d2d;
     font-weight: bold;
   }
   .bar--transparent:not(.pos-fixed) .btn:not([class*='primary']):hover {
@@ -4003,7 +4006,7 @@ pre {
 }
 /*! -- Stack Links -- */
 a {
-  color: #58220f;
+  color: #000000;
   font-weight: 700;
 }
 a:hover {
