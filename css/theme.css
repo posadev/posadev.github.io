@@ -950,7 +950,7 @@ div[data-overlay] ul {
   color: #484951;
 }
 .btn--primary:hover {
-  background: #EEC339;
+  background: #EC5385;
 }
 .btn--primary:active {
   background: #EEC339;
@@ -965,7 +965,7 @@ div[data-overlay] ul {
   color: #484951;
 }
 .btn--primary-1:hover {
-  background: #376faf;
+  background: #EC5385;
 }
 .btn--primary-1:active {
   background: #2b5789;
@@ -7596,4 +7596,9 @@ footer.footer-7 {
   .footer-7 .social-list {
     margin-top: 1.85714286em;
   }
+}
+.logosize {
+  height: auto;
+  max-width: 12em;
+  padding-top: 3em;
 }

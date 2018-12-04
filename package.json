@@ -1,28 +1,24 @@
 {
-  "name": "pataconf",
+  "name": "Posadev",
   "version": "1.0.0",
-  "description": "Sitio web para el evento pataconf",
+  "description": "Sitio web para el evento Posadev 2018",
   "main": "index.js",
   "scripts": {
-    "start": "echo \"Colombia-dev\" && exit 1",
-    "add": "all-contributors add",
-    "generate": "all-contributors generate"
+    "start": "echo \"Posadev\" && exit 1"
   },
   "devDependencies": {
-    "all-contributors-cli": "^4.3.0"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/colombia-dev/pataconf.git"
+    "url": "https://github.com/posadev/posadev.github.io.git"
   },
   "keywords": [
-    "pataconf",
-    "colombia-dev"
+    "posadev"
   ],
-  "author": "Colombia-dev",
+  "author": "GDL DevComms",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/colombia-dev/pataconf/issues"
+    "url": "https://github.com/posadev/posadev.github.io"
   },
-  "homepage": "https://github.com/colombia-dev/pataconf#readme"
+  "homepage": "hhttps://github.com/posadev/posadev.github.io#readme"
 }
