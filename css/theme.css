@@ -7725,3 +7725,7 @@ footer.footer-7 {
   font-size: 30px;
   font-weight: bold;
 }
+
+section.pretalx-schedule-day-wrapper{
+  padding-top: 0px!important;
+}
