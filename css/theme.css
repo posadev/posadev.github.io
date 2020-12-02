@@ -7669,6 +7669,10 @@ footer.footer-7 {
   display: flex;
 }
 
+.logo-lg{
+  width: 130px!important;
+}
+
 .logos-container{
   margin-top: 15px;
   margin-bottom: 15px;
