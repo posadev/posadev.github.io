@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Posadev 2019</title>
+  <title>Posadev 2020</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="La Posada de y para las comunidades tecnológicas en Guadalajara">
   <link rel="icon" type="image/png" sizes="32x32" href="img/arbolito.png">
@@ -13,6 +13,8 @@
   <link href="css/theme.css" rel="stylesheet" type="text/css" media="all" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700%7CMerriweather:300,300i%7CMaterial+Icons"
     rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://convoca.dev/posadev-2020/schedule/widget/v1.css">
+    <script type="text/javascript" src="https://convoca.dev/posadev-2020/schedule/widget/v1.es.js"></script>
 </head>
 
 <body class=" ">
@@ -56,7 +58,15 @@
           <span>Evento Gratuito</span>
         </div>
         <div class="col-sm-12 text-center">
-            <a class="btn btn-download" href="public/doc/agendaPOSADEV2019.pdf">Descarga la agenda <i class="mdi mdi-download"></i></a>
+          <pretalx-schedule-widget event="https://convoca.dev/posadev-2020/" height="1520px"></pretalx-schedule-widget>
+          <noscript>
+            <div class="pretalx-widget">
+                  <div class="pretalx-widget-info-message">
+                      JavaScript is disabled in your browser. To access our schedule without JavaScript,
+                      please <a target="_blank" href="https://convoca.dev/posadev-2020/schedule/">click here</a>.
+                  </div>
+              </div>
+          </noscript>
         </div>
       </div>
     </div>
