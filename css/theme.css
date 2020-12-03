@@ -7639,12 +7639,17 @@ footer.footer-7 {
   font-weight: bold;
 }
 
+.container-streamings{
+  padding-left: 45px;
+}
+
 #schedule .btn-download{
   background-color: #ffff;
   border-color:  #ED6B69;
   color: #ED6B69;
   font-weight: bold;
   margin-bottom: 12px;
+  padding: 3px 10px;
 }
 
 .btn-download i{
