@@ -1,7 +1,7 @@
 {
   "name": "Posadev",
   "version": "1.0.0",
-  "description": "Sitio web para el evento Posadev 2018",
+  "description": "Sitio web para el evento Posadev 2022",
   "main": "index.js",
   "scripts": {
     "start": "echo \"Posadev\" && exit 1"
