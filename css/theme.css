@@ -2746,7 +2746,7 @@ a {
   background: #ED6B69;
 }
 .bg--tertiary {
- background: #f5a6a7; 
+ background: #f5a6a7;
 }
 .bg--primary p,
 .bg--primary span,
@@ -7655,7 +7655,25 @@ footer.footer-7 {
 .btn-download i{
   color: #ED6B69;
 }
+/* Ally communities */
 
+#ally-communities h2 {
+  color: #ffff;
+  font-weight: bold;
+}
+
+/* Sponsors */
+
+#sponsors h2 {
+  color: #ffff;
+  font-weight: bold;
+}
+
+/* Organizers */
+#organizers h2 {
+  color: #2A377F;
+  font-weight: bold;
+}
 /*Comunitys section*/
 
 #comunitys h2{
@@ -7722,7 +7740,7 @@ footer.footer-7 {
 
 /*Button back to top*/
 .back-to-top{
-  -webkit-box-shadow: 0px 0px 10px -1px #000000; 
+  -webkit-box-shadow: 0px 0px 10px -1px #000000;
   box-shadow: 0px 0px 10px -1px #000000;
 }
 .back-to-top i{
