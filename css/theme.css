@@ -7628,6 +7628,10 @@ footer.footer-7 {
   font-weight: bold;
 }
 
+#schedule .row {
+  margin-bottom: 15px;
+}
+
 #tags-container{
   margin-bottom: 30px;
 }
