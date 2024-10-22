@@ -2748,6 +2748,14 @@ a {
 .bg--tertiary {
  background: #f5a6a7;
 }
+
+.bg--tertiary h2 {
+  color: #ffffff;
+}
+
+.bg--tertiary .lead {
+  color: #ffffff;
+}
 .bg--primary p,
 .bg--primary span,
 .bg--primary ul,
@@ -7701,6 +7709,14 @@ footer.footer-7 {
   float: none;
   width: auto !important;
   margin-top: 15% !important;
+  display: inline-block;
+}
+
+.womcy-logo {
+  vertical-align: middle;
+  float: none;
+
+  margin-top: 18% !important;
   display: inline-block;
 }
 
