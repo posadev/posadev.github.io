@@ -7713,6 +7713,14 @@ footer.footer-7 {
   display: inline-block;
 }
 
+.womcy-logo {
+  vertical-align: middle;
+  float: none;
+
+  margin-top: 18% !important;
+  display: inline-block;
+}
+
 .logos-container .container-img{
   text-align: center;
   height: 150px;
