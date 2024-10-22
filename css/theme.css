@@ -2747,6 +2747,15 @@ a {
 }
 .bg--tertiary {
  background: #f5a6a7;
+
+}
+
+.bg--tertiary h2 {
+  color: #ffffff;
+}
+
+.bg--tertiary .lead {
+  color: #ffffff;
 }
 .bg--primary p,
 .bg--primary span,
