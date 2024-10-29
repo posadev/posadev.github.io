@@ -1,0 +1,15 @@
+---
+    name: html_tidy
+
+    on: push
+
+    jobs:
+      html_tidy:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v2.1.0
+        - run: sudo apt install tidy
+
+        - name: Check all HTML files
+          run: tidy -config tidy_config.txt *.html
+
