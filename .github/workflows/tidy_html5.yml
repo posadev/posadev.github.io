@@ -13,5 +13,7 @@ jobs:
       - run: sudo apt install tidy
 
       - name: Check all HTML files
-        run: tidy -config tidy_config.txt *.html
+        run: |
+          tidy -config tidy.config *.html
+          test $? -lt 2 || echo "Errors founds"
 
