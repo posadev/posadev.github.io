@@ -15,5 +15,3 @@ jobs:
       - name: Check all HTML files
         run: |
           tidy -config tidy.config *.html
-          test $? -lt 2 || echo "Errors founds"
-
