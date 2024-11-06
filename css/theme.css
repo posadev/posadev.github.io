@@ -7631,11 +7631,6 @@ footer.footer-7 {
 
 /*Schedule section*/
 
-#schedule h2{
-  color: #2A377F;
-  font-weight: bold;
-}
-
 #schedule .row {
   margin-bottom: 15px;
 }
@@ -7669,29 +7664,14 @@ footer.footer-7 {
 .btn-download i{
   color: #ED6B69;
 }
-/* Ally communities */
 
-#ally-communities h2 {
+.bg--tertiary h2 {
   color: #ffff;
   font-weight: bold;
 }
 
-/* Sponsors */
-
-#sponsors h2 {
-  color: #ffff;
-  font-weight: bold;
-}
-
-/* Organizers */
-#organizers h2 {
+.bg--secondary h2 {
   color: #2A377F;
-  font-weight: bold;
-}
-/*Comunitys section*/
-
-#comunitys h2{
-  color: #ffff;
   font-weight: bold;
 }
 
@@ -7743,13 +7723,6 @@ footer.footer-7 {
 .logos-container{
   margin-top: 15px;
   margin-bottom: 15px;
-}
-
-/*Sponsors section*/
-
-#sponsors  h2{
-  color: #2A377F;
-  font-weight: bold;
 }
 
 /*Footer section*/
