@@ -20,6 +20,19 @@
 }
 
 .ribbon-diamond {
+  color: #000;
+  background-color: #B9F2FF;
+}
+
+.ribbon-gold {
   color: #fff;
-  background-color: #CC333F;
+  background-color: goldenrod;
+  width: 80%;
+}
+
+.ribbon-silver {
+  color: #fff;
+  background-color: silver;
+  width: 60%;
+
 }
