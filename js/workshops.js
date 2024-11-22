@@ -7,7 +7,7 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
   var modal = $(this)
   modal.find('.modal-title').text(title)
-  modal.find('#modal-content').text(content)
+  modal.find('#modal-content').html(content)
   modal.find('#modal-instructor').text(instructor)
   modal.find('#modal-difficulty').text(difficulty)
 })();
