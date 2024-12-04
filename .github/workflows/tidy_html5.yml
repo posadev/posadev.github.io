@@ -17,4 +17,4 @@ jobs:
 
       - name: Check all HTML files
         run: |
-          tidy -config tidy.config *.html
+          tidy --literal-attributes true -config tidy.config *.html
