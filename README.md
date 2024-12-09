@@ -1,4 +1,4 @@
-# POSADEV 2024
+# POSADEV 2025
 
 Fork original de https://github.com/colombia-dev/pataconf
 
