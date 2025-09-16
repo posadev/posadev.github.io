@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Users, Image } from 'lucide-react';
-import posadevLogo from './img/posadev-logo.png'
+import posadevLogo from '../img/posadev-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
