@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Calendar, MapPin, Clock, Sparkles } from 'lucide-react';
-import posadevLogo from '../../img/posadev-logo.png';
+import posadevLogo from './img/posadev-logo.png';
 
 const Hero = () => {
   return (
