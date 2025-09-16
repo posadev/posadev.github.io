@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- 
+ Copyright (c) 2012, 2024, Oracle and/or its affiliates. 
+
+   NAME
+     AmManageRemoveProtectedDB.xml - <one-line expansion of the name>
+
+   DESCRIPTION
+      This is the deployment procedure for Add Protected Database to Recovery Appliance.
+-->
+<procedure name="AmManageRemoveProtectedDB" type="AM" version="250710.0" createdBy="Oracle" errorMode="continue"
+           xmlns="http://www.oracle.com/paf/provisioningAdvisorXML/11.2">
+    <displayName nlsid="AM_MANAGE_WRAPPER_NAME">Manage Remove Protected Databases</displayName>
+    <description nlsid="AM_MANAGE_WRAPPER_DESC">Manages the remove protected databases on the Recovery Appliance.</description>
+    <declarations>
+            
+            <targetList name="databaseList" type="oracle_database">
+              <!-- Database Credentials -->            
+              <credential usage="raUserCred" authTargetType="oracle_dblra" defaultCredentialSet="AMCredsNormal"
+                          credentialTypes="AMCreds">
+                  <displayName nlsid="AM_USER_CREDS">Recovery Database Credentials</displayName>
+                  <description nlsid="AM_USER_CREDS_DESC">Specifies Recovery Database Credentials</description>
+              </credential>
+              <!-- Database Backup -->
+                  <property name="raTargetName" typeName="scalar"/>
+                  <property name="dbTargetName" typeName="scalar"/>
+                  <property name="dbTargetType" typeName="scalar"/>
+                  <property name="dbUniqueName" typeName="scalar"/>
+                  <property name="raUserGuid" typeName="scalar"/>
+                  <property name="isRADb" typeName="scalar"/>
+            </targetList>
+            <variable name="raTargetName" typeName="scalar" visibility="public"/>
+            <variable name="raAdminGuid" typeName="scalar" visibility="public"/>
+        <function name="buildDatabaseList"
+                  classname="oracle.sysman.am.br.pojo.procedure.protecteddb.AmBuildRemoveDbTargetsDP"/>
+        <function name="removePDb"
+                  classname="oracle.sysman.am.br.pojo.procedure.protecteddb.AmRemoveProtectedDbDP"/>
+    </declarations>
+
+        <steps>
+            <!-- Check for the database that were already added to ZDLRA in the Intialization Phase. -->
+            <computeStep name="RA_DB_INITIALIZATION" expression="${buildDatabaseList(${data.databaseList})}">
+                <displayName nlsid="RA_DB_INITIALIZATION_NAME">Initialization</displayName>
+                <description nlsid="RA_DB_INITIALIZATION_DESC">Validates the databases to be removed to the Recovery Appliance.</description>
+            </computeStep>
+            
+            <phase executionMode="serial" name="MANAGE_PDB_BY_RA" targets="${data.databaseList}"
+               condition="${ora:successOf('RA_DB_INITIALIZATION')}">
+            <displayName nlsid="MANAGE_PDB_BY_RA_NAME">Remove Protected Databases</displayName>
+            <description nlsid="MANAGE_PDB_BY_RA_DESC">Unenrolls protected databases with the Recovery Appliance.</description>
+                <steps>
+                    <computeStep name="AM_REMOVE_PDB_COMPUTE_REMOVE_PDB_NAME" expression="${removePDb(${target})}">
+                        <displayName nlsid="AM_REMOVE_PDB_COMPUTE_REMOVE_PDB_NAME">Add Protected Database</displayName>
+                        <description nlsid="AM_REMOVE_PDB_COMPUTE_REMOVE_PDB_NAME">Enrolls a protected database with the Recovery Appliance.</description>
+                    </computeStep>                    
+                </steps>
+            </phase>
+        </steps>
+    <uiMetadata embeddable="false" hidden="true">
+        <resource type="java">oracle.sysman.am.br.pojo.rsc.AmProcedureMsg</resource>
+    </uiMetadata>    
+</procedure>
