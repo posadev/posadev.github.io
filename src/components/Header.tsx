@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Users, Image } from 'lucide-react';
+import posadevLogo from '../../img/posadev-logo.png'
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,43 +25,42 @@ const Header = () => {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-posadev-darkPink/20' 
-          : 'bg-transparent'
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+        ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-posadev-darkPink/20'
+        : 'bg-transparent'
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="flex items-center space-x-2">
-            <img 
-              src="/img/posadev-logo.png" 
-              alt="Posadev Logo" 
-              className="h-8 w-auto"
-            />
-          </div>
+              <img
+                src={posadevLogo}
+                alt="Posadev Logo"
+                className="h-8 w-auto"
+              />
+            </div>
           </div>
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
+            <button
               onClick={() => scrollToSection('inicio')}
               className="text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1"
             >
               <Calendar className="w-4 h-4" />
               <span>Inicio</span>
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('galeria')}
               className="text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1"
             >
               <Image className="w-4 h-4" />
               <span>Galería</span>
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('patrocinadores')}
               className="bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1"
             >
@@ -82,21 +82,21 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-posadev-darkPink/20">
             <nav className="px-4 py-4 space-y-4">
-              <button 
+              <button
                 onClick={() => scrollToSection('inicio')}
                 className="w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Inicio</span>
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('galeria')}
                 className="w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2"
               >
                 <Image className="w-4 h-4" />
                 <span>Galería</span>
               </button>
-              <button 
+              <button
                 onClick={() => scrollToSection('patrocinadores')}
                 className="w-full text-left bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 mt-4"
               >
