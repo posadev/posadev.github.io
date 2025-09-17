@@ -47,7 +47,7 @@ const Hero = () => {
                             <Ticket className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20" />
                         </button>
                         <div
-                            className="mt-8 w-24 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
+                            className="mt-8 w-60 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
                     </div>
                     {/* Subtitle */}
                     <p className="text-xl md:text-2xl text-posadev-lightPink mb-8 animate-fade-in font-light">
