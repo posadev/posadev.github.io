@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ExternalLink, CheckCircle, Building, Mail, MessageSquare } from 'lucide-react';
+import { Download, CheckCircle, Building, Mail, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import becomeSponsorImage from '@/img/become_sponsor.jpeg';
 
