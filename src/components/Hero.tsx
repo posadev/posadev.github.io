@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { Calendar, MapPin, Clock, Sparkles } from 'lucide-react';
-import posadevLogo from '../img/posadev-logo.png';
 
 const Hero = () => {
   return (
@@ -22,7 +21,7 @@ const Hero = () => {
           <div className="mb-6">
             <div className="flex justify-center mb-4">
               <img
-                src={posadevLogo}
+                src="/img/posadev-logo.png"
                 alt="Posadev Logo"
                 className="h-32 md:h-48 w-auto animate-fade-in"
               />

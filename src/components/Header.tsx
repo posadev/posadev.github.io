@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Users, Image } from 'lucide-react';
-import posadevLogo from '../img/posadev-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,18 +32,16 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="flex items-center space-x-2">
               <img
-                src={posadevLogo}
+                src="/img/posadev-logo.png"
                 alt="Posadev Logo"
                 className="h-8 w-auto"
               />
             </div>
           </div>
 
-          {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('inicio')}
