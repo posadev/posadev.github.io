@@ -2,8 +2,10 @@
 import React from 'react';
 import { Calendar, MapPin, Clock, Sparkles } from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
+import {useNavigate} from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
@@ -27,9 +29,14 @@ const Hero = () => {
                 className="h-32 md:h-48 w-auto animate-fade-in"
               />
             </div>
+            <button
+                onClick={() => window.open("https://boletos.posadev.org/event/5/posadev", "_blank")}
+                className="text-posadev-darkPink border-2 px-8 py-4 rounded-full text-lg font-semibold bg-white transition-all hover:bg-posadev-lightPink duration-300"
+            >
+              Comprar boletos
+            </button>
             <div className="w-24 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
           </div>
-
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-posadev-lightPink mb-8 animate-fade-in font-light">
             El evento anual que reúne a la comunidades technológicas
