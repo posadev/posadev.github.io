@@ -1,6 +1,11 @@
-
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
+import posadevFila from '@/img/posadev-fila.jpg';
+import posadevReferentes from '@/img/IMG_7461.jpg';
+import posadevAsistencia from '@/img/PXL_20241208_011903817.jpg';
+import posadevPlaticas from '@/img/IMG_7466.jpg';
+import posadevAmbiente from '@/img/IMG_7464.jpg';
+import posadevTecnologia from '@/img/IMG_7425.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -8,37 +13,37 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: "img/posadev-fila.jpg",
+      src: posadevFila,
       alt: "Posadev - Participantes",
       title: "Participantes"
     },
     {
       id: 2,
-      src: "img/IMG_7461.jpg",
+      src: posadevReferentes,
       alt: "Posadev - Referentes",
       title: "Referentes"
     },
     {
       id: 3,
-      src: "img/PXL_20241208_011903817.jpg",
+      src: posadevAsistencia,
       alt: "Posadev - Asistencia",
       title: "Asistencia"
     },
     {
       id: 4,
-      src: "img/IMG_7466.jpg",
+      src: posadevPlaticas,
       alt: "Platicas",
       title: "Platicas"
     },
     {
       id: 5,
-      src: "img/IMG_7464.jpg",
+      src: posadevAmbiente,
       alt: "Ambiente del evento",
       title: "Ambiente único"
     },
     {
       id: 6,
-      src: "img/IMG_7425.jpg",
+      src: posadevTecnologia,
       alt: "Tecnología",
       title: "Tecnología"
     }
