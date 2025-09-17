@@ -1,14 +1,15 @@
 
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
+import posadevFila from '@/img/posadev-fila.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
-  
+
   const images = [
     {
       id: 1,
-      src: "img/posadev-fila.jpg",
+      src: posadevFila,
       alt: "Posadev - Participantes",
       title: "Participantes"
     },
@@ -107,7 +108,7 @@ const Gallery = () => {
                 alt={image.alt}
                 className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              
+
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-posadev-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 right-4">
