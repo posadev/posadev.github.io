@@ -1,6 +1,7 @@
 import React from 'react';
 import { Download, ExternalLink, CheckCircle, Building, Mail, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import becameSponsorImage from '@/img/became_sponsor.jpeg';
 
 const Sponsors = () => {
   const { toast } = useToast();
@@ -96,7 +97,7 @@ const Sponsors = () => {
               
               <div className="relative">
                 <img 
-                  src="img/become_sponsor.jpeg" 
+                  src={becameSponsorImage}
                   alt="Conviértete en Patrocinador de Posadev" 
                   className="w-full h-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                 />
