@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="mb-6">
             <div className="flex justify-center mb-4">
               <img
-                src="/img/posadev-logo.png"
+                src="/assets/posadev-logo.png"
                 alt="Posadev Logo"
                 className="h-32 md:h-48 w-auto animate-fade-in"
               />
