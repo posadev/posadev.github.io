@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, ExternalLink, CheckCircle, Building, Mail, MessageSquare } from 'lucide-react';
+import { Download, CheckCircle, Building, Mail, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import becomeSponsorImage from '@/img/become_sponsor.jpeg';
 
@@ -84,7 +84,6 @@ const Sponsors = () => {
                 >
                   <Download className="w-5 h-5" />
                   <span>Descargar brochure</span>
-                  <ExternalLink className="w-4 h-4" />
                 </button>
               </div>
             </div>
