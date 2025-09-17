@@ -59,7 +59,7 @@ const Hero = () => {
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale">
                             <Calendar className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"/>
                             <h3 className="text-white font-semibold mb-2">Fecha</h3>
-                            <p className="text-posadev-lightPink">16 de Diciembre 2025</p>
+                            <p className="text-posadev-lightPink">6 de Diciembre 2025</p>
                         </div>
 
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale">
