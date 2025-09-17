@@ -84,7 +84,6 @@ const Sponsors = () => {
                 >
                   <Download className="w-5 h-5" />
                   <span>Descargar brochure</span>
-                  <ExternalLink className="w-4 h-4" />
                 </button>
               </div>
             </div>
