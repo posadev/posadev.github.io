@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Users, Image } from 'lucide-react';
+import posadevLogo from '@/img/posadev-logo.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,7 +36,7 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <div className="flex items-center space-x-2">
               <img
-                src="/img/posadev-logo.png"
+                src={posadevLogo}
                 alt="Posadev Logo"
                 className="h-8 w-auto"
               />
