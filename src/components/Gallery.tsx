@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
-import posadevFila from '@/img/posadev-fila.jpg';
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -9,7 +8,7 @@ const Gallery = () => {
   const images = [
     {
       id: 1,
-      src: posadevFila,
+      src: "img/posadev-fila.jpg",
       alt: "Posadev - Participantes",
       title: "Participantes"
     },
