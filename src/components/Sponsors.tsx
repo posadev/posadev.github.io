@@ -90,10 +90,10 @@ const Sponsors = () => {
                                     Conoce todos los detalles sobre los paquetes de patrocinio y beneficios
                                 </p>
                                 <a
-                                    href="public/posadev_brochure2025.pdf"
+                                    href="/posadev_brochure2025.pdf"
                                     download
                                     onClick={handleBrochureClick}
-                                    className="flex gap-x-2 bg-white text-posadev-darkPink px-6 py-3 rounded-lg font-semibold hover:bg-posadev-lightPink transition-colors duration-300 flex items-center space-x-2"
+                                    className="flex gap-x-2 bg-white text-posadev-darkPink px-6 py-3 rounded-lg font-semibold hover:bg-posadev-lightPink transition-colors duration-300 items-center space-x-2 w-60"
                                 >
                                     Descargar brochure
                                     <Download className="w-5 h-5"/>
