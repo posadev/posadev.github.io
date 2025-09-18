@@ -4,6 +4,10 @@
 
 There are several ways of editing your application.
 
+## Requirements
+
+Node version 20+
+
 
 Follow these steps:
 
