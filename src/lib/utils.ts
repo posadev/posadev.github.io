@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export const handleDownload = async () => {
   try {
-    const response = await fetch("/public/posadev_brochure2025.pdf");
+    const response = await fetch("/posadev_brochure2025.pdf");
     if (!response.ok) {
       throw new Error("Error al descargar el archivo");
     }
