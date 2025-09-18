@@ -2,17 +2,20 @@ import React from 'react';
 import { Download, CheckCircle, Building, Mail, MessageSquare } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import becomeSponsorImage from '@/img/become_sponsor.jpeg';
+import {handleDownload} from "@/lib/utils.ts";
 
 const Sponsors = () => {
-  const { toast } = useToast();
+  const { toast, dismiss } = useToast();
 
   const handleBrochureClick = () => {
     toast({
       title: "Descargando brochure...",
       description: "El documento se está descargando a tu dispositivo.",
     });
-    
-    window.open('https://drive.google.com/file/d/1O-cpi3_ktVw42FIdDpSlw8qf_N9exRVN/view?usp=drive_link', '_blank');
+    handleDownload().then(r => toast({
+      title: "Descargado con exito",
+      description: "La descarga se ha completado correctamente.",
+    })).finally(() => dismiss());
   };
 
   return (
@@ -80,10 +83,10 @@ const Sponsors = () => {
                 </p>
                 <button
                   onClick={handleBrochureClick}
-                  className="bg-white text-posadev-darkPink px-6 py-3 rounded-lg font-semibold hover:bg-posadev-lightPink transition-colors duration-300 flex items-center space-x-2"
+                  className="flex gap-x-2 bg-white text-posadev-darkPink px-6 py-3 rounded-lg font-semibold hover:bg-posadev-lightPink transition-colors duration-300 flex items-center space-x-2"
                 >
+                  Descargar brochure
                   <Download className="w-5 h-5" />
-                  <span>Descargar brochure</span>
                 </button>
               </div>
             </div>
