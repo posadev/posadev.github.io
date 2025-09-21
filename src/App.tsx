@@ -8,6 +8,8 @@ import NotFound from "@/pages/NotFound.tsx";
 import Index from "@/pages/Index.tsx";
 import Header from "@/components/Header.tsx";
 import React from "react";
+import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
+import Footer from "@/components/Footer.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,13 +20,15 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Header />
+        <main className="flex flex-col">
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           <Route path="/code-of-conduct" element={<CodeOfConduct />}/>
-
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
         </Routes>
+        </main>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

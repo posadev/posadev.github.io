@@ -1,4 +1,3 @@
-
 import React, {useEffect} from 'react';
 import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
@@ -13,18 +12,17 @@ const Index = () => {
         if (location.hash) {
             const element = document.querySelector(location.hash);
             if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+                element.scrollIntoView({behavior: "smooth"});
             }
         }
     }, [location]);
-  return (
-    <div className="min-h-screen">
-      <Hero />
-      <Gallery />
-      <Sponsors />
-      <Footer />
-    </div>
-  );
+    return (
+        <>
+            <Hero/>
+            <Gallery/>
+            <Sponsors/>
+        </>
+    );
 };
 
 export default Index;

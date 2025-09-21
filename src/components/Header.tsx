@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <header
-      className={`${location.pathname === "/" ? 'fixed' : 'sticky'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || location.pathname ==='/code-of-conduct'
+      className={`${location.pathname === "/" ? 'fixed' : 'sticky'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || location.pathname !=='/'
         ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-posadev-darkPink/20'
         : 'bg-transparent'
         }`}
