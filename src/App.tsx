@@ -21,7 +21,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Header />
-            <main className="flex flex-col">
+            <main className="flex flex-col flex-1">
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="*" element={<NotFound />} />
