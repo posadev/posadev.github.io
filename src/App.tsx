@@ -13,25 +13,27 @@ import Footer from "@/components/Footer.tsx";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Header />
-        <main className="flex flex-col">
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
-          <Route path="/code-of-conduct" element={<CodeOfConduct />}/>
-          <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
-        </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Header />
+            <main className="flex flex-col">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="*" element={<NotFound />} />
+                <Route path="/code-of-conduct" element={<CodeOfConduct />}/>
+                <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+              </Routes>
+            </main>
+            <Footer />
+          </BrowserRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+  )
+};
 
 export default App;

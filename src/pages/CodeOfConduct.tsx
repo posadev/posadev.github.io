@@ -1,6 +1,11 @@
 const CodeOfConduct = () => {
     return (
-        <section className="flex flex-col container gap-8 mx-auto p-4 my-8">
+        <section
+            className="flex flex-col container gap-8 mx-auto p-4 my-8"
+            aria-labelledby="code-of-conduct-heading"
+            itemScope
+            itemType="https://schema.org/CreativeWork"
+        >
             <h1 className="text-4xl gradient-text">Codigo de Conducta</h1>
             <aside className="flex flex-col gap-4">
                 <h2 className="text-3xl">Propósito</h2>

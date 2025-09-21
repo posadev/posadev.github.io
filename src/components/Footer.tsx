@@ -55,19 +55,19 @@ const Footer = () => {
                         <h3 className="text-xl font-semibold mb-4">Enlaces rápidos</h3>
                         <nav className="space-y-2">
                             <a
-                                onClick={() => document.getElementById('inicio')?.scrollIntoView({behavior: 'smooth'})}
+                                onClick={() => navigate('/#inicio')}
                                 className="block text-posadev-lightPink hover:text-posadev-brightPink transition-colors duration-300"
                             >
                                 Inicio
                             </a>
                             <a
-                                onClick={() => document.getElementById('galeria')?.scrollIntoView({behavior: 'smooth'})}
+                                onClick={() => navigate('/#galeria')}
                                 className="block text-posadev-lightPink hover:text-posadev-brightPink transition-colors duration-300"
                             >
                                 Galería
                             </a>
                             <a
-                                onClick={() => document.getElementById('patrocinadores')?.scrollIntoView({behavior: 'smooth'})}
+                                onClick={() => navigate('/#patrocinadores')}
                                 className="block text-posadev-lightPink hover:text-posadev-brightPink transition-colors duration-300"
                             >
                                 Patrocinadores
