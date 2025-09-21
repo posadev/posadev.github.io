@@ -14,17 +14,12 @@ import Footer from "@/components/Footer.tsx";
 const queryClient = new QueryClient();
 
 const App = () => {
-  const search = window.location.search;
-  let basePath = "/";
-  if (search.startsWith("?/")) {
-    basePath = search.replace("?/", "/");
-  }
   return (
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter basename={basePath}>
+          <BrowserRouter>
             <Header />
             <main className="flex flex-col">
               <Routes>
