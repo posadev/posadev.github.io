@@ -1,8 +1,9 @@
-
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Users, Image } from 'lucide-react';
+import React, {useEffect, useState} from 'react';
+import {Image, Menu, Users, X} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
+import {Navbar} from "@/types/navbar.ts";
+import {cn, scrollToTop} from "@/lib/utils.ts";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,6 +25,10 @@ const Header = () => {
     navigate(path);
   }
 
+  const isActive = (path: string) => {
+    return location.pathname + location.hash === path;
+  };
+
   return (
     <header
       className={`${location.pathname === "/" ? 'fixed' : 'sticky'} top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || location.pathname !=='/'
@@ -34,44 +39,47 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-2">
-            <button onClick={() => navigate('/#inicio')}>
+            <a onClick={() => navigate('/#inicio')}>
               <img
                   src={posadevLogo}
                   alt="Posadev Logo"
                   className="h-8 w-auto"
               />
-            </button>
+            </a>
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
             <a
               onClick={() => navigate('/#galeria')}
-              className="text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1"
+              className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink") }
             >
               <Image className="w-4 h-4" />
               <span>Galería</span>
             </a>
             <a
               onClick={() => navigate('/#patrocinadores')}
-              className="bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1"
+              className={cn("bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25") }
             >
               <Users className="w-4 h-4" aria-hidden={true} />
               <span>Ser Patrocinador</span>
             </a>
             <a
-                onClick={() => navigate('/code-of-conduct')}
-                className="text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1">
-              Codigo de Conducta
+                onClick={() => {
+                  scrollToTop();
+                  navigate('/code-of-conduct')
+                }}
+                className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
+              Código de Conducta
             </a>
           </nav>
 
           {/* Mobile menu button */}
-          <a
+          <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-white p-2"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </a>
+          </button>
         </div>
 
         {/* Mobile Navigation */}
@@ -80,22 +88,22 @@ const Header = () => {
             <nav className="px-4 py-4 space-y-4">
               <a
                 onClick={() => navigateMenu('/#galeria')}
-                className="w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2"
+                className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#galeria') && "text-posadev-brightPink") }
               >
                 <Image className="w-4 h-4" aria-hidden="true"/>
                 Galería
               </a>
               <a
                 onClick={() => navigateMenu('/#patrocinadores')}
-                className="w-full text-left bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 mt-4"
+                className={cn("w-full text-left bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 mt-4", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25") }
               >
                 <Users className="w-4 h-4" aria-hidden="true" />
                 Ser Patrocinador
               </a>
               <a
                   onClick={() => navigateMenu('/code-of-conduct')}
-                  className="text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1">
-                Codigo de Conducta
+                  className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
+                Código de Conducta
               </a>
             </nav>
           </div>

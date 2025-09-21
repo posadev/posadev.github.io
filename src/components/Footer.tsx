@@ -2,6 +2,7 @@ import React from 'react';
 import {Heart, Calendar, MapPin, Mail} from 'lucide-react';
 import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
 import {useNavigate} from "react-router-dom";
+import {scrollToTop} from "@/lib/utils.ts";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -81,7 +82,10 @@ const Footer = () => {
                         © {currentYear} Posadev. Todos los derechos reservados.
                     </small>
                     <a className="text-sm hover:text-posadev-brightPink"
-                       onClick={() => navigate("/privacy-policy")}>Politica de Privacidad</a>
+                       onClick={() => {
+                           scrollToTop()
+                           navigate("/privacy-policy")
+                       }}>Politica de Privacidad</a>
                     <p className="text-posadev-lightPink text-sm flex gap-1 items-center">
                         Creado con
                         <span role="img" aria-label="amor" className="text-posadev-brightPink">♥</span>

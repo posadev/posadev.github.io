@@ -7,7 +7,6 @@ import {useLocation} from "react-router-dom";
 
 const Index = () => {
     const location = useLocation();
-
     useEffect(() => {
         if (location.hash) {
             const element = document.querySelector(location.hash);

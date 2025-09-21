@@ -6,7 +6,7 @@ const CodeOfConduct = () => {
             itemScope
             itemType="https://schema.org/CreativeWork"
         >
-            <h1 className="text-4xl gradient-text">Codigo de Conducta</h1>
+            <h1 className="text-4xl gradient-text">Código de Conducta</h1>
             <aside className="flex flex-col gap-4">
                 <h2 className="text-3xl">Propósito</h2>
                 <p>En Posadev buscamos ser y seguir siendo un espacio en el que cualquier persona se pueda sentir segura
