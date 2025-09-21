@@ -123,3 +123,8 @@ All colors MUST be HSL.
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(10px);
 }
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

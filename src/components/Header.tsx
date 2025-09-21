@@ -101,7 +101,10 @@ const Header = () => {
                 Ser Patrocinador
               </a>
               <a
-                  onClick={() => navigateMenu('/code-of-conduct')}
+                  onClick={() => {
+                    scrollToTop()
+                    navigateMenu('/code-of-conduct')
+                  }}
                   className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
                 Código de Conducta
               </a>
