@@ -1,3 +1,5 @@
+import {useEffect} from "react";
+import {scrollToTop} from "@/lib/utils.ts";
 
 const PrivacyPolicy = () => {
   return (

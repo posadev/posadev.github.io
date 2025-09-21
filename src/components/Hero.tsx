@@ -7,10 +7,9 @@ import {cn} from "@/lib/utils.ts";
 const Hero = () => {
     const navigate = useNavigate();
     return (
-        <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-7 md:pt-0">
             {/* Background gradient */}
             <div className="absolute inset-0 gradient-bg"></div>
-
             {/* Decorative elements */}
             <div className="absolute inset-0">
                 <div className="absolute top-20 left-10 w-20 h-20 bg-posadev-brightPink/20 rounded-full blur-xl"></div>
