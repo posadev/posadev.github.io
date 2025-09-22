@@ -8,14 +8,14 @@ const PrivacyPolicy = () => {
           aria-labelledby="privacy-heading"
           about="https://posadev.org/PrivacyPolicy"
       >
-          <header className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
               <h1 id="privacy-heading" className="text-4xl gradient-text">
                   Aviso de Privacidad
               </h1>
               <p>
                   En Posadev, nos comprometemos a proteger la información que nos proporcionas.
               </p>
-          </header>
+          </div>
           <article className="flex flex-col gap-4" itemScope itemType="https://schema.org/CreativeWork">
               <meta itemProp="name" content="Aviso de Privacidad de Posadev" />
               <meta itemProp="inLanguage" content="es-MX" />
