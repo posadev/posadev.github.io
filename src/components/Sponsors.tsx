@@ -81,7 +81,6 @@ const Sponsors = () => {
                                     </div>
                                 </div>
                             </div>
-
                             {/* Brochure download */}
                             <div
                                 className="bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink rounded-2xl p-6 text-white">

@@ -1,11 +1,9 @@
 import React from 'react';
 import {Calendar, MapPin, Ticket} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
-import {useNavigate} from "react-router-dom";
-import {cn} from "@/lib/utils.ts";
+import {useToast} from "@/hooks/use-toast.ts";
 
 const Hero = () => {
-    const navigate = useNavigate();
     return (
         <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-7 md:pt-0">
             {/* Background gradient */}
@@ -61,11 +59,14 @@ const Hero = () => {
                             <p className="text-posadev-lightPink">6 de Diciembre 2025</p>
                         </div>
 
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale">
+                        <a
+                            href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7"
+                            target="_blank"
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale">
                             <MapPin className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"/>
                             <h3 className="text-white font-semibold mb-2">Ubicación</h3>
                             <p className="text-posadev-lightPink">Tec de Monterrey Campus Guadalajara</p>
-                        </div>
+                        </a>
                     </section>
                     {/* CTA Button */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
