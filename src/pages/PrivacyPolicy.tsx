@@ -1,24 +1,20 @@
-import {useEffect} from "react";
-import {scrollToTop} from "@/lib/utils.ts";
-
 const PrivacyPolicy = () => {
   return (
       <section
           className="flex flex-col container gap-8 mx-auto p-4 my-8"
-          aria-labelledby="privacy-heading"
-          about="https://posadev.org/PrivacyPolicy"
-      >
-          <header className="flex flex-col gap-4">
+          aria-labelledby="privacy-heading">
+          <div className="flex flex-col gap-4">
               <h1 id="privacy-heading" className="text-4xl gradient-text">
                   Aviso de Privacidad
               </h1>
               <p>
                   En Posadev, nos comprometemos a proteger la información que nos proporcionas.
               </p>
-          </header>
-          <article className="flex flex-col gap-4" itemScope itemType="https://schema.org/CreativeWork">
               <meta itemProp="name" content="Aviso de Privacidad de Posadev" />
               <meta itemProp="inLanguage" content="es-MX" />
+              <meta itemProp="dateModified" content="2025-09-22" />
+          </div>
+          <article className="flex flex-col gap-4" itemScope itemType="https://schema.org/CreativeWork">
               <h2 className="text-2xl font-semibold">Uso de los datos personales</h2>
               <p itemProp="text">
                   Los datos personales que compartas con nosotros serán utilizados exclusivamente para fines

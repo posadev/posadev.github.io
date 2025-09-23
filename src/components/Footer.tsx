@@ -16,7 +16,7 @@ const Footer = () => {
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
                             <div
-                                className="w-10 h-10 bg-gradient-to-br from-posadev-darkPink to-posadev-brightPink rounded-lg flex items-center justify-center">
+                                className="w-10 h-10 bg-gradient-to-br from-posadev-darkPink to-posadev-brightPink rounded-lg flex items-center justify-center" aria-hidden="true">
                                 <span className="text-white font-bold">P</span>
                             </div>
                             <span className="text-2xl font-bold">Posadev</span>

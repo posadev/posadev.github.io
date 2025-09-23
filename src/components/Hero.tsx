@@ -1,15 +1,22 @@
 import React from 'react';
 import {Calendar, MapPin, Ticket} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
-import {useToast} from "@/hooks/use-toast.ts";
+import {useNavigate} from "react-router-dom";
+import {cn} from "@/lib/utils.ts";
 
 const Hero = () => {
+    const navigate = useNavigate();
     return (
-        <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-7 md:pt-0">
+        <section id="inicio"
+                 className="min-h-screen flex items-center justify-center relative overflow-hidden pt-7 md:pt-0"
+                 itemScope
+                 itemType="https://schema.org/Event"
+                 aria-labelledby="hero-title"
+        >
             {/* Background gradient */}
-            <div className="absolute inset-0 gradient-bg"></div>
+            <div className="absolute inset-0 gradient-bg" aria-hidden="true"></div>
             {/* Decorative elements */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" aria-hidden="true">
                 <div className="absolute top-20 left-10 w-20 h-20 bg-posadev-brightPink/20 rounded-full blur-xl"></div>
                 <div
                     className="absolute bottom-20 right-10 w-32 h-32 bg-posadev-lightPink/10 rounded-full blur-2xl"></div>
@@ -20,15 +27,18 @@ const Hero = () => {
                 <div className="text-center">
                     {/* Main title */}
                     <div className="mb-6 flex flex-col justify-center items-center">
-                        <div className="flex justify-center mb-4">
-                            <img
-                                src={posadevLogo}
-                                alt="Posadev Logo"
-                                className="h-32 md:h-48 w-auto animate-fade-in"
-                            />
-                        </div>
-                        <button
-                            onClick={() => window.open("https://boletos.posadev.org/event/5/posadev", "_blank")}
+                        <img
+                            src={posadevLogo}
+                            alt="Logo de Posadev"
+                            className="h-32 md:h-48 w-auto animate-fade-in mb-4"
+                        />
+                        <h1 id="hero-title" className="sr-only">
+                            Posadev 2025 – El evento anual de comunidades tecnológicas
+                        </h1>
+                        <a
+                            href="https://boletos.posadev.org/event/5/posadev"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className={`flex items-center text-center justify-center
                                  lg:h-32 lg:w-2/4 mb-6 mt-6  sm:h-20 sm:text-lg
                                   text-posadev-darkPink border-2 px-8 py-4
@@ -38,34 +48,69 @@ const Hero = () => {
                                      flex-row-reverse
                                      lg:gap-x-6
                                      gap-x-4`
-                        }
+                            }
+                            itemProp="url"
                         >
                             Comprar boleto
-                            <Ticket className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20" />
-                        </button>
+                            <Ticket
+                                className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20"
+                                aria-hidden="true"
+                            />
+                        </a>
                         <div
                             className="mt-8 w-60 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
                     </div>
                     {/* Subtitle */}
-                    <p className="text-xl md:text-2xl text-posadev-lightPink mb-8 animate-fade-in font-light">
+                    <p
+                        itemProp="description"
+                        className="text-xl md:text-2xl text-posadev-lightPink mb-8 animate-fade-in font-light">
                         El evento anual que reúne a la comunidades tecnológicas
                     </p>
 
                     {/* Event details */}
-                    <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale">
-                            <Calendar className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"/>
+                    <section
+                        className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto"
+                        itemScope
+                        itemType="https://schema.org/Event"
+                        aria-labelledby="event-details-title"
+                    >
+                        <h2 id="event-details-title" className="sr-only">
+                            Detalles del evento
+                        </h2>
+                        {/* Fecha */}
+                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
+                            <Calendar
+                                className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"
+                                aria-hidden="true"
+                            />
                             <h3 className="text-white font-semibold mb-2">Fecha</h3>
-                            <p className="text-posadev-lightPink">6 de Diciembre 2025</p>
+                            <time
+                                className="text-posadev-lightPink"
+                                dateTime="2025-12-06"
+                                itemProp="startDate"
+                            >
+                                6 de diciembre 2025
+                            </time>
                         </div>
 
+                        {/* Ubicación */}
                         <a
                             href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7"
                             target="_blank"
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale">
-                            <MapPin className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"/>
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
+                            <MapPin
+                                className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"
+                                aria-hidden="true"
+                            />
                             <h3 className="text-white font-semibold mb-2">Ubicación</h3>
-                            <p className="text-posadev-lightPink">Tec de Monterrey Campus Guadalajara</p>
+                            <p
+                                className="text-posadev-lightPink"
+                                itemProp="location"
+                                itemScope
+                                itemType="https://schema.org/Place"
+                            >
+                                Tec de Monterrey Campus Guadalajara
+                            </p>
                         </a>
                     </section>
                     {/* CTA Button */}
