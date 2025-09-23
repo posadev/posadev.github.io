@@ -10,7 +10,10 @@ Node version 20+
 
 Recommended to use a node package manager like nvm or fnm https://github.com/Schniz/fnm
 
-run ```npm i```
+run 
+```
+npm i
+```
 
 
 Follow these steps:
