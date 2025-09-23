@@ -94,7 +94,10 @@ const Hero = () => {
                         </div>
 
                         {/* Ubicación */}
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
+                        <a
+                            href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7"
+                            target="_blank"
+                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
                             <MapPin
                                 className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"
                                 aria-hidden="true"
@@ -108,7 +111,7 @@ const Hero = () => {
                             >
                                 Tec de Monterrey Campus Guadalajara
                             </p>
-                        </div>
+                        </a>
                     </section>
                     {/* CTA Button */}
                     <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
