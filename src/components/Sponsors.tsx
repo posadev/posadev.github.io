@@ -15,7 +15,7 @@ const Sponsors = () => {
 
     return (
         <section id="patrocinadores"
-                 className="py-20 bg-gradient-to-b from-white to-posadev-lightPink/20 container mx-auto px-4">
+                 className="py-20 bg-gradient-to-b from-white to-posadev-lightPink/20 mx-auto px-4 w-full">
             {/* Section header */}
             <div className="text-center mb-16">
                 <h2 className="text-4xl md:text-5xl font-bold text-posadev-black mb-6">
