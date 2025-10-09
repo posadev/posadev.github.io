@@ -2,6 +2,7 @@ import React from 'react';
 import {Calendar, MapPin, Ticket} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
 import {useNavigate} from "react-router-dom";
+import Tickets from "@/components/Tickets.tsx";
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Hero = () => {
                 <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-posadev-darkPink/30 rounded-full blur-lg"></div>
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-4 relative z-10 mt-16 lg:pt-0">
                 <div className="text-center">
                     {/* Main title */}
                     <div className="mb-6 flex flex-col justify-center items-center">
@@ -31,41 +32,18 @@ const Hero = () => {
                             alt="Logo de Posadev"
                             className="h-32 md:h-48 w-auto animate-fade-in mb-4"
                         />
-                        <h1 id="hero-title" className="sr-only">
+                        <title id="hero-title" className="sr-only">
                             Posadev 2025 – El evento anual de comunidades tecnológicas
-                        </h1>
-                        <a
-                            href="https://boletos.posadev.org/event/5/posadev"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`flex items-center text-center justify-center
-                                 lg:h-32 lg:w-2/4 mb-6 mt-6  sm:h-20 sm:text-lg
-                                  text-posadev-darkPink border-2 px-8 py-4
-                                   rounded-full lg:text-5xl font-semibold
-                                    bg-white transition-all
-                                     hover:bg-posadev-lightPink duration-300
-                                     flex-row-reverse
-                                     lg:gap-x-6
-                                     gap-x-4`
-                            }
-                            itemProp="url"
-                        >
-                            Comprar boleto
-                            <Ticket
-                                className="w-6 h-6 sm:w-10 sm:h-10 lg:w-20 lg:h-20"
-                                aria-hidden="true"
-                            />
-                        </a>
-                        <div
-                            className="mt-8 w-60 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
+                        </title>
+                        <Tickets />
+                        <div className="mt-8 w-60 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
+                        <p
+                            itemProp="description"
+                            className="pt-8 text-xl md:text-2xl text-posadev-lightPink animate-fade-in font-light">
+                            El evento anual que reúne a la comunidades tecnológicas
+                        </p>
                     </div>
                     {/* Subtitle */}
-                    <p
-                        itemProp="description"
-                        className="text-xl md:text-2xl text-posadev-lightPink mb-8 animate-fade-in font-light">
-                        El evento anual que reúne a la comunidades tecnológicas
-                    </p>
-
                     {/* Event details */}
                     <section
                         className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto"
@@ -73,9 +51,9 @@ const Hero = () => {
                         itemType="https://schema.org/Event"
                         aria-labelledby="event-details-title"
                     >
-                        <h2 id="event-details-title" className="sr-only">
+                        <title id="event-details-title" className="sr-only">
                             Detalles del evento
-                        </h2>
+                        </title>
                         {/* Fecha */}
                         <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
                             <Calendar

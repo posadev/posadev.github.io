@@ -35,7 +35,7 @@ const Header = () => {
                 "top-0 left-0 right-0 z-50 transition-all duration-300"
             )}
         >
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 pt-2">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center space-x-2">
                         <a onClick={() => navigate('/#inicio')}>
@@ -49,23 +49,25 @@ const Header = () => {
 
                     <nav className="hidden md:flex items-center space-x-8">
                         <a
+                            onClick={() => navigate('/#patrocinadores')}
+                            className={cn(
+                                "bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1 hover:underline hover:shadow-posadev-brightPink/25",
+                                isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25"
+                            )}>
+                            <Users className="w-4 h-4" aria-hidden="true"/>
+                            <span>Se un Patrocinador</span>
+                        </a>
+                        <a
                             onClick={() => navigate('/#comunidades')}
                             className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink")}
                         >
-                            <span>Comunidades</span>
+                            <span>Organizadores</span>
                         </a>
                         <a
                             onClick={() => navigate('/#galeria')}
                             className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink")}
                         >
                             <span>Galería</span>
-                        </a>
-                        <a
-                            onClick={() => navigate('/#patrocinadores')}
-                            className={cn("bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
-                        >
-                            <Users className="w-4 h-4" aria-hidden={true}/>
-                            <span>Se un Patrocinador</span>
                         </a>
                         <a
                             onClick={() => {
