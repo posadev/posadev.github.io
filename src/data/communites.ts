@@ -11,6 +11,7 @@ import JUG from "@/img/organizers/gljug.png"
 
 export const organizers: Array<ICommunity> = [
     {
+        name: "Las Chicas del Código",
         description: "Comunidad de mujeres en tecnología que busca visibilizar el talento femenino en el sector tecnológico a través de eventos.",
         link: "https://linktr.ee/laschicasdelcodigo",
         image: LCDC,
@@ -21,9 +22,10 @@ export const organizers: Array<ICommunity> = [
         },
     },
     {
+        name: "IXDA (The Interaction Design Association)",
         description: `
-        The Interaction Design Association es una organización dedicada al diseño de interacción.
-        Conecta a profesionales de todos los niveles para compartir conocimientos y experiencias en la disciplina.`,
+        Organización respaldada por sus miembros, dedicada al diseño de interacción.
+        Con grupos locales en todo el mundo, conecta a profesionales de todos los niveles para compartir conocimientos y experiencias en la disciplina.`,
         link: "https://ixda.org/",
         image: IxDA,
         socials: {
@@ -33,6 +35,7 @@ export const organizers: Array<ICommunity> = [
         },
     },
     {
+        name: "KUG",
         description: "Comunidad de desarrolladores de Kotlin.",
         link: "",
         image: KUG,
@@ -43,6 +46,7 @@ export const organizers: Array<ICommunity> = [
         },
     },
     {
+        name: "GDL Devcomms",
         description: "La comunidad de comunidades de Guadalajara.",
         link: "",
         image: GDLDevcomms,
@@ -53,6 +57,7 @@ export const organizers: Array<ICommunity> = [
         },
     },
     {
+        name: "J4G",
         description: "Java User Group de Guadalajara.",
         link: "",
         image: J4G,
@@ -98,8 +103,10 @@ export const organizers: Array<ICommunity> = [
         }
     },
     {
-        description: "Comunidad de Java en Guadalajara. Co-organizadores de la JConf GDL.",
-        link: "http://juggdl.org\n",
+        name: "JUG GDL",
+        description: `
+        Comunidad de Java en Guadalajara. Co-organizadores de la JConf GDL.`,
+        link: "http://juggdl.org",
         image: JUG,
         socials: {
             facebook: "https://www.facebook.com/gdljug",

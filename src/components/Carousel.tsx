@@ -59,12 +59,12 @@ const Carousel = <T,>({
 
     return (
         <section className="w-full flex flex-col items-center overflow-x-hidden">
-            <div className="flex flex-row items-center gap-10 w-full">
+            <div className="flex flex-row items-center gap-16 w-full">
                 {/* Left Arrow */}
                 <Button
                     variant="default"
                     size="square"
-                    className="text-white bg-primary-500 hidden lg:flex justify-center items-center"
+                    className="text-white bg-primary-500 border-primary-500 border-2 rounded-xl hidden lg:flex justify-center items-center"
                     onClick={() => instanceRef.current?.prev()}
                 >
                     <ChevronLeft height="30" width="30"/>
@@ -81,7 +81,7 @@ const Carousel = <T,>({
                 <Button
                     variant="default"
                     size="square"
-                    className={`text-white bg-primary-500 hidden lg:flex justify-center items-center`}
+                    className={`text-white bg-primary-500 hidden lg:flex justify-center items-center border-primary-500 border-2 rounded-xl`}
                     onClick={() => instanceRef.current?.next()}
                 >
                     <ChevronRight height={30} width={30} />
@@ -89,7 +89,7 @@ const Carousel = <T,>({
             </div>
             {/* Dots */}
             {loaded && instanceRef.current && (
-                <div className="flex justify-center mt-6 gap-4 md:pt-14 md:pb-14">
+                <div className="flex justify-center mt-2 gap-2.5 md:gap-4 md:pt-14 md:pb-14">
                     {[
                         ...Array(instanceRef.current.track.details.slides.length).keys(),
                     ].map((idx) => (
@@ -97,7 +97,7 @@ const Carousel = <T,>({
                             key={idx}
                             onClick={() => instanceRef.current?.moveToIdx(idx)}
                             className={`w-3 h-3 rounded-full ${
-                                currentSlide === idx ? "bg-posadev-black" : "bg-gray-300"
+                                currentSlide === idx ? "bg-primary-600" : "bg-primary-200"
                             }`}
                         />
                     ))}
