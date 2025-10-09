@@ -1,8 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
 All colors MUST be HSL.
 */
 
@@ -17,11 +16,50 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary-100: 341, 100%, 91%, 1;
+    --primary-200: 340, 100%, 62%, 1;
+    --primary-300: 340, 80%, 75%, 1;
+    --primary-400: 340, 100%, 61%, 1;
+    --primary-500: 340, 97%, 50%, 1;
+    --primary-600: 340, 99%, 43%, 1;
+    --primary-700: 340, 100%, 38%, 1;
+    --primary-800: 340, 99%, 32%, 1;
+    --primary-900: 340, 98% 26%, 1;
+    --primary-foreground: 210, 40%, 98%, 1;
 
-    --secondary: 210 40% 96.1%;
+    --secondary-100: 217, 100%, 86%, 1;
+    --secondary-200: 217, 100%, 77%, 1;
+    --secondary-300: 217, 100%, 64%, 1%;
+    --secondary-400: 217, 63%, 51%, 1;
+    --secondary-500: 217, 75%, 43%, 1;
+    --secondary-600: 217, 76%, 37%, 1;
+    --secondary-700: 217, 76%, 30%, 1;
+    --secondary-800: 217, 88%, 24%, 1;
+    --secondary-900: 217, 86%, 18%, 1;
     --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --alternative-100:  167, 100%, 86%, 1;
+    --alternative-200:  167, 84%, 76%, 1;
+    --alternative-300:  167, 82%, 50%, 1;
+    --alternative-400:  167, 100%, 39%, 1;
+    --alternative-500:  168, 98%, 26%, 1;
+    --alternative-600:  168, 99%, 20%, 1;
+    --alternative-700:  168, 99%, 15%, 1;
+    --alternative-800:  168, 100%, 10%, 1;
+    --alternative-900:  168, 98%, 7%, 1;
+    --alternative-foreground: 340 100% 91%;
+
+    --grey-100: 240, 100%, 100%, 1;
+    --grey-200: 0, 70%, 93%, 1;
+    --grey-300: 0, 2%, 87%, 1;
+    --grey-400: 0, 1%, 78%, 1;
+    --grey-500: 0, 1%, 67%, 1;
+    --grey-600: 0, 0%, 56%, 1;
+    --grey-700: 0, 0%, 40%, 1;
+    --grey-800: 0, 1%, 26%, 1;
+    --grey-900: 0, 0%, 13%, 1;
+    --grey-foreground: 222.2 84% 4.9%;
+
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -58,7 +96,7 @@ All colors MUST be HSL.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 345 100% 91%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
