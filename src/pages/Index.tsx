@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
 import Sponsors from '@/components/Sponsors';
-import Footer from '@/components/Footer';
 import {useLocation} from "react-router-dom";
+import Communities from "@/components/Communities.tsx";
 
 const Index = () => {
     const location = useLocation();
@@ -18,8 +18,9 @@ const Index = () => {
     return (
         <>
             <Hero/>
-            <Gallery/>
             <Sponsors/>
+            <Communities/>
+            <Gallery/>
         </>
     );
 };

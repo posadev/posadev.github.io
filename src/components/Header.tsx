@@ -49,10 +49,15 @@ const Header = () => {
 
                     <nav className="hidden md:flex items-center space-x-8">
                         <a
+                            onClick={() => navigate('/#comunidades')}
+                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink")}
+                        >
+                            <span>Comunidades</span>
+                        </a>
+                        <a
                             onClick={() => navigate('/#galeria')}
                             className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink")}
                         >
-                            <Image className="w-4 h-4"/>
                             <span>Galería</span>
                         </a>
                         <a
@@ -60,7 +65,7 @@ const Header = () => {
                             className={cn("bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
                         >
                             <Users className="w-4 h-4" aria-hidden={true}/>
-                            <span>Ser Patrocinador</span>
+                            <span>Se un Patrocinador</span>
                         </a>
                         <a
                             onClick={() => {
@@ -86,6 +91,12 @@ const Header = () => {
                     <div
                         className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-posadev-darkPink/20">
                         <nav className="px-4 py-4 space-y-4">
+                            <a
+                                onClick={() => navigateMenu('/#galeria')}
+                                className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#galeria') && "text-posadev-brightPink")}
+                            >
+                                Comunidades
+                            </a>
                             <a
                                 onClick={() => navigateMenu('/#galeria')}
                                 className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#galeria') && "text-posadev-brightPink")}

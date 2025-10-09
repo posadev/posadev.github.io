@@ -2,7 +2,6 @@ import React from 'react';
 import {Calendar, MapPin, Ticket} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
 import {useNavigate} from "react-router-dom";
-import {cn} from "@/lib/utils.ts";
 
 const Hero = () => {
     const navigate = useNavigate();
