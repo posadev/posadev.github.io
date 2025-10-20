@@ -11,3 +11,9 @@ export interface ICommunity {
         tikTok?: string;
     }
 }
+export interface IImage {
+    id: number
+    src: string
+    alt: string
+    title: string
+}

@@ -11,7 +11,7 @@ interface CommunityProps {
 const Community: React.FC<CommunityProps> = ({ community }) => {
 
   return (
-      <Card className="h-full flex md:flex-row flex-col items-center gap-4 border-0 bg-transparent shadow-none">
+      <Card className="h-full flex md:flex-row flex-col items-center gap-8 border-0 bg-transparent shadow-none">
           <a
               className="bg-alternative-700 rounded-3xl w-full max-w-80 min-h-52 flex flex-col justify-center items-center p-4 transition-all duration-300"
               href={community.link}
@@ -25,7 +25,7 @@ const Community: React.FC<CommunityProps> = ({ community }) => {
               />
           </a>
 
-          <CardContent className="flex flex-col items-start justify-center gap-1">
+          <CardContent className="flex flex-col items-start justify-center gap-1 p-0">
                   <h3 className="text-2xl text-primary-700 font-semibold">{community.name}</h3>
                   <p className="text-xl text-gray-500 line-clamp-5 md:line-clamp-none">
                       {community.description}
