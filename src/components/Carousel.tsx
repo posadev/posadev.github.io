@@ -9,6 +9,10 @@ interface CarouselProps<T> {
     renderItem: (item: T, index: number) => React.ReactNode;
     autoplay?: boolean;
     autoplayInterval?: number;
+    slidePerViewLg?: number;
+    slidePerViewSm?: number;
+    slidePerViewMd?: number;
+    className?: string;
 }
 
 const Carousel = <T,>({
@@ -16,6 +20,10 @@ const Carousel = <T,>({
                           renderItem,
                           autoplay = false,
                           autoplayInterval = 3000,
+                            slidePerViewLg = 1,
+                            slidePerViewSm = 1,
+                            slidePerViewMd = 1,
+    className
 }: CarouselProps<T>) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
@@ -23,10 +31,10 @@ const Carousel = <T,>({
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
         mode: "snap",
-        slides: { perView: 1, spacing: 15 },
+        slides: { perView: slidePerViewSm, spacing: 15 },
         breakpoints: {
-            "(min-width: 640px)": { slides: { perView: 1, spacing: 15 } },
-            "(min-width: 1024px)": { slides: { perView: 1, spacing: 20 } },
+            "(min-width: 640px)": { slides: { perView: slidePerViewMd, spacing: 15 } },
+            "(min-width: 1024px)": { slides: { perView: slidePerViewLg, spacing: 20 } },
         },
         slideChanged: (slider) => {
             setCurrentSlide(slider.track.details.rel);
@@ -58,8 +66,8 @@ const Carousel = <T,>({
     }, [autoplay, autoplayInterval, instanceRef]);
 
     return (
-        <section className="w-full flex flex-col items-center overflow-x-hidden">
-            <div className="flex flex-row items-center gap-16 w-full">
+        <section className="w-full md:h-full flex flex-col items-center overflow-x-hidden">
+            <div className="flex flex-row items-center gap-10 w-full">
                 {/* Left Arrow */}
                 <Button
                     variant="default"
@@ -70,9 +78,9 @@ const Carousel = <T,>({
                     <ChevronLeft height="30" width="30"/>
                 </Button>
                 {/* Slides */}
-                <div ref={sliderRef} className="keen-slider w-full overflow-hidden">
+                <div ref={sliderRef} className={`keen-slider ${className}`}>
                     {items.map((item, i) => (
-                        <div key={i} className="keen-slider__slide">
+                        <div key={i} className={`keen-slider__slide`}>
                             {renderItem(item, i)}
                         </div>
                     ))}

@@ -1,58 +1,78 @@
 import React, {useState} from 'react';
-import {X, ChevronLeft, ChevronRight, ZoomIn} from 'lucide-react';
+import {X, ChevronLeft, ChevronRight, ZoomIn, Heart} from 'lucide-react';
 import posadevFila from '@/img/posadev-fila.jpg';
 import posadevReferentes from '@/img/IMG_7461.jpg';
 import posadevAsistencia from '@/img/PXL_20241208_011903817.jpg';
-import posadevPlaticas from '@/img/IMG_7466.jpg';
-import posadevAmbiente from '@/img/IMG_7464.jpg';
 import posadevTecnologia from '@/img/IMG_7425.jpg';
+import voluntarios from '@/img/gallery/voluntarios.jpg';
+import hazzim from '@/img/gallery/Hazzim.jpg';
+import dinamicas from '@/img/gallery/Dinamicas.jpg';
+import gabriel from '@/img/gallery/Gabriel.jpg';
+import posadev from '@/img/gallery/posadev.jpg'
+import Photo from "@/components/Photo.tsx";
+import Carousel from "@/components/Carousel.tsx";
+
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
     const images = [
         {
+            id: 9,
+            src: posadev,
+            alt: "Posadev 2019",
+            title: "Posadev 2019"
+        },
+        {
+            id: 7,
+            src: hazzim,
+            alt: "Hazzim organizador Posadev 2024",
+            title: "Hazzim Organizador"
+        },
+        {
+            id: 8,
+            src: dinamicas,
+            alt: "Dinamicas con sponsors",
+            title: "Dinamicas con sponsors"
+        },
+
+        {
             id: 1,
+            src: gabriel,
+            alt: "Gabriel speaker Posadev 2024",
+            title: "Gabriel speaker"
+        },
+        {
+            id: 2,
+            src: voluntarios,
+            alt: "Voluntarios Posadev",
+            title: "Voluntarios"
+        },
+        {
+            id: 3,
+            src: posadevTecnologia,
+            alt: "Tecnología",
+            title: "Tecnología"
+        },
+        {
+            id: 4,
             src: posadevFila,
             alt: "Posadev - Participantes",
             title: "Participantes"
         },
         {
-            id: 2,
+            id: 5,
             src: posadevReferentes,
             alt: "Posadev - Referentes",
             title: "Referentes"
         },
         {
-            id: 3,
+            id: 6,
             src: posadevAsistencia,
             alt: "Posadev - Asistencia",
             title: "Asistencia"
-        },
-        {
-            id: 4,
-            src: posadevPlaticas,
-            alt: "Platicas",
-            title: "Platicas"
-        },
-        {
-            id: 5,
-            src: posadevAmbiente,
-            alt: "Ambiente del evento",
-            title: "Ambiente único"
-        },
-        {
-            id: 6,
-            src: posadevTecnologia,
-            alt: "Tecnología",
-            title: "Tecnología"
         }
     ];
-
-    const openLightbox = (index: number) => {
-        setSelectedImage(index);
-        document.body.style.overflow = 'hidden';
-    };
 
     const closeLightbox = () => {
         setSelectedImage(null);
@@ -88,53 +108,22 @@ const Gallery = () => {
     return (
         <section
             id="galeria"
-            className="py-20 bg-gradient-to-b from-posadev-lightPink/10 to-white"
+            className="flex flex-col justify-center items-center py-20 px-10 bg-gradient-to-b from-posadev-lightPink/10 to-white"
             aria-labelledby="gallery-title">
-            <div className="container mx-auto px-4">
-                {/* Section header */}
-                <div className="text-center mb-16">
-                    <h2 id="gallery-title" className="text-4xl md:text-5xl font-bold text-posadev-black mb-4">
-                        Galería de Momentos
-                    </h2>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Revive los mejores momentos de ediciones anteriores del Posadev
-                    </p>
-                    <div
-                        className="w-20 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto mt-6 rounded-full"></div>
-                </div>
-
-                {/* Gallery grid */}
-                <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {images.map((image, index) => (
-                        <figure
-                            key={image.id}
-                            className="relative group cursor-pointer overflow-hidden rounded-2xl hover-scale"
-                        >
-                            <button
-                                aria-label={`Ver imagen completa de ${image.title}`}
-                                className="w-full h-full text-left focus:outline-none"
-                                onClick={() => openLightbox(index)}
-                            >
-                                <img
-                                    src={image.src}
-                                    alt={image.alt}
-                                    loading="lazy"
-                                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                {/* Overlay */}
-                                <div className="absolute flex justify-between align-middle inset-0 bg-gradient-to-t from-posadev-black/70 via-transparent to-transparent opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <figcaption
-                                            className="text-white font-semibold text-lg mb-2 flex flex-col justify-end p-4">
-                                            <span>{image.title}</span>
-                                            <span className="text-posadev-lightPink text-sm" aria-hidden="true">Ver imagen completa</span>
-                                        </figcaption>
-                                    <ZoomIn className="w-5 h-5 m-4 self-end text-white" aria-hidden="true"/>
-                                </div>
-                            </button>
-                        </figure>
-                    ))}
-                </section>
-            </div>
+            {/* Section header */}
+            <h2 id="gallery-title" className="text-4xl md:text-5xl font-bold text-posadev-black mb-4">
+                Galería de Momentos
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl">
+                Revive los mejores momentos de ediciones anteriores del Posadev
+            </p>
+            <div className="w-20 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "></div>
+            {/* Gallery grid */}
+            <Carousel
+                items={images} slidePerViewSm={1} slidePerViewLg={3} slidePerViewMd={2} className=""
+                renderItem={
+                    (image, index) =>   <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage}/>
+                }/>
 
             {/* Lightbox */}
             {selectedImage !== null && (

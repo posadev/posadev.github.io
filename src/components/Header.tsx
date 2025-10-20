@@ -59,7 +59,7 @@ const Header = () => {
                         </a>
                         <a
                             onClick={() => navigate('/#comunidades')}
-                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink")}
+                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#comunidades') && "text-posadev-brightPink")}
                         >
                             <span>Organizadores</span>
                         </a>
@@ -94,8 +94,8 @@ const Header = () => {
                         className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-posadev-darkPink/20">
                         <nav className="px-4 py-4 space-y-4">
                             <a
-                                onClick={() => navigateMenu('/#galeria')}
-                                className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#galeria') && "text-posadev-brightPink")}
+                                onClick={() => navigateMenu('/#comunidades')}
+                                className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#comunidades') && "text-posadev-brightPink")}
                             >
                                 Comunidades
                             </a>
