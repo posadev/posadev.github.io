@@ -17,3 +17,12 @@ export interface IImage {
     alt: string
     title: string
 }
+
+export interface ISponsor {
+    id: string;
+    name: string;
+    description?: string;
+    link?: string;
+    image: string;
+    isPaid: boolean;
+}
