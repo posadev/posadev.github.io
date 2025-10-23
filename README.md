@@ -57,4 +57,11 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+### Issues
+
+if you saw on web
+
+Se bloqueó la carga de un módulo de “https://posadev.org/src/main.tsx” debido a un tipo MIME no permitido (“application/octet-stream”).
+
+delete npm cache in actions
 
