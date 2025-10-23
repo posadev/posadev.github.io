@@ -9,7 +9,7 @@ const Communities = () => {
   return (
       <Gradient
           id="comunidades"
-          className="w-full mx-auto px-10 pt-40 gap-6 flex flex-col justify-center items-center pb-10"
+          className="w-full mx-auto px-10 pt-40 gap-6 flex flex-col justify-center items-center pb-16 md:pb-10"
       >
          <div className="flex items-center justify-center gap-1.5 lg:gap-8 pb-4">
              <StarIcon className="hidden md:block"/>

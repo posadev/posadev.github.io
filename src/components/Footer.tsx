@@ -3,26 +3,24 @@ import {Heart, Calendar, MapPin, Mail} from 'lucide-react';
 import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
 import {useNavigate} from "react-router-dom";
 import {scrollToTop} from "@/lib/utils.ts";
+import DuckFace from "@/components/ui/duckFace.tsx";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     const navigate = useNavigate();
 
     return (
-        <footer className="bg-posadev-black text-white py-12">
+        <footer className="bg-grey-900 text-white py-12">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     {/* Logo and description */}
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
-                            <div
-                                className="w-10 h-10 bg-gradient-to-br from-posadev-darkPink to-posadev-brightPink rounded-lg flex items-center justify-center" aria-hidden="true">
-                                <span className="text-white font-bold">P</span>
-                            </div>
+                            <DuckFace className="h-8 w-8" />
                             <span className="text-2xl font-bold">Posadev</span>
                         </div>
                         <p className="text-posadev-lightPink mb-4">
-                            El evento anual que conecta, inspira y fortalece la comunidad de desarrolladores.
+                            El evento anual que conecta, inspira y fortalece las comunidades de tecnologia.
                         </p>
                         <div className="flex items-center space-x-2 text-posadev-brightPink">
                             <Heart className="w-4 h-4" aria-hidden="true"/>
@@ -41,8 +39,9 @@ const Footer = () => {
                             </li>
                             <li className="flex items-center space-x-3">
                                 <MapPin className="w-5 h-5 text-posadev-brightPink" aria-hidden="true" focusable="false"/>
-                                <span
-                                    className="text-posadev-lightPink">Tecnológico de Monterrey Campus Guadalajara</span>
+                                <a href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7" target="_blank"
+                                   itemProp="location"
+                                   className="text-posadev-lightPink">Tecnológico de Monterrey Campus Guadalajara</a>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="w-5 h-5 text-posadev-brightPink" aria-hidden="true" focusable="false"/>

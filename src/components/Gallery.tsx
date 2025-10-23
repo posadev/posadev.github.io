@@ -111,20 +111,19 @@ const Gallery = () => {
             className="flex flex-col justify-center items-center py-20 px-10 bg-gradient-to-b from-posadev-lightPink/10 to-white"
             aria-labelledby="gallery-title">
             {/* Section header */}
-            <h2 id="gallery-title" className="text-4xl md:text-5xl font-bold text-posadev-black mb-4">
+            <h2 id="gallery-title" className="text-2xl md:text-5xl font-bold text-alternative-700 mb-4">
                 Galería de Momentos
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl">
-                Revive los mejores momentos de ediciones anteriores del Posadev
+            <p className="text-md text-gray-600 w-full flex-wrap flex gap-2 justify-center items-center">
+                Revive los mejores momentos <Heart className="text-primary-500 h-4 w-4" fill="currentColor" aria-hidden="true" /> de ediciones anteriores del Posadev
             </p>
-            <div className="w-20 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "></div>
+            <div className="w-28 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "></div>
             {/* Gallery grid */}
             <Carousel
                 items={images} slidePerViewSm={1} slidePerViewLg={3} slidePerViewMd={2} className=""
                 renderItem={
                     (image, index) =>   <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage}/>
                 }/>
-
             {/* Lightbox */}
             {selectedImage !== null && (
                 <div className="fixed inset-0 z-50 lightbox-overlay flex items-center justify-center p-4">
