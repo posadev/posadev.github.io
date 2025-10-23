@@ -111,7 +111,7 @@ const Header = () => {
                                 className={cn("w-full text-left bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 mt-4", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
                             >
                                 <Users className="w-4 h-4" aria-hidden="true"/>
-                                Ser Patrocinador
+                                Se un patrocinador
                             </a>
                             <a
                                 onClick={() => {
