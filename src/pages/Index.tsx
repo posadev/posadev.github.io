@@ -22,7 +22,6 @@ const Index = () => {
             <Hero/>
             <BecomeSponsor/>
             <Communities/>
-            <Sponsors/>
             <Gallery/>
         </>
     );
