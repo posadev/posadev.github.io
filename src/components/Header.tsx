@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Image, Menu, Users, X} from 'lucide-react';
+import {Image, Menu, UserStar, X} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
 import {useLocation, useNavigate} from "react-router-dom";
 import {cn, scrollToTop} from "@/lib/utils.ts";
@@ -54,7 +54,7 @@ const Header = () => {
                                 "bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1 hover:underline hover:shadow-posadev-brightPink/25",
                                 isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25"
                             )}>
-                            <Users className="w-4 h-4" aria-hidden="true"/>
+                            <UserStar className="w-4 h-4" aria-hidden="true"/>
                             <span>Se un Patrocinador</span>
                         </a>
                         <a
@@ -110,7 +110,7 @@ const Header = () => {
                                 onClick={() => navigateMenu('/#patrocinadores')}
                                 className={cn("w-full text-left bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 mt-4", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
                             >
-                                <Users className="w-4 h-4" aria-hidden="true"/>
+                                <UserStar className="w-4 h-4" aria-hidden="true"/>
                                 Se un patrocinador
                             </a>
                             <a
