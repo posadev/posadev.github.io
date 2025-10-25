@@ -8,7 +8,7 @@ There are several ways of editing your application.
 
 Node version 20+
 
-Recommended to use a node package manager like nvm or fnm https://github.com/Schniz/fnm
+Recommended to use a node package manager like nvm or fnm https://github.com/Schniz/fnm or nvm
 
 run 
 ```
