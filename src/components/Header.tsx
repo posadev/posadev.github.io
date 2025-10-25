@@ -58,7 +58,7 @@ const Header = () => {
                             <span>Se un Patrocinador</span>
                         </a>
                         <a
-                            onClick={() => navigate('/#comunidades')}
+                            onClick={() => navigate('/#organizadores')}
                             className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#comunidades') && "text-posadev-brightPink")}
                         >
                             <span>Organizadores</span>
@@ -94,10 +94,10 @@ const Header = () => {
                         className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-posadev-darkPink/20">
                         <nav className="px-4 py-4 space-y-4">
                             <a
-                                onClick={() => navigateMenu('/#comunidades')}
+                                onClick={() => navigateMenu('/#organizadores')}
                                 className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#comunidades') && "text-posadev-brightPink")}
                             >
-                                Comunidades
+                                Organizadores
                             </a>
                             <a
                                 onClick={() => navigateMenu('/#galeria')}
