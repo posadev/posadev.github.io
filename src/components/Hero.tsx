@@ -6,21 +6,11 @@ import Tickets from "@/components/Tickets.tsx";
 const Hero = () => {
     return (
         <section id="inicio"
-                 className="min-h-screen flex items-center justify-center relative overflow-hidden pt-7 md:pt-0"
+                 className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-7 md:pt-0"
                  itemScope
                  itemType="https://schema.org/Event"
                  aria-labelledby="hero-title"
         >
-            {/* Background gradient */}
-            <div className="absolute inset-0 gradient-bg" aria-hidden="true"></div>
-            {/* Decorative elements */}
-            <div className="absolute inset-0" aria-hidden="true">
-                <div className="absolute top-20 left-10 w-20 h-20 bg-posadev-brightPink/20 rounded-full blur-xl"></div>
-                <div
-                    className="absolute bottom-20 right-10 w-32 h-32 bg-posadev-lightPink/10 rounded-full blur-2xl"></div>
-                <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-posadev-darkPink/30 rounded-full blur-lg"></div>
-            </div>
-
             <div className="container mx-auto px-4 relative z-10 mt-16 lg:pt-0">
                 <div className="text-center">
                     {/* Main title */}

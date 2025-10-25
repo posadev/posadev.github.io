@@ -1,6 +1,5 @@
 import React from 'react';
-import {Heart, Calendar, MapPin, Mail} from 'lucide-react';
-import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
+import { MapPin, Mail, CandyCane, CalendarHeart} from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 import {scrollToTop} from "@/lib/utils.ts";
 import DuckFace from "@/components/ui/duckFace.tsx";
@@ -23,7 +22,7 @@ const Footer = () => {
                             El evento anual que conecta, inspira y fortalece las comunidades de tecnologia.
                         </p>
                         <div className="flex items-center space-x-2 text-posadev-brightPink">
-                            <Heart className="w-4 h-4" aria-hidden="true"/>
+                            <CandyCane className="w-4 h-4" aria-hidden="true"/>
                             <span className="text-sm">Hecho con amor para la comunidad tech</span>
                         </div>
                     </div>
@@ -33,7 +32,7 @@ const Footer = () => {
                         <h3 id="event-info-heading" className="text-xl font-semibold mb-4">Información del evento</h3>
                         <ul className="space-y-3">
                             <li className="flex items-center space-x-3">
-                                <Calendar aria-hidden="true"
+                                <CalendarHeart aria-hidden="true"
                                           focusable="false" className="w-5 h-5 text-posadev-brightPink"/>
                                 <time dateTime="2025-12-06" className="text-posadev-lightPink">6 de Diciembre del 2025</time>
                             </li>

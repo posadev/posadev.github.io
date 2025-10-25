@@ -26,23 +26,23 @@ const Tickets = () => {
           <h3 className="text-2xl md:text-3xl font-semibold ">Qué incluye tu boleto (General) Posadev 2025</h3>
           <ul className="flex flex-col items-start animate-fade-in text-base md:text-xl text-left gap-1.5">
               <li className="flex items-center justify-start gap-2 ">
-                  <DuckIcon className="h-4 w-4"/>
+                  <DuckIcon color="yellow" className="h-4 w-4"/>
                   Acceso a todas las charlas y actividades ✨
               </li>
               <li className="flex items-center gap-2">
-                  <DuckIcon className="h-4 w-4" />
+                  <DuckIcon color="yellow" className="h-4 w-4" />
                   Playera edición especial 👕
               </li>
               <li className="flex items-center justify-start gap-2">
-                  <DuckIcon className="h-4 w-4" />
+                  <DuckIcon color="yellow" className="h-4 w-4" />
                   Coffee break durante toda la jornada ☕
               </li>
               <li className="flex items-center gap-2">
-                  <DuckIcon className="h-4 w-4" />
+                  <DuckIcon color="yellow" className="h-4 w-4" />
                   Comida y bebidas 🍽️🥤
               </li>
               <li className="flex items-center gap-2">
-                  <DuckIcon className="h-4 w-4" />
+                  <DuckIcon color="yellow" className="h-4 w-4" />
                   El ya tradicional networking de cierre 🎉
               </li>
           </ul>

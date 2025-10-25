@@ -2,6 +2,7 @@ import React from 'react';
 import {Download, CheckCircle, Building, Mail, MessageSquare} from 'lucide-react';
 import {useToast} from '@/hooks/use-toast';
 import becomeSponsorImage from '@/img/become_sponsor.jpeg';
+import DuckIcon from "@/components/ui/duckIcon.tsx";
 
 const BecomeSponsor = () => {
     const {toast} = useToast();
@@ -41,8 +42,8 @@ const BecomeSponsor = () => {
                     <ul className="space-y-4">
                         <li className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
         <span
-            className="w-12 h-12 bg-gradient-to-br from-posadev-darkPink to-posadev-brightPink rounded-lg flex items-center justify-center flex-shrink-0">
-          <Building className="w-6 h-6 text-white" aria-hidden="true"/>
+            className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+          <DuckIcon color="purple" className="w-8 h-8 text-white" aria-hidden="true"/>
         </span>
                             <div>
                                 <h4 className="font-semibold text-posadev-black mb-2">Visibilidad de marca</h4>
@@ -52,10 +53,9 @@ const BecomeSponsor = () => {
                         </li>
 
                         <li className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
-        <span
-            className="w-12 h-12 bg-gradient-to-br from-posadev-darkPink to-posadev-brightPink rounded-lg flex items-center justify-center flex-shrink-0">
-          <MessageSquare className="w-6 h-6 text-white" aria-hidden="true"/>
-        </span>
+                            <span className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <DuckIcon color="blue" className="w-8 h-8 text-white" aria-hidden="true"/>
+                            </span>
                             <div>
                                 <h4 className="font-semibold text-posadev-black mb-2">Networking</h4>
                                 <p className="text-gray-600">Expande tus redes de comunidades de desarrolladores</p>
@@ -63,8 +63,8 @@ const BecomeSponsor = () => {
                         </li>
                         <li className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
         <span
-            className="w-12 h-12 bg-gradient-to-br from-posadev-darkPink to-posadev-brightPink rounded-lg flex items-center justify-center flex-shrink-0">
-          <CheckCircle className="w-6 h-6 text-white" aria-hidden="true"/>
+            className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+          <DuckIcon color="yellow" className="w-8 h-8 text-white" aria-hidden="true"/>
         </span>
                             <div>
                                 <h4 className="font-semibold text-posadev-black mb-2">Impacto social</h4>

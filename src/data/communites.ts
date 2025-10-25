@@ -115,4 +115,14 @@ export const organizers: Array<ICommunity> = [
     }
 ]
 
-export const communitiesAllies: Array<ICommunity> = [];
+export const communitiesAllies: Array<ICommunity> = [
+    {
+        name: "Technology Events",
+        description: "",
+        link: "https://www.meetup.com/devops-gdl/",
+        image: null,
+        socials: {
+            twitter: "https://x.com/DevOpsGDL"
+        },
+    }
+];

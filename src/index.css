@@ -137,7 +137,20 @@ All colors MUST be HSL.
 
 /* Estilos personalizados para Posadev */
 .gradient-bg {
-  background: linear-gradient(135deg, #000000 0%, #CF0F47 100%);
+  background: linear-gradient(
+          125deg,
+          #6C0224 0%,
+          #6C0224 50%,
+          #FB0454 80%
+  );
+  @media (max-width: 768px) {
+    background: linear-gradient(
+            110deg,
+            #6C0224 10%,
+            #6C0224 35%,
+            #FB0454 80%
+    );
+  }
 }
 
 .gradient-text {

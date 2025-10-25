@@ -5,6 +5,7 @@ import Sponsors from '@/components/Sponsors';
 import {useLocation} from "react-router-dom";
 import Communities from "@/components/Communities.tsx";
 import BecomeSponsor from "@/components/BecomeSponsor.tsx";
+import Organizers from "@/components/Organizers.tsx";
 
 const Index = () => {
     const location = useLocation();
@@ -20,7 +21,7 @@ const Index = () => {
         <>
             <Hero/>
             <BecomeSponsor/>
-            <Communities/>
+            <Organizers/>
             <Gallery/>
         </>
     );
