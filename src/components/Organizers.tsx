@@ -1,11 +1,13 @@
 import Gradient from "@/components/Gradient.tsx";
 import StarIcon from "@/components/ui/starIcon.tsx";
-import Carousel from "@/components/Carousel.tsx";
+import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {organizers} from "@/data/communites.ts";
 import Community from "@/components/Community.tsx";
 import React from "react";
 
 const Organizers = () => {
+    const grid: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
+
   return (
       <Gradient
           id="organizadores"
@@ -22,7 +24,7 @@ const Organizers = () => {
               <br/>
               Un evento creado por y para las comunidades 🎄🎅🏼
           </p>
-          <Carousel items={organizers} renderItem={(community) => <Community community={community} />} autoplayInterval={3000} />
+          <Carousel gridLg={grid} gridMd={grid} gridSm={grid} items={organizers} renderItem={(community) => <Community community={community} key={community.name} />} autoplayInterval={3000} />
       </Gradient>
   )
 }

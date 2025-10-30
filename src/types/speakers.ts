@@ -1,8 +1,4 @@
-export interface SpeakerList {
-    speakers: Speaker[]
-}
-
-export interface Speaker {
+export interface ISpeaker {
     id: string
     firstName: string
     lastName: string
@@ -10,25 +6,32 @@ export interface Speaker {
     bio: string
     tagLine: string
     profilePicture: string
-    sessions: Session[]
+    sessions: ISession[]
     isTopSpeaker: boolean
-    links: Link[]
-    questionAnswers: QuestionAnswer[]
+    links: ILink[]
+    questionAnswers: IQuestionAnswer[]
     categories: any[]
 }
 
-export interface Session {
+export interface ISession {
     id: number
     name: string
 }
 
-export interface Link {
+export interface ILink {
     title: string
     url: string
     linkType: string
 }
 
-export interface QuestionAnswer {
+export enum LinkType {
+    Twitter = "Twitter",
+    LinkedIn = "LinkedIn",
+    GitHub = "GitHub",
+    Instagram = "Instagram"
+}
+
+export interface IQuestionAnswer {
     id: number
     question: string
     questionType: string

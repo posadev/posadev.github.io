@@ -84,54 +84,50 @@ All colors MUST be HSL.
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-  }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    ::-webkit-scrollbar-thumb {
+      background: repeating-linear-gradient(
+              135deg,
+              #ffffff 0 8px,
+              #FB0454 8px 16px
+      );
+      border-radius: 9999px;
+    }
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 345 100% 91%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
+.candy-text {
+  background: repeating-linear-gradient(135deg, #ffffff 0 8px, #FB0454 8px 16px);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-size: 200% auto;
+  animation: candyFlow 2s linear infinite;
+}
+
 @layer base {
+
   * {
     @apply border-border;
   }
 
   body {
     @apply bg-background text-foreground;
+    cursor: url('./img/icons/duck-face.png') 4 4, all-scroll !important;
+  }
+
+  a,
+  button,
+  [role="button"],
+  input,
+  input[type="button"],
+  label {
+    cursor: url('./img/icons/duck-yellow.png') 4 4, pointer;
   }
 }
 
@@ -178,4 +174,11 @@ All colors MUST be HSL.
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+@keyframes caneBounce {
+  0% { transform: translateY(0) rotate(-20deg); }
+  30% { transform: translateY(-8px) rotate(-18deg); }
+  60% { transform: translateY(0) rotate(-22deg); }
+  100% { transform: translateY(0) rotate(-20deg); }
 }

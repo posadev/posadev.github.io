@@ -9,14 +9,40 @@ import hazzim from '@/img/gallery/Hazzim.jpg';
 import dinamicas from '@/img/gallery/Dinamicas.jpg';
 import gabriel from '@/img/gallery/Gabriel.jpg';
 import posadev from '@/img/gallery/posadev.jpg'
+import dinamicaSponsor from '@/img/gallery/DinamicaSponsor.png'
+import invocacionDemo from '@/img/gallery/InvocacionDemo.png'
+import tamales from '@/img/gallery/tamales.png'
+import globos from '@/img/gallery/globos.jpg'
 import Photo from "@/components/Photo.tsx";
-import Carousel from "@/components/Carousel.tsx";
+import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 
 
 const Gallery = () => {
     const [selectedImage, setSelectedImage] = useState<number | null>(null);
+    const gridLg: GridConfig = {cols: 3, rows: 2, itemsPerSlide: 6};
+    const gridMd: GridConfig = {cols: 2, rows: 2, itemsPerSlide: 4};
+    const gridSm: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
 
     const images = [
+        {
+            id: 11,
+            src: invocacionDemo,
+            alt: "Invocación de demo",
+            title: "Invocación de demo"
+        },
+        {
+            id: 12,
+            src: tamales,
+            alt: "Tamales",
+            title: "Y llegaron los tamales"
+        },
+
+        {
+            id: 8,
+            src: dinamicas,
+            alt: "Dinamicas con sponsors",
+            title: "Dinamicas con sponsors"
+        },
         {
             id: 9,
             src: posadev,
@@ -30,23 +56,16 @@ const Gallery = () => {
             title: "Hazzim Organizador"
         },
         {
-            id: 8,
-            src: dinamicas,
-            alt: "Dinamicas con sponsors",
-            title: "Dinamicas con sponsors"
+            id: 2,
+            src: voluntarios,
+            alt: "Voluntarios Posadev",
+            title: "Voluntarios"
         },
-
         {
             id: 1,
             src: gabriel,
             alt: "Gabriel speaker Posadev 2024",
             title: "Gabriel speaker"
-        },
-        {
-            id: 2,
-            src: voluntarios,
-            alt: "Voluntarios Posadev",
-            title: "Voluntarios"
         },
         {
             id: 3,
@@ -71,6 +90,12 @@ const Gallery = () => {
             src: posadevAsistencia,
             alt: "Posadev - Asistencia",
             title: "Asistencia"
+        },
+        {
+            id: 10,
+            src: dinamicaSponsor,
+            alt: "Dinamica con Sponsor",
+            title: "Dinamica con Sponsor"
         }
     ];
 
@@ -120,7 +145,10 @@ const Gallery = () => {
             <div className="w-28 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "></div>
             {/* Gallery grid */}
             <Carousel
-                items={images} slidePerViewSm={1} slidePerViewLg={3} slidePerViewMd={2} className=""
+                gridLg={gridLg}
+                gridMd={gridMd}
+                gridSm={gridSm}
+                items={images}
                 renderItem={
                     (image, index) =>   <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage}/>
                 }/>
@@ -142,7 +170,6 @@ const Gallery = () => {
                     >
                         <ChevronLeft className="w-8 h-8"/>
                     </button>
-
                     <button
                         onClick={nextImage}
                         className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-posadev-brightPink transition-colors p-2 z-60"

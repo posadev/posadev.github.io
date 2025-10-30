@@ -11,12 +11,11 @@ interface CommunityProps {
 const Community: React.FC<CommunityProps> = ({ community }) => {
 
   return (
-      <Card className="h-full flex md:flex-row flex-col items-center gap-8 border-0 bg-transparent shadow-none">
+      <Card className="h-full flex md:flex-row flex-col items-center gap-8 border-0 bg-transparent shadow-none w-full">
           <a
               className="bg-alternative-700 rounded-3xl w-full max-w-80 min-h-52 flex flex-col justify-center items-center p-4 transition-all duration-300"
               href={community.link}
               target="_blank"
-              style={{ cursor: "pointer" }}
           >
               <img
                   src={community.image}
