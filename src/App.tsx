@@ -10,6 +10,7 @@ import Header from "@/components/Header.tsx";
 import React from "react";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
 import Footer from "@/components/Footer.tsx";
+import SpeakerInfo from "@/components/SpeakerInfo.tsx";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="*" element={<NotFound />} />
                 <Route path="/code-of-conduct" element={<CodeOfConduct />}/>
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
+                <Route path="/speaker" element={<SpeakerInfo/>}/>
               </Routes>
             </main>
             <Footer />
