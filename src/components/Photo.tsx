@@ -15,7 +15,7 @@ const Photo: React.FC<PhotoProps> = ({image, setSelectedImage, index}) => {
     };
   return (
       <figure
-          className="relative group cursor-pointer overflow-hidden rounded-3xl w-full bg-posadev-alternative-800 mb-16"
+          className="relative group cursor-pointer overflow-hidden rounded-3xl bg-posadev-alternative-800 w-full"
       >
           <button
               aria-label={`Ver imagen completa de ${image.title}`}

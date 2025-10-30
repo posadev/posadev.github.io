@@ -30,6 +30,7 @@ const Header = () => {
     return (
         <header
             className={cn(
+                "h-20",
                 location.pathname === "/" ? 'fixed' : 'sticky',
                 (location.pathname !== "/" || isMenuOpen) || isScrolled ? "bg-black/95 backdrop-blur-md shadow-lg border-b border-posadev-darkPink/20" : "bg-transparent",
                 "top-0 left-0 right-0 z-50 transition-all duration-300"
@@ -37,15 +38,13 @@ const Header = () => {
         >
             <div className="container mx-auto px-4 pt-2">
                 <div className="flex items-center justify-between h-16">
-                    <div className="flex items-center space-x-2">
-                        <a onClick={() => navigate('/#inicio')}>
+                        <a className="flex items-center space-x-2" onClick={() => navigate('/#inicio')}>
                             <img
                                 src={posadevLogo}
                                 alt="Posadev Logo"
                                 className="h-8 w-auto"
                             />
                         </a>
-                    </div>
 
                     <nav className="hidden md:flex items-center space-x-8">
                         <a
@@ -91,24 +90,24 @@ const Header = () => {
                 {/* Mobile Navigation */}
                 {isMenuOpen && (
                     <div
-                        className="md:hidden absolute top-16 left-0 right-0 bg-black/95 backdrop-blur-md border-b border-posadev-darkPink/20">
-                        <nav className="px-4 py-4 space-y-4">
+                        className="md:hidden absolute top-16 left-0 right-0 bg-black/95 rounded-b-xl backdrop-blur-md border-b border-posadev-darkPink/20">
+                        <nav className="flex flex-col gap-2 px-4 py-4 space-y-4">
                             <a
                                 onClick={() => navigateMenu('/#organizadores')}
-                                className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#comunidades') && "text-posadev-brightPink")}
+                                className={cn("w-full text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2", isActive('/#comunidades') && "text-posadev-brightPink")}
                             >
                                 Organizadores
                             </a>
                             <a
                                 onClick={() => navigateMenu('/#galeria')}
-                                className={cn("w-full text-left text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2 py-2", isActive('/#galeria') && "text-posadev-brightPink")}
+                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors duration-300 space-x-2", isActive('/#galeria') && "text-posadev-brightPink")}
                             >
                                 <Image className="w-4 h-4" aria-hidden="true"/>
                                 Galería
                             </a>
                             <a
                                 onClick={() => navigateMenu('/#patrocinadores')}
-                                className={cn("w-full text-left bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 mt-4", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
+                                className={cn("w-full bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
                             >
                                 <UserStar className="w-4 h-4" aria-hidden="true"/>
                                 Se un patrocinador

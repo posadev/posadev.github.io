@@ -40,7 +40,6 @@ const DuckIcon: React.FC<DuckIconProps> = (props) => {
         }
     }
     const choosedColor = colors[props.color]
-    console.log(choosedColor.first)
 
   return (
       <svg width="139" height="141" viewBox="0 0 139 141" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>

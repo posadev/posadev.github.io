@@ -6,6 +6,7 @@ import {useLocation} from "react-router-dom";
 import Communities from "@/components/Communities.tsx";
 import BecomeSponsor from "@/components/BecomeSponsor.tsx";
 import Organizers from "@/components/Organizers.tsx";
+import Speakers from "@/components/Speakers.tsx";
 
 const Index = () => {
     const location = useLocation();
@@ -20,6 +21,7 @@ const Index = () => {
     return (
         <>
             <Hero/>
+            <Speakers/>
             <BecomeSponsor/>
             <Organizers/>
             <Gallery/>
