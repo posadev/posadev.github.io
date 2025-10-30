@@ -10,9 +10,8 @@ import dinamicas from '@/img/gallery/Dinamicas.jpg';
 import gabriel from '@/img/gallery/Gabriel.jpg';
 import posadev from '@/img/gallery/posadev.jpg'
 import dinamicaSponsor from '@/img/gallery/DinamicaSponsor.png'
-import invocacionDemo from '@/img/gallery/InvocacionDemo.png'
+import invocacionDemo from '@/img/gallery/invocacionDemo.png'
 import tamales from '@/img/gallery/tamales.png'
-import globos from '@/img/gallery/globos.jpg'
 import Photo from "@/components/Photo.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 
