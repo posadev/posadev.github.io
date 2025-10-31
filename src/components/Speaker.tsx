@@ -22,13 +22,13 @@ const Speaker: React.FC<SpeakerProps> = ({speaker}) => {
                 <Card className="bg-white/10 border-0 shadow-none text-white flex flex-col justify-start h-44 p-6  w-full">
                     <p className="text-2xl font-bold">{`${speaker.firstName.split(" ")[0]} ${speaker.lastName.split(" ")[0]}`}</p>
                     <p className="py-2 text-xl line-clamp-2 my-4 rounded">{speaker.tagLine}</p>
-                    <div className="flex items-center justify-start gap-6 text-alternative-100">
+                    <div className="flex items-end justify-start gap-6 text-alternative-100">
                         {speaker.links.map((link, index) => (
                             <SocialMedia key={`link-${link.url}`} link={link} />
                         ))}
-                        <button onClick={() => handleClick(speaker)} role="link" className="flex hover:text-alternative-400 rounded-lg">
+                        <span onClick={() => handleClick(speaker)} role="link" className="flex hover:text-alternative-400 rounded-lg">
                             Ver más
-                        </button>
+                        </span>
                     </div>
                 </Card>
         </article>
