@@ -24,8 +24,8 @@ export const AppProvider = ({ children }) => {
         getAll().then((data) => {
             const getSpeakersWithSessions = addSessionSpeakers(data.sessions, data.speakers, data.categories[0].items);
             setSpeakers(getSpeakersWithSessions);
+            setAppStatus(AppStatus.Success)
         });
-        setAppStatus(AppStatus.Success)
     }, []);
 
     const value = {
