@@ -41,8 +41,8 @@ const SpeakerInfo = () => {
 
   return (
       <Gradient className="py-10 px-4 md:px-20" >
-          <article className="flex flex-col gap-8">
-              <Card className="flex flex-col justify-center items-center md:flex-row gap-6 border-0 shadow-none text-primary-600">
+          <article className="flex flex-col gap-8 w-full">
+              <Card className="flex flex-col justify-center items-center md:justify-start md:flex-row gap-6 border-0 shadow-none text-primary-600">
                   <img src={currentSpeaker.profilePicture} alt={currentSpeaker.fullName} className="w-60 h-60 rounded-xl"/>
                   <div className="flex flex-col gap-2">
                         <h1 className="text-2xl font-bold text-alternative-700">{currentSpeaker.fullName}</h1>
