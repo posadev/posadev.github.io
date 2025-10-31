@@ -41,7 +41,7 @@ const BecomeSponsor = () => {
 
                     {/* Lista de beneficios */}
                     <ul className="space-y-4">
-                        <li className="flex justify-center items-center md:items-start md:justify-center space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
+                        <li className="flex justify-start items-center md:items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
         <span
             className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
           <DuckIcon color="purple" className="w-8 h-8 text-white" aria-hidden="true"/>
@@ -53,8 +53,8 @@ const BecomeSponsor = () => {
                             </div>
                         </li>
 
-                        <li className="flex justify-center items-center md:items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
-                            <span className="w-12 h-12 rounded-lg self-center flex items-center justify-center flex-shrink-0">
+                        <li className="flex justify-start items-center md:items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
+                            <span className="w-12 h-12 rounded-lg self-start flex items-center justify-center flex-shrink-0">
                                 <DuckIcon color="blue" className="w-8 h-8 text-white" aria-hidden="true"/>
                             </span>
                             <div>

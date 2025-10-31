@@ -9,7 +9,7 @@ import Gradient from "@/components/Gradient.tsx";
 import {useAppContext} from "@/context/AppContext.tsx";
 import {findSpeaker, scrollToTop} from "@/lib/utils.ts";
 import Shared from "@/components/Shared.tsx";
-import Loading from "@/components/Loading.tsx";
+import Loading from "@/pages/Loading.tsx";
 
 const SpeakerInfo = () => {
     const navigate = useNavigate()

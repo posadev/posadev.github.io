@@ -2,6 +2,7 @@ import React from 'react';
 import Speaker from "@/components/Speaker.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {useAppContext} from "@/context/AppContext.tsx";
+import {useIsMobile} from "@/hooks/use-mobile.tsx";
 
 const Speakers = () => {
     const {speakers} = useAppContext();
@@ -14,7 +15,7 @@ const Speakers = () => {
 
     return (
         <section id="speakers"
-                 className="bg-gradient-to-bl to-posadev-darkPink from-primary-600 min-h-screen flex items-center justify-center flex-col py-20"
+                 className="bg-gradient-to-br to-posadev-darkPink from-primary-600 min-h-screen flex items-center justify-center flex-col py-20"
                  itemScope
                  itemType="https://schema.org/Event"
                  aria-labelledby="hero-title"
