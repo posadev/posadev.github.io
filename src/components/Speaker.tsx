@@ -3,7 +3,6 @@ import {ISpeaker} from "@/types/speakers.ts";
 import {Card} from "@/components/ui/card.tsx";
 import SocialMedia from "@/components/SocialMedia.tsx";
 import {useNavigate} from "react-router-dom";
-import {scrollToTop} from "@/lib/utils.ts";
 
 interface SpeakerProps {
     speaker: ISpeaker;
