@@ -1,25 +1,30 @@
 import {useToast} from "@/hooks/use-toast.ts";
 import {Share2} from "lucide-react";
 import React from "react";
+import {ISpeaker} from "@/types/speakers.ts";
 
 interface SharedProps {
     link: string,
-    speakerName: string
+    speaker: ISpeaker
+    blob: Blob
 }
 
-const Shared: React.FC<SharedProps> = ({link, speakerName}) => {
+const Shared: React.FC<SharedProps> = ({link, speaker, blob }) => {
     const {toast, dismiss} = useToast();
+    const file = new File([blob], speaker.profilePicture, { type: "image/png" });
+
     const handleBrochureClick = async () => {
         if (navigator.share) {
             await navigator.share({
-                title: `Speaker: ${speakerName}`,
+                title: `Speaker: ${speaker.fullName}`,
                 text: "¡Mira este speaker de Posadev 2025!",
                 url: link,
+                files: [file]
             });
         } else {
             await navigator.clipboard.writeText(link);
             toast({
-                title: `Link de speaker: ${speakerName}`,
+                title: `Link de speaker: ${speaker.fullName}`,
                 description: "Copiado al portapapeles",
             });
             setTimeout(() => {

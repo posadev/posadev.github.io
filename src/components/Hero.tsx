@@ -2,6 +2,7 @@ import React from 'react';
 import {Calendar, MapPin} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
 import Tickets from "@/components/Tickets.tsx";
+import CalendarCard from "@/components/CalendarCard.tsx";
 
 const Hero = () => {
     return (
@@ -43,21 +44,7 @@ const Hero = () => {
                             Detalles del evento
                         </title>
                         {/* Fecha */}
-                        <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
-                            <Calendar
-                                className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"
-                                aria-hidden="true"
-                            />
-                            <h3 className="text-white font-semibold mb-2">Fecha</h3>
-                            <time
-                                className="text-posadev-lightPink"
-                                dateTime="2025-12-06"
-                                itemProp="startDate"
-                            >
-                                6 de diciembre 2025
-                            </time>
-                        </div>
-
+                        <CalendarCard />
                         {/* Ubicación */}
                         <a
                             href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7"
@@ -76,6 +63,7 @@ const Hero = () => {
                             >
                                 Tec de Monterrey Campus Guadalajara
                             </p>
+                            <p className="text-xs text-posadev-lightPink/70 mt-2">(Haz clic para ir al mapa)</p>
                         </a>
                     </section>
                 </div>

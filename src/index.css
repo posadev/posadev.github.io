@@ -166,6 +166,13 @@ All colors MUST be HSL.
   box-shadow: 0 20px 40px rgba(207, 15, 71, 0.3);
 }
 
+@media (max-width: 640px) {
+  .hover-scale {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 2.5px 5px rgba(207, 15, 71, 0.3);
+  }
+}
+
 /* Lightbox overlay */
 .lightbox-overlay {
   background: rgba(0, 0, 0, 0.9);

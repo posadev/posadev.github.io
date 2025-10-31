@@ -11,6 +11,7 @@ interface AppContextType {
     sessions: ISession[];
     agenda: any[]; // o tipa tu modelo de agenda si lo tienes
     appStatus: AppStatus;
+    blob: Blob
 }
 
 const AppContext = createContext(null);
@@ -19,16 +20,19 @@ export const AppProvider = ({ children }) => {
     const [speakers, setSpeakers] = useState<ISpeaker[]>([]);
     const [agenda, setAgenda] = useState([]);
     const [appStatus, setAppStatus] = useState(AppStatus.Loading);
+    const [blob, setBlob] = useState<Blob>()
 
     useEffect(() => {
         getAll().then((data) => {
             const getSpeakersWithSessions = addSessionSpeakers(data.sessions, data.speakers, data.categories[0].items);
             setSpeakers(getSpeakersWithSessions);
+            setBlob(data.blob)
             setAppStatus(AppStatus.Success)
         });
     }, []);
 
     const value = {
+        blob,
         speakers,
         agenda,
         appStatus

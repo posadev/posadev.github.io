@@ -19,7 +19,7 @@ const BecomeSponsor = () => {
                  className="py-20 bg-gradient-to-b from-white to-posadev-lightPink/20 mx-auto px-4 w-full">
             {/* Section header */}
             <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-posadev-black mb-6">
+                <h2 className="text-3xl md:text-5xl font-bold text-posadev-black mb-6">
                     Únete como Patrocinador
                 </h2>
                 <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -33,14 +33,15 @@ const BecomeSponsor = () => {
                 {/* Benefits section */}
                 <section aria-labelledby="benefits-title" className="space-y-8">
                     <header>
-                        <h3 id="benefits-title" className="text-2xl font-bold text-posadev-black mb-6">
+                        <h3 id="benefits-title"
+                            className="text-xl text-center md:text-2xl font-bold text-posadev-black mb-6">
                             ¿Por qué patrocinar Posadev?
                         </h3>
                     </header>
 
                     {/* Lista de beneficios */}
                     <ul className="space-y-4">
-                        <li className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
+                        <li className="flex justify-center items-center md:items-start md:justify-center space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
         <span
             className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
           <DuckIcon color="purple" className="w-8 h-8 text-white" aria-hidden="true"/>
@@ -52,8 +53,8 @@ const BecomeSponsor = () => {
                             </div>
                         </li>
 
-                        <li className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
-                            <span className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <li className="flex justify-center items-center md:items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
+                            <span className="w-12 h-12 rounded-lg self-center flex items-center justify-center flex-shrink-0">
                                 <DuckIcon color="blue" className="w-8 h-8 text-white" aria-hidden="true"/>
                             </span>
                             <div>
@@ -61,11 +62,10 @@ const BecomeSponsor = () => {
                                 <p className="text-gray-600">Expande tus redes de comunidades de desarrolladores</p>
                             </div>
                         </li>
-                        <li className="flex items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
-        <span
-            className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
-          <DuckIcon color="yellow" className="w-8 h-8 text-white" aria-hidden="true"/>
-        </span>
+                        <li className="flex items-center md:items-start space-x-4 p-4 bg-white rounded-xl shadow-sm hover-scale">
+                            <span className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <DuckIcon color="yellow" className="w-8 h-8 text-white" aria-hidden="true"/>
+                            </span>
                             <div>
                                 <h4 className="font-semibold text-posadev-black mb-2">Impacto social</h4>
                                 <p className="text-gray-600">Contribuye al crecimiento de las comunidades de la

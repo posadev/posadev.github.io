@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Mail, CandyCane, CalendarHeart} from 'lucide-react';
+import {MapPin, Mail, CandyCane, CalendarHeart, Map} from 'lucide-react';
 import {useNavigate} from "react-router-dom";
 import {scrollToTop} from "@/lib/utils.ts";
 import DuckFace from "@/components/ui/duckFace.tsx";
@@ -9,7 +9,7 @@ const Footer = () => {
     const navigate = useNavigate();
 
     return (
-        <footer className="bg-grey-900 text-white py-12">
+        <footer className="bg-grey-900 text-white py-12 px-6 md:px-10">
             <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                     {/* Logo and description */}
@@ -36,8 +36,8 @@ const Footer = () => {
                                           focusable="false" className="w-5 h-5 text-posadev-brightPink"/>
                                 <time dateTime="2025-12-06" className="text-posadev-lightPink">6 de Diciembre del 2025</time>
                             </li>
-                            <li className="flex items-center space-x-3">
-                                <MapPin className="w-5 h-5 text-posadev-brightPink" aria-hidden="true" focusable="false"/>
+                            <li className="flex items-center justify-start space-x-3">
+                                <Map className="min-w-5 min-h-5 text-posadev-brightPink" aria-hidden="true" focusable="false"/>
                                 <a href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7" target="_blank"
                                    itemProp="location"
                                    className="text-posadev-lightPink">Tecnológico de Monterrey Campus Guadalajara</a>
@@ -75,7 +75,7 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* Bottom section */}
-                <div className="border-t border-posadev-darkPink/30 flex md:flex-row flex-col md:items-baseline justify-between items-center pt-8">
+                <div className="border-t border-posadev-darkPink/30 flex md:flex-row flex-col md:items-baseline justify-between items-start gap-2 pt-8">
                     <small role="contentinfo" className="text-posadev-lightPink text-sm">
                         © {currentYear} Posadev. Todos los derechos reservados.
                     </small>

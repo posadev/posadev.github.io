@@ -11,6 +11,19 @@ import JUG from "@/img/organizers/gljug.png"
 
 export const organizers: Array<ICommunity> = [
     {
+        name: "Pythonistas",
+        description: "La comunidad de entusiastas de Python en Guadalajara",
+        link: "https://pythonistas-gdl.org/",
+        image: Pythonistas,
+        socials: {
+            facebook: "https://www.facebook.com/pythonistasgdl",
+            instagram: "https://www.instagram.com/pythonistas_gdl",
+            twitter: "https://twitter.com/pythonistas_gdl",
+            linkedin: "https://www.linkedin.com/groups/13193010",
+            tikTok: "https://www.tiktok.com/@pythonistas_gdl"
+        }
+    },
+    {
         name: "Las Chicas del Código",
         description: "Comunidad de mujeres en tecnología que busca visibilizar el talento femenino en el sector tecnológico a través de eventos.",
         link: "https://linktr.ee/laschicasdelcodigo",
@@ -67,19 +80,6 @@ export const organizers: Array<ICommunity> = [
             twitter: ""
         }
         },
-    {
-        name: "Pythonistas",
-        description: "La comunidad de entusiastas de Python en Guadalajara",
-        link: "https://pythonistas-gdl.org/",
-        image: Pythonistas,
-        socials: {
-            facebook: "https://www.facebook.com/pythonistasgdl",
-            instagram: "https://www.instagram.com/pythonistas_gdl",
-            twitter: "https://twitter.com/pythonistas_gdl",
-            linkedin: "https://www.linkedin.com/groups/13193010",
-            tikTok: "https://www.tiktok.com/@pythonistas_gdl"
-        }
-    },
     {
         name: "Golang",
         description: "Comunidad de desarrolladores de Go.",
