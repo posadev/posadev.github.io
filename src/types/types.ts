@@ -27,3 +27,9 @@ export interface ISponsor {
     isPaid: boolean;
     type?: 'gold' | 'silver' | 'bronze';
 }
+
+export enum AppStatus {
+    Loading,
+    Success,
+    Error
+}

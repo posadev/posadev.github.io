@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
 import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
-import Sponsors from '@/components/Sponsors';
 import {useLocation} from "react-router-dom";
-import Communities from "@/components/Communities.tsx";
 import BecomeSponsor from "@/components/BecomeSponsor.tsx";
 import Organizers from "@/components/Organizers.tsx";
 import Speakers from "@/components/Speakers.tsx";

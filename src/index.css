@@ -131,7 +131,6 @@ All colors MUST be HSL.
   }
 }
 
-/* Estilos personalizados para Posadev */
 .gradient-bg {
   background: linear-gradient(
           125deg,
@@ -148,6 +147,7 @@ All colors MUST be HSL.
     );
   }
 }
+
 
 .gradient-text {
   background: linear-gradient(135deg, #CF0F47, #FF0B55);
@@ -181,4 +181,14 @@ All colors MUST be HSL.
   30% { transform: translateY(-8px) rotate(-18deg); }
   60% { transform: translateY(0) rotate(-22deg); }
   100% { transform: translateY(0) rotate(-20deg); }
+}
+
+@layer utilities {
+  .bg-candy-stripes {
+    background-image: repeating-linear-gradient(
+            45deg,
+            #FF0B55 0 10px,
+            white 10px 20px
+    );
+  }
 }
