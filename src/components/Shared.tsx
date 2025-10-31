@@ -13,7 +13,7 @@ const Shared: React.FC<SharedProps> = ({link, speakerName}) => {
         if (navigator.share) {
             await navigator.share({
                 title: `Speaker: ${speakerName}`,
-                text: "¡Mira este speaker!",
+                text: "¡Mira este speaker de Posadev 2025!",
                 url: link,
             });
         } else {
