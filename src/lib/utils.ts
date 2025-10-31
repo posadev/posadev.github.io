@@ -1,5 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
+import {ICategory, ISession, ISpeaker} from "@/types/speakers.ts";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -17,3 +18,16 @@ export const handleCopy = async (toast, dismiss) => {
     setTimeout(() => dismiss(), 3000);
   }
 };
+
+export const addSessionSpeakers = (sessions: ISession[], speakers: ISpeaker[], categories: ICategory[]): ISpeaker[] => {
+  return speakers.map((speaker) => {
+    const session = sessions.find((session) => session.speakers.includes(speaker.id));
+    const category = categories.find((category) => session.categoryItems.includes(category.id))
+    console.log(category.name)
+    return {
+    ...speaker,
+      sessions: session,
+      category: category.name
+    };
+  });
+}

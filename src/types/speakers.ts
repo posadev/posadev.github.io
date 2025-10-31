@@ -6,16 +6,20 @@ export interface ISpeaker {
     bio: string
     tagLine: string
     profilePicture: string
-    sessions: ISession[]
+    sessions: ISession
     isTopSpeaker: boolean
     links: ILink[]
-    questionAnswers: IQuestionAnswer[]
-    categories: any[]
+    category: string
 }
 
 export interface ISession {
     id: number
-    name: string
+    title: string
+    description: string
+    startAt: string
+    endAt: string
+    speakers: string[]
+    categoryItems: number[]
 }
 
 export interface ILink {
@@ -31,11 +35,15 @@ export enum LinkType {
     Instagram = "Instagram"
 }
 
-export interface IQuestionAnswer {
+export interface ICategory {
     id: number
-    question: string
-    questionType: string
-    answer: any
-    sort: number
-    answerExtra: any
+    name: string
+}
+
+export interface IConferenceData {
+    sessions: ISession[];
+    speakers: ISpeaker[];
+    categories: [{
+        items: ICategory[]
+    }]
 }
