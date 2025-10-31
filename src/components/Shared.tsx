@@ -6,20 +6,17 @@ import {ISpeaker} from "@/types/speakers.ts";
 interface SharedProps {
     link: string,
     speaker: ISpeaker
-    blob: Blob
 }
 
-const Shared: React.FC<SharedProps> = ({link, speaker, blob }) => {
+const Shared: React.FC<SharedProps> = ({link, speaker }) => {
     const {toast, dismiss} = useToast();
-    const file = new File([blob], speaker.profilePicture, { type: "image/png" });
 
     const handleBrochureClick = async () => {
         if (navigator.share) {
             await navigator.share({
                 title: `Speaker: ${speaker.fullName}`,
-                text: "¡Mira este speaker de Posadev 2025!",
-                url: link,
-                files: [file]
+                text: "¡Mira a este speaker de Posadev 2025!",
+                url: link
             });
         } else {
             await navigator.clipboard.writeText(link);

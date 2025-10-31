@@ -23,7 +23,7 @@ END:VCALENDAR
         link.download = "posadev-2025.ics";
         link.click();
     };
-    const handleGoogleCalendar = () => {
+    const getUrlGoogleCalendar = () => {
         // Hora UTC equivalente a 9:00 a.m. - 9:00 p.m. hora México (UTC−6)
         const start = "20251206T150000Z";
         const end = "20251207T030000Z";
@@ -32,14 +32,14 @@ END:VCALENDAR
         const details = encodeURIComponent("Únete al evento Posadev 2025 en Guadalajara.");
         const location = encodeURIComponent("https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7");
 
-        const url = `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&details=${details}&location=${location}`;
-        window.open(url, "_blank");
+        return `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&details=${details}&location=${location}`;
     };
 
     return (
-        <div
-            onClick={handleGoogleCalendar}
-            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center cursor-pointer"
+        <a
+            target="_blank"
+            href={getUrlGoogleCalendar()}
+            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center"
         >
             <Calendar className="w-8 h-8 text-posadev-brightPink mx-auto mb-3" aria-hidden="true" />
             <h3 className="text-white font-semibold mb-2">Fecha</h3>
@@ -51,7 +51,7 @@ END:VCALENDAR
                 6 de diciembre 2025
             </time>
             <p className="text-xs text-posadev-lightPink/70 mt-2">(Haz clic para agregar al calendario)</p>
-        </div>
+        </a>
     );
 };
 

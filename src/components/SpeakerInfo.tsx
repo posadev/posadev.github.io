@@ -4,13 +4,12 @@ import React, {useEffect, useState} from "react";
 import {useLocation, useNavigate, useParams} from "react-router-dom";
 import SocialMedia from "@/components/SocialMedia.tsx";
 import {Badge} from "@/components/ui/badge.tsx";
-import {ArrowBigLeft, ChevronLeft, Speech} from "lucide-react";
+import { ChevronLeft, Speech} from "lucide-react";
 import Gradient from "@/components/Gradient.tsx";
 import {useAppContext} from "@/context/AppContext.tsx";
 import {findSpeaker, scrollToTop} from "@/lib/utils.ts";
 import Shared from "@/components/Shared.tsx";
 import Loading from "@/components/Loading.tsx";
-import {Button} from "@/components/ui/button.tsx";
 
 const SpeakerInfo = () => {
     const navigate = useNavigate()
@@ -49,6 +48,7 @@ const SpeakerInfo = () => {
               <ChevronLeft className="h-8 w-8" strokeWidth={2} />
               <span
                   className="
+                  hidden md:block
       relative
       after:absolute after:left-0 after:bottom-0
       after:h-[2px] after:w-0 after:bg-primary-600
@@ -70,7 +70,7 @@ const SpeakerInfo = () => {
                           {currentSpeaker.links.map((link) => (
                               <SocialMedia key={`link-${link.url}`} className="h-6 w-6 hover:text-primary-600" link={link} />
                           ))}
-                          <Shared blob={blob} link={fullUrl} speaker={currentSpeaker} />
+                          <Shared link={fullUrl} speaker={currentSpeaker} />
                       </div>
                   </div>
               </Card>
