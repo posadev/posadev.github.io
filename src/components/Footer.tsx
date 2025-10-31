@@ -81,7 +81,6 @@ const Footer = () => {
                     </small>
                     <a className="text-sm hover:text-posadev-brightPink"
                        onClick={() => {
-                           scrollToTop()
                            navigate("/privacy-policy")
                        }}>Politica de Privacidad</a>
                     <p className="text-posadev-lightPink text-sm flex gap-1 items-center">

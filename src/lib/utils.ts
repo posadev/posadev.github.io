@@ -23,7 +23,6 @@ export const addSessionSpeakers = (sessions: ISession[], speakers: ISpeaker[], c
   return speakers.map((speaker) => {
     const session = sessions.find((session) => session.speakers.includes(speaker.id));
     const category = categories.find((category) => session.categoryItems.includes(category.id))
-    console.log(category.name)
     return {
     ...speaker,
       sessions: session,
@@ -31,3 +30,5 @@ export const addSessionSpeakers = (sessions: ISession[], speakers: ISpeaker[], c
     };
   });
 }
+
+export const findSpeaker = (speakers: ISpeaker[], id: string) => speakers.find((speaker) => speaker.id === id);

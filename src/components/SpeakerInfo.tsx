@@ -1,16 +1,28 @@
 import {ISpeaker} from "@/types/speakers.ts";
 import {Card, CardFooter} from "@/components/ui/card.tsx";
 import React, {useEffect} from "react";
-import {useLocation} from "react-router-dom";
+import {useLocation, useParams} from "react-router-dom";
 import SocialMedia from "@/components/SocialMedia.tsx";
 import {Badge} from "@/components/ui/badge.tsx";
-import {Share2, Speech} from "lucide-react";
+import { Speech} from "lucide-react";
 import Gradient from "@/components/Gradient.tsx";
+import {useAppContext} from "@/context/AppContext.tsx";
+import {findSpeaker, scrollToTop} from "@/lib/utils.ts";
+import Shared from "@/components/Shared.tsx";
 
 const SpeakerInfo = () => {
     const location = useLocation();
+    const { speakerId } = useParams();
+    const { speakers } = useAppContext();
     const speaker = location.state?.speaker as ISpeaker;
     const {fullName, sessions, profilePicture, tagLine, bio, links} = speaker;
+    const fullUrl = `${window.location.origin}${location.pathname}${location.search}${location.hash}`;
+
+    useEffect(() => {
+        scrollToTop()
+        if (speaker) return;
+        findSpeaker(speakers, speakerId)
+    }, []);
 
   return (
       <Gradient className="py-10 px-20" >
@@ -22,12 +34,10 @@ const SpeakerInfo = () => {
                         <h2 className="text-xl">{tagLine}</h2>
                         <p className="text-gray-700">{bio}</p>
                       <div className="flex items-center justify-start gap-4 text-gray-700">
-                          {links.map((link, index) => (
+                          {links.map((link) => (
                               <SocialMedia key={`link-${link.url}`} className="h-6 w-6 hover:text-primary-600" link={link} />
                           ))}
-                          <Share2 className="hidden h-6 w-6 hover:text-primary-600">
-                              <title>Compartir</title>
-                          </Share2>
+                          <Shared link={fullUrl} speakerName={speaker.fullName} />
                       </div>
                   </div>
               </Card>

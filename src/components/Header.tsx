@@ -70,7 +70,6 @@ const Header = () => {
                         </a>
                         <a
                             onClick={() => {
-                                scrollToTop();
                                 navigate('/code-of-conduct')
                             }}
                             className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
@@ -114,7 +113,6 @@ const Header = () => {
                             </a>
                             <a
                                 onClick={() => {
-                                    scrollToTop()
                                     navigateMenu('/code-of-conduct')
                                 }}
                                 className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
