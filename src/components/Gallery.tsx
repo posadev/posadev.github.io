@@ -135,7 +135,7 @@ const Gallery = () => {
             className="flex flex-col justify-center items-center py-20 px-10 bg-gradient-to-b from-posadev-lightPink/10 to-white"
             aria-labelledby="gallery-title">
             {/* Section header */}
-            <h2 id="gallery-title" className="text-2xl md:text-5xl font-bold text-alternative-700 mb-4">
+            <h2 id="gallery-title" className="text-3xl md:text-5xl font-bold text-alternative-700 mb-4">
                 Galería de Momentos
             </h2>
             <p className="text-md text-gray-600 w-full flex-wrap flex gap-2 justify-center items-center">

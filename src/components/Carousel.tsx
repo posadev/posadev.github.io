@@ -3,7 +3,6 @@ import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import {useIsMobile} from "@/hooks/use-mobile.tsx";
 
 export interface GridConfig {
     cols: number;
@@ -21,7 +20,7 @@ interface CarouselProps<T> {
 
     autoplay?: boolean;
     autoplayInterval?: number;
-
+    className?: string;
     hideArrows?: boolean;
 }
 
@@ -33,6 +32,7 @@ const Carousel = <T,>({
                           gridSm = { cols: 1, rows: 1, itemsPerSlide: 1 },
                           autoplay = false,
                           autoplayInterval = 3000,
+                          className,
                           hideArrows = false,
                       }: CarouselProps<T>) => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,8 +42,8 @@ const Carousel = <T,>({
     useEffect(() => {
         const updateGrid = () => {
             const width = window.innerWidth;
-            if (width < 640) setGridConfig(gridSm);
-            else if (width < 1024) setGridConfig(gridMd);
+            if (width <= 640) setGridConfig(gridSm);
+            else if (width <= 1024) setGridConfig(gridMd);
             else setGridConfig(gridLg);
         };
         updateGrid();
@@ -56,6 +56,7 @@ const Carousel = <T,>({
     for (let i = 0; i < items.length; i += itemsPerSlide) {
         groupedItems.push(items.slice(i, i + itemsPerSlide));
     }
+    const slideCount = groupedItems.length;
 
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
@@ -83,7 +84,7 @@ const Carousel = <T,>({
 
     return (
         <section className="w-full flex flex-col items-center overflow-x-hidden">
-            <div className="flex flex-row items-center gap-10 w-full">
+            <div className="flex flex-row justify-center items-center gap-14 w-full">
                 {/* Left Arrow */}
                 {!hideArrows && (
                     <Button
@@ -96,8 +97,7 @@ const Carousel = <T,>({
                     </Button>
                 )}
 
-                <Slides itemsPerSlide={itemsPerSlide} renderItem={renderItem} groupedItems={groupedItems} gridConfig={gridConfig} sliderRef={sliderRef} />
-
+                <Slides className={className} key={`${gridConfig.cols}-${gridConfig.rows}`} itemsPerSlide={itemsPerSlide} renderItem={renderItem} groupedItems={groupedItems} gridConfig={gridConfig} sliderRef={sliderRef} />
 
                 {/* Right Arrow */}
                 {!hideArrows && (
@@ -115,7 +115,7 @@ const Carousel = <T,>({
             {/* Dots */}
             {loaded && instanceRef.current && (
                 <div className="flex justify-center mt-20 gap-2.5 md:gap-4">
-                    {[...Array(instanceRef.current.track.details.slides.length).keys()].map((index) => (
+                    {[...Array(slideCount).keys()].map((index) => (
                         <button
                             key={index}
                             onClick={() => instanceRef.current?.moveToIdx(index)}
@@ -130,15 +130,15 @@ const Carousel = <T,>({
     );
 };
 
-const Slides = ({sliderRef, renderItem, groupedItems, gridConfig, itemsPerSlide}) => {
+const Slides = ({className, sliderRef, renderItem, groupedItems, gridConfig, itemsPerSlide}) => {
     if (itemsPerSlide === 1) {
         return (
             <div ref={sliderRef} className={`keen-slider`}>
                     {
                         groupedItems.map((group, i) => {
                         return (
-                            <div key={i} className="keen-slider__slide flex justify-center">
-                                {group.map((item, j) => renderItem(item, i * itemsPerSlide + j))}
+                            <div key={i} className={`keen-slider__slide flex justify-center ${className}`}>
+                                {group.map((item, j) => renderItem(item, i))}
                             </div>
                         );
                     })}
@@ -148,21 +148,24 @@ const Slides = ({sliderRef, renderItem, groupedItems, gridConfig, itemsPerSlide}
 
     {/* Slides */}
     return (<div ref={sliderRef} className={`keen-slider`}>
-        {groupedItems.map((group, i) => {
-            return (
-                <div key={i} className="keen-slider__slide flex justify-center">
-                    <div
-                        className="grid gap-4 w-full justify-center content-center"
-                        style={{
-                            gridTemplateColumns: `repeat(${gridConfig.cols}, minmax(0, auto))`,
-                            gridTemplateRows: `repeat(${gridConfig.rows}, auto)`,
-                        }}
-                    >
-                        {group.map((item, j) => renderItem(item, i * itemsPerSlide + j))}
-                    </div>
+        {groupedItems.map((group, i) => (
+            <div key={i} className="keen-slider__slide flex justify-center flex-grow">
+                <div
+                    className={`flex flex-wrap gap-2 w-full justify-center items-center ${className}`}
+                >
+                    {group.map((item, j) => (
+                        <div
+                            key={j}
+                            style={{
+                                flex: `0 0 calc(${100 / gridConfig.cols}% - 1rem)`, // -1rem para compensar el gap
+                            }}
+                        >
+                            {renderItem(item, i * itemsPerSlide + j)}
+                        </div>
+                    ))}
                 </div>
-            );
-        })}
+            </div>
+        ))}
     </div>)
 }
 

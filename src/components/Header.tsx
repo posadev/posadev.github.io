@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Image, Menu, UserStar, X} from 'lucide-react';
 import posadevLogo from '@/img/posadev-logo.png';
 import {useLocation, useNavigate} from "react-router-dom";
-import {cn, scrollToTop} from "@/lib/utils.ts";
+import {cn} from "@/lib/utils.ts";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -93,13 +93,13 @@ const Header = () => {
                         <nav className="flex flex-col gap-2 px-4 py-4 space-y-4">
                             <a
                                 onClick={() => navigateMenu('/#organizadores')}
-                                className={cn("w-full text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-2", isActive('/#comunidades') && "text-posadev-brightPink")}
+                                className={cn("w-full text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center px-4 py-1 space-x-2", isActive('/#comunidades') && "text-posadev-brightPink")}
                             >
                                 Organizadores
                             </a>
                             <a
                                 onClick={() => navigateMenu('/#galeria')}
-                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors duration-300 space-x-2", isActive('/#galeria') && "text-posadev-brightPink")}
+                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/#galeria') && "text-posadev-brightPink")}
                             >
                                 <Image className="w-4 h-4" aria-hidden="true"/>
                                 Galería
@@ -115,7 +115,7 @@ const Header = () => {
                                 onClick={() => {
                                     navigateMenu('/code-of-conduct')
                                 }}
-                                className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
+                                className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1 px-4 py-1", isActive('/code-of-conduct') && "text-posadev-brightPink")}>
                                 Código de Conducta
                             </a>
                         </nav>

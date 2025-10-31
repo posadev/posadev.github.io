@@ -47,3 +47,6 @@ export interface IConferenceData {
         items: ICategory[]
     }]
 }
+export interface fetchResponse extends IConferenceData{
+    blob: Blob
+}

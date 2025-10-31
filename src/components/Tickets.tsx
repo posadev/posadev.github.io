@@ -11,15 +11,15 @@ const Tickets = () => {
              rel="noopener noreferrer"
              className={`self-center flex items-center justify-center flex-row-reverse gap-x-4
               text-primary-500 bg-white hover:bg-primary-100 duration-300 rounded-full
-              h-20 lg:max-w-md w-full
-              text-3xl lg:text-4xl font-semibold
-              px-8 py-2
+              md:h-20 lg:max-w-md w-11/12
+              text-2xl md:text-3xl lg:text-4xl font-semibold
+              px-4 md:px-8 py-4
              `}
              itemProp="url"
           >
               Comprar boleto
               <Ticket
-                  className="w-10 h-10"
+                  className="w-8 h-8 md:w-10 md:h-10"
                   aria-hidden="true"
               />
           </a>

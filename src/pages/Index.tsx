@@ -12,10 +12,20 @@ const Index = () => {
         if (location.hash) {
             const element = document.querySelector(location.hash);
             if (element) {
-                element.scrollIntoView({behavior: "smooth"});
+                setTimeout(() => {
+                    const headerOffset = 80; // ajusta según el alto de tu navbar
+                    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                    const offsetPosition = elementPosition - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth",
+                    });
+                }, 100);
             }
         }
     }, [location]);
+
     return (
         <>
             <Hero/>
