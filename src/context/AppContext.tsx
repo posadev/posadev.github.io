@@ -2,7 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import {ISession, ISpeaker} from "@/types/speakers.ts";
 import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
-import Loading from "@/components/Loading.tsx";
+import Loading from "@/pages/Loading.tsx";
 import {addSessionSpeakers} from "@/lib/utils.ts";
 
 

@@ -22,6 +22,7 @@ interface CarouselProps<T> {
     autoplayInterval?: number;
     className?: string;
     hideArrows?: boolean;
+    hideDots?: boolean;
 }
 
 const Carousel = <T,>({
@@ -34,6 +35,7 @@ const Carousel = <T,>({
                           autoplayInterval = 3000,
                           className,
                           hideArrows = false,
+    hideDots = false
                       }: CarouselProps<T>) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
@@ -113,14 +115,14 @@ const Carousel = <T,>({
             </div>
 
             {/* Dots */}
-            {loaded && instanceRef.current && (
-                <div className="flex justify-center mt-20 gap-2.5 md:gap-4">
+            {loaded && !hideDots && instanceRef.current && (
+                <div className="flex flex-wrap justify-center mt-20 px-4 gap-2.5 md:gap-4">
                     {[...Array(slideCount).keys()].map((index) => (
                         <button
                             key={index}
                             onClick={() => instanceRef.current?.moveToIdx(index)}
                             className={`w-3 h-3 rounded-full ${
-                                currentSlide === index ? "bg-primary-600" : "bg-primary-200"
+                                currentSlide === index ? "bg-primary-400 border-4 border-primary-400 " : "bg-primary-200"
                             }`}
                         />
                     ))}
