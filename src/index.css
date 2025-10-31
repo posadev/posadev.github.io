@@ -124,6 +124,7 @@ All colors MUST be HSL.
   a,
   button,
   [role="button"],
+  [role="link"],
   input,
   input[type="button"],
   label {

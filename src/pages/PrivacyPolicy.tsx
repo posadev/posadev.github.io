@@ -1,4 +1,10 @@
+import {useEffect} from "react";
+import {scrollToTop} from "@/lib/utils.ts";
+
 const PrivacyPolicy = () => {
+    useEffect(() => {
+        scrollToTop()
+    }, []);
   return (
       <section
           className="flex flex-col container gap-8 mx-auto p-4 my-8"
