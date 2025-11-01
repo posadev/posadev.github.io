@@ -23,6 +23,7 @@ interface CarouselProps<T> {
     className?: string;
     hideArrows?: boolean;
     hideDots?: boolean;
+    mode?: "snap" | "free" | "free-snap"
 }
 
 const Carousel = <T,>({
@@ -35,23 +36,31 @@ const Carousel = <T,>({
                           autoplayInterval = 3000,
                           className,
                           hideArrows = false,
-    hideDots = false
+    hideDots = false,
+    mode = "snap"
                       }: CarouselProps<T>) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [loaded, setLoaded] = useState(false);
     const [gridConfig, setGridConfig] = useState(gridLg);
 
     useEffect(() => {
+        const mqSm = window.matchMedia("(max-width: 640px)");
+        const mqMd = window.matchMedia("(max-width: 1024px)");
+
         const updateGrid = () => {
-            const width = window.innerWidth;
-            if (width <= 640) setGridConfig(gridSm);
-            else if (width <= 1024) setGridConfig(gridMd);
+            if (mqSm.matches) setGridConfig(gridSm);
+            else if (mqMd.matches) setGridConfig(gridMd);
             else setGridConfig(gridLg);
         };
+
         updateGrid();
-        window.addEventListener("resize", updateGrid);
-        return () => window.removeEventListener("resize", updateGrid);
-    }, [gridSm, gridMd, gridLg]);
+        mqSm.addEventListener("change", updateGrid);
+        mqMd.addEventListener("change", updateGrid);
+        return () => {
+            mqSm.removeEventListener("change", updateGrid);
+            mqMd.removeEventListener("change", updateGrid);
+        };
+    }, [gridSm, gridMd, gridLg])
 
     const itemsPerSlide = gridConfig.itemsPerSlide ?? gridConfig.cols * gridConfig.rows;
     const groupedItems = React.useMemo(() => {
@@ -65,7 +74,8 @@ const Carousel = <T,>({
 
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
         loop: true,
-        mode: "snap",
+        mode: mode,
+        renderMode: "precision",
         slides: { perView: 1, spacing: 15 },
         slideChanged: (slider) => setCurrentSlide(slider.track.details.rel),
         created: () => setLoaded(true),
@@ -135,43 +145,50 @@ const Carousel = <T,>({
     );
 };
 
-const Slides = ({className, sliderRef, renderItem, groupedItems, gridConfig, itemsPerSlide}) => {
-    if (itemsPerSlide === 1) {
-        return (
-            <div ref={sliderRef} className={`keen-slider`}>
-                    {
-                        groupedItems.map((group, i) => {
-                        return (
-                            <div key={i} className={`keen-slider__slide flex justify-center ${className}`}>
-                                {group.map((item, j) => renderItem(item, i))}
-                            </div>
-                        );
-                    })}
-            </div>
-        )
-    }
+interface SlidesProps<T> {
+    className: string;
+    sliderRef: (node: HTMLDivElement) => void;
+    renderItem: (item: any, index: number) => React.ReactNode;
+    groupedItems:  T[][]
+    gridConfig: GridConfig;
+    itemsPerSlide: number;
+}
 
-    {/* Slides */}
-    return (<div ref={sliderRef} className={`keen-slider`}>
-        {groupedItems.map((group, i) => (
-            <div key={i} className="keen-slider__slide flex justify-center flex-grow">
-                <div
-                    className={`flex flex-wrap gap-2 w-full justify-center items-center ${className}`}
-                >
-                    {group.map((item, j) => (
-                        <div
-                            key={j}
-                            style={{
-                                flex: `0 0 calc(${100 / gridConfig.cols}% - 1rem)`, // -1rem para compensar el gap
-                            }}
-                        >
-                            {renderItem(item, i * itemsPerSlide + j)}
+const Slides = React.memo<SlidesProps<any>>(
+    ({ className, sliderRef, renderItem, groupedItems, gridConfig, itemsPerSlide }) => {
+        if (itemsPerSlide === 1) {
+            return (
+                <div ref={sliderRef} className={`keen-slider`}>
+                    {groupedItems.map((group, i) => (
+                        <div key={i} className={`keen-slider__slide grid gpu-optimized transform-gpu ${className}`}>
+                            {group.map((item) => renderItem(item, i))}
                         </div>
                     ))}
                 </div>
+            );
+        }
+
+        return (
+            <div ref={sliderRef} className={`keen-slider`}>
+                {groupedItems.map((group, i) => (
+                    <div key={i} className="keen-slider__slide gpu-optimized">
+                        <div
+                            className={`grid gap-2 w-full items-center place-items-center justify-center gpu-optimized ${className}`}
+                            style={{
+                                gridTemplateColumns: `repeat(${gridConfig.cols}, minmax(0, 1fr))`,
+                            }}
+                        >
+                            {group.map((item, j) => (
+                                <div className="w-full place-items-center transform-gpu" key={j}>
+                                    {renderItem(item, i * itemsPerSlide + j)}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>)
-}
+        );
+    }
+);
 
 export default React.memo(Carousel);

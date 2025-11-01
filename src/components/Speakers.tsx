@@ -2,13 +2,12 @@ import React from 'react';
 import Speaker from "@/components/Speaker.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {useAppContext} from "@/context/AppContext.tsx";
-import {useIsMobile} from "@/hooks/use-mobile.tsx";
 import {ISpeaker} from "@/types/speakers.ts";
 
 const Speakers = () => {
     const {speakers} = useAppContext();
 
-    const gridLg: GridConfig = {cols: 4, rows: 2, itemsPerSlide: 5};
+    const gridLg: GridConfig = {cols: 3, rows: 2, itemsPerSlide: 5};
     const gridMd: GridConfig = {cols: 2, rows: 1, itemsPerSlide: 2};
     const gridSm: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
 

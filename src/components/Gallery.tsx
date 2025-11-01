@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import {X, ChevronLeft, ChevronRight, Heart} from 'lucide-react';
-import posadevFila from '@/img/posadev-fila.jpg';
-import posadevReferentes from '@/img/IMG_7461.jpg';
-import posadevAsistencia from '@/img/PXL_20241208_011903817.jpg';
-import posadevTecnologia from '@/img/IMG_7425.jpg';
-import voluntarios from '@/img/gallery/voluntarios.jpg';
-import hazzim from '@/img/gallery/Hazzim.jpg';
-import dinamicas from '@/img/gallery/Dinamicas.jpg';
-import gabriel from '@/img/gallery/Gabriel.jpg';
-import posadev from '@/img/gallery/posadev.jpg'
+import posadevFila from '@/img/gallery/posadev-fila.webp';
+import posadevReferentes from '@/img/gallery/IMG_7461.webp';
+import posadevAsistencia from '@/img/gallery/PXL_20241208_011903817.webp';
+import posadevTecnologia from '@/img/gallery/IMG_7425.webp';
+import voluntarios from '@/img/gallery/voluntarios.webp';
+import hazzim from '@/img/gallery/Hazzim.webp';
+import dinamicas from '@/img/gallery/Dinamicas.webp';
+import gabriel from '@/img/gallery/Gabriel.webp';
+import posadev from '@/img/gallery/posadev.webp'
 import dinamicaSponsor from '@/img/gallery/DinamicaSponsor.png'
 import invocacionDemo from '@/img/gallery/invocacionDemo.png'
 import tamales from '@/img/gallery/tamales.png'
@@ -101,9 +101,7 @@ const Gallery = () => {
     const renderPhoto = React.useCallback(
         (image: IImage, index: number) => (
             <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage} />
-        ),
-        [setSelectedImage]
-    );
+        ), []);
 
     const closeLightbox = () => {
         setSelectedImage(null);
@@ -151,11 +149,13 @@ const Gallery = () => {
             <div className="w-28 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "></div>
             {/* Gallery grid */}
             <Carousel
+                mode="free"
                 gridLg={gridLg}
                 gridMd={gridMd}
                 gridSm={gridSm}
                 items={images}
-                renderItem={renderPhoto}/>
+                renderItem={renderPhoto}
+            />
             {/* Lightbox */}
             {selectedImage !== null && (
                 <div className="fixed inset-0 z-50 lightbox-overlay flex items-center justify-center p-4">
