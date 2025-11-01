@@ -15,6 +15,7 @@ import tamales from '@/img/gallery/tamales.png'
 import Photo from "@/components/Photo.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {IImage} from "@/types/types.ts";
+import {useIsMobile} from "@/hooks/use-mobile.tsx";
 
 
 const Gallery = () => {
@@ -149,7 +150,7 @@ const Gallery = () => {
             <div className="w-28 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "></div>
             {/* Gallery grid */}
             <Carousel
-                mode="free"
+                mode={useIsMobile() ? "snap" :"free"}
                 gridLg={gridLg}
                 gridMd={gridMd}
                 gridSm={gridSm}

@@ -216,7 +216,6 @@ All colors MUST be HSL.
     img {
       object-fit: cover;
       max-width: 100%;
-      height: auto;
       image-rendering: optimizeSpeed;
       will-change: transform;
       transform: translateZ(0);
