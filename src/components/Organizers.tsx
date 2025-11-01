@@ -4,6 +4,7 @@ import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {organizers} from "@/data/communites.ts";
 import Community from "@/components/Community.tsx";
 import React from "react";
+import {ICommunity} from "@/types/types.ts";
 
 const Organizers = () => {
     const grid: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
@@ -24,7 +25,7 @@ const Organizers = () => {
               <br/>
               Un evento creado por y para las comunidades 🎄🎅🏼
           </p>
-          <Carousel className="carousel__cell" gridLg={grid} gridMd={grid} gridSm={grid} items={organizers} renderItem={(community) => <Community community={community} key={community.name} />} autoplayInterval={3000} />
+          <Carousel className="carousel__cell" gridLg={grid} gridMd={grid} gridSm={grid} items={organizers} renderItem={(community: ICommunity) => <Community community={community} key={community.name} />} autoplayInterval={3000} />
       </Gradient>
   )
 }

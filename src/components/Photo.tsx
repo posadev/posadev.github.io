@@ -42,4 +42,4 @@ const Photo: React.FC<PhotoProps> = ({image, setSelectedImage, index}) => {
   )
 }
 
-export default Photo
+export default React.memo(Photo);

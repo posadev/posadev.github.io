@@ -54,10 +54,13 @@ const Carousel = <T,>({
     }, [gridSm, gridMd, gridLg]);
 
     const itemsPerSlide = gridConfig.itemsPerSlide ?? gridConfig.cols * gridConfig.rows;
-    const groupedItems: T[][] = [];
-    for (let i = 0; i < items.length; i += itemsPerSlide) {
-        groupedItems.push(items.slice(i, i + itemsPerSlide));
-    }
+    const groupedItems = React.useMemo(() => {
+        const groups: T[][] = [];
+        for (let i = 0; i < items.length; i += itemsPerSlide) {
+            groups.push(items.slice(i, i + itemsPerSlide));
+        }
+        return groups;
+    }, [items, itemsPerSlide]);
     const slideCount = groupedItems.length;
 
     const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -171,4 +174,4 @@ const Slides = ({className, sliderRef, renderItem, groupedItems, gridConfig, ite
     </div>)
 }
 
-export default Carousel;
+export default React.memo(Carousel);

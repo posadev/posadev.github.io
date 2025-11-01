@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {X, ChevronLeft, ChevronRight, ZoomIn, Heart} from 'lucide-react';
+import {X, ChevronLeft, ChevronRight, Heart} from 'lucide-react';
 import posadevFila from '@/img/posadev-fila.jpg';
 import posadevReferentes from '@/img/IMG_7461.jpg';
 import posadevAsistencia from '@/img/PXL_20241208_011903817.jpg';
@@ -14,6 +14,7 @@ import invocacionDemo from '@/img/gallery/invocacionDemo.png'
 import tamales from '@/img/gallery/tamales.png'
 import Photo from "@/components/Photo.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
+import {IImage} from "@/types/types.ts";
 
 
 const Gallery = () => {
@@ -22,7 +23,7 @@ const Gallery = () => {
     const gridMd: GridConfig = {cols: 2, rows: 2, itemsPerSlide: 4};
     const gridSm: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
 
-    const images = [
+    const images = React.useMemo<IImage[]>(() => [
         {
             id: 11,
             src: invocacionDemo,
@@ -96,7 +97,13 @@ const Gallery = () => {
             alt: "Dinamica con Sponsor",
             title: "Dinamica con Sponsor"
         }
-    ];
+    ], []);
+    const renderPhoto = React.useCallback(
+        (image: IImage, index: number) => (
+            <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage} />
+        ),
+        [setSelectedImage]
+    );
 
     const closeLightbox = () => {
         setSelectedImage(null);
@@ -148,9 +155,7 @@ const Gallery = () => {
                 gridMd={gridMd}
                 gridSm={gridSm}
                 items={images}
-                renderItem={
-                    (image, index) =>   <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage}/>
-                }/>
+                renderItem={renderPhoto}/>
             {/* Lightbox */}
             {selectedImage !== null && (
                 <div className="fixed inset-0 z-50 lightbox-overlay flex items-center justify-center p-4">
