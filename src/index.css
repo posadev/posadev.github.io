@@ -171,6 +171,14 @@ All colors MUST be HSL.
     transform: translateY(-5px) scale(1.02);
     box-shadow: 0 2.5px 5px rgba(207, 15, 71, 0.3);
   }
+
+  .keen-slider__slide {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
+  }
+
 }
 
 /* Lightbox overlay */
@@ -198,5 +206,20 @@ All colors MUST be HSL.
             #FF0B55 0 10px,
             white 10px 20px
     );
+  }
+  .gpu-optimized {
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    contain: layout paint;
+
+    img {
+      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      image-rendering: optimizeSpeed;
+      will-change: transform;
+      transform: translateZ(0);
+    }
   }
 }
