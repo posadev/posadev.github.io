@@ -7,7 +7,7 @@ import {ISpeaker} from "@/types/speakers.ts";
 const Speakers = () => {
     const {speakers} = useAppContext();
 
-    const gridLg: GridConfig = {cols: 3, rows: 2, itemsPerSlide: 5};
+    const gridLg: GridConfig = {cols: 3, rows: 2, itemsPerSlide: 6};
     const gridMd: GridConfig = {cols: 2, rows: 1, itemsPerSlide: 2};
     const gridSm: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
 
