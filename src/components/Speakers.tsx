@@ -3,6 +3,7 @@ import Speaker from "@/components/Speaker.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {useAppContext} from "@/context/AppContext.tsx";
 import {useIsMobile} from "@/hooks/use-mobile.tsx";
+import {ISpeaker} from "@/types/speakers.ts";
 
 const Speakers = () => {
     const {speakers} = useAppContext();
@@ -22,7 +23,7 @@ const Speakers = () => {
         >
             <h1 className="text-3xl md:text-5xl font-bold text-white">Speakers</h1>
             <div className="mt-8 mb-20 md:w-60 w-24 h-1 bg-candy-stripes mx-auto rounded-full"></div>
-                <Carousel className="lg:gap-20" gridMd={gridMd} gridSm={gridSm} gridLg={gridLg} hideArrows items={speakers} renderItem={(speaker) => <Speaker key={speaker.id} speaker={speaker} /> } />
+                <Carousel className="lg:gap-20" gridMd={gridMd} gridSm={gridSm} gridLg={gridLg} hideArrows items={speakers} renderItem={(speaker: ISpeaker) => <Speaker key={speaker.id} speaker={speaker} /> } />
         </section>
     );
 };

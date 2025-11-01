@@ -99,7 +99,7 @@ const Gallery = () => {
         }
     ], []);
     const renderPhoto = React.useCallback(
-        (image, index) => (
+        (image: IImage, index: number) => (
             <Photo key={image.id} index={index} image={image} setSelectedImage={setSelectedImage} />
         ),
         [setSelectedImage]
