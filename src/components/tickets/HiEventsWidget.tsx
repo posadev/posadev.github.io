@@ -33,7 +33,7 @@ const HiEventsWidget = ({
             data-hievents-widget-type={widgetType}
             data-hievents-widget-version={widgetVersion}
             data-hievents-locale={locale}
-            className="hievents-widget w-full px-20"
+            className="hievents-widget w-full"
         />
     )
 }
