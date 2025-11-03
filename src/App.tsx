@@ -12,6 +12,7 @@ import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
 import Footer from "@/components/Footer.tsx";
 import SpeakerInfo from "@/components/SpeakerInfo.tsx";
 import {AppProvider} from "@/context/AppContext.tsx";
+import TicketsPage from "@/pages/TicketsPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => {
                 <Route path="/code-of-conduct" element={<CodeOfConduct />}/>
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                 <Route path="/speaker/:speakerId" element={<SpeakerInfo/>}/>
+                  <Route path="/boletos" element={<TicketsPage />} />
               </Routes>
             </main>
             <Footer />
