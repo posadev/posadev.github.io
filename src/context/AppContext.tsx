@@ -4,6 +4,8 @@ import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
 import Loading from "@/pages/Loading.tsx";
 import {addSessionSpeakers} from "@/lib/utils.ts";
+import NotFound from "@/pages/NotFound.tsx";
+import ErrorPage from "@/pages/ErrorPage.tsx";
 
 
 interface AppContextType {
@@ -28,6 +30,8 @@ export const AppProvider = ({ children }) => {
             setSpeakers(getSpeakersWithSessions);
             setBlob(data.blob)
             setAppStatus(AppStatus.Success)
+        }).catch(() => {
+            setAppStatus(AppStatus.Error)
         });
     }, []);
 
@@ -41,16 +45,14 @@ export const AppProvider = ({ children }) => {
     if (appStatus === AppStatus.Loading) {
         return (
             <div className="flex items-center justify-center min-h-screen">
-                <Loading size={60} gap={4} count={5} />
+                <Loading size={60} count={5} />
             </div>
         );
     }
 
     if (appStatus === AppStatus.Error) {
         return (
-            <div className="flex items-center justify-center min-h-screen text-red-500">
-                Error al cargar los datos iniciales 😞
-            </div>
+            <ErrorPage />
         );
     }
 

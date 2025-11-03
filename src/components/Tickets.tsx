@@ -1,13 +1,14 @@
 import React from "react";
 import {Ticket} from "lucide-react";
 import DuckIcon from "@/components/ui/duckIcon.tsx";
+import {useNavigate} from "react-router-dom";
 
 const Tickets = () => {
+    const navigate = useNavigate()
   return (
       <section className="flex flex-col items-center gap-8 text-white">
-          <a role="button"
-             href="https://boletos.posadev.org/event/5/posadev"
-             target="_blank"
+          <button role="link"
+             onClick={() => navigate("/boletos")}
              rel="noopener noreferrer"
              className={`self-center flex items-center justify-center flex-row-reverse gap-x-4
               text-primary-500 bg-white hover:bg-primary-100 duration-300 rounded-full
@@ -22,7 +23,7 @@ const Tickets = () => {
                   className="w-8 h-8 md:w-10 md:h-10"
                   aria-hidden="true"
               />
-          </a>
+          </button>
           <h3 className="text-2xl md:text-3xl font-semibold ">Qué incluye tu boleto (General) Posadev 2025</h3>
           <ul className="flex flex-col items-start animate-fade-in text-base md:text-xl text-left gap-1.5">
               <li className="flex items-center justify-start gap-2 ">
