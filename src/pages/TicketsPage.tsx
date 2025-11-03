@@ -1,6 +1,5 @@
 import HiEventsWidget from "@/components/tickets/HiEventsWidget.tsx";
 import React from "react";
-import '@/tickets.css'
 
 const TicketsPage = () => {
     return (
