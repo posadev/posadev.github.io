@@ -15,7 +15,7 @@ const SpeakerInfo = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const { speakerId } = useParams();
-    const { speakers, blob } = useAppContext();
+    const { speakers } = useAppContext();
     const speaker = location.state?.speaker as ISpeaker;
     const [currentSpeaker, setCurrentSpeaker] = useState<ISpeaker>()
     const fullUrl = `${window.location.origin}${location.pathname}${location.search}${location.hash}`;
@@ -35,7 +35,7 @@ const SpeakerInfo = () => {
     if (!currentSpeaker) {
         return (
             <div className="flex items-center justify-center min-h-screen">
-                <Loading size={60} gap={4} count={5} />
+                <Loading size={60} count={5} />
             </div>
         );
     }
