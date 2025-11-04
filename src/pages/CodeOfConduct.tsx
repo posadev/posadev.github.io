@@ -15,7 +15,7 @@ const CodeOfConduct = () => {
             aria-labelledby="code-of-conduct-heading"
         >
             <aside className="flex flex-col gap-4">
-                <h1 className="text-4xl gradient-text">Código de Conducta</h1>
+                <h1 className="text-4xl gradient-text">Código de conducta</h1>
                 <title className="text-3xl text-alternative-700 font-semibold">Propósito</title>
                 <p>En Posadev buscamos ser y seguir siendo un espacio en el que cualquier persona se pueda sentir segura
                     para aprender y compartir conocimientos.
@@ -39,7 +39,7 @@ const CodeOfConduct = () => {
                         punto del código de conducta.
                     </p>
                     <h3 className="text-2xl text-alternative-700 font-semibold">
-                        Ejemplos de Discriminación
+                        Ejemplos de discriminación
                     </h3>
                     <p>
                         La discriminación ocurre cuando se trata injustamente a una persona o grupo por características
@@ -61,7 +61,7 @@ const CodeOfConduct = () => {
                             "esto no es para mujeres" o "ellos no entenderían").
                         </li>
                     </ul>
-                    <h3 className="text-2xl text-alternative-700 font-semibold">Ejemplos de Acoso</h3>
+                    <h3 className="text-2xl text-alternative-700 font-semibold">Ejemplos de acoso</h3>
                     <p>El acoso es cualquier comportamiento no deseado que incomoda, humilla, intimida o agrede a otra persona. Puede ser verbal, físico, visual o digital. Algunos actos incluyen:</p>
                     <ul className="list-disc list-inside">
                         <li><strong>Comentarios sexuales no deseados</strong>, insinuaciones o chistes con connotación sexual.</li>
