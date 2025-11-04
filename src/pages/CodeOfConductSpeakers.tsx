@@ -12,7 +12,7 @@ const CodeOfConductSpeakers = () => {
         <aside className="flex flex-col gap-2">
             <h1 className="text-4xl gradient-text">Código de conducta de Speakers</h1>
             <p className="text-lg" itemProp="description">
-                Todo speaker debera cumplir con el <Link role="link" to={"/code-of-conduct"} className="text-primary-600 hover:underline hover:underline-offset-1">codigo de conducta general</Link> al igual que los siguientes puntos puestos en este documento:
+                Todo speaker debera cumplir con el <Link role="link" to={"/code-of-conduct"} className="text-primary-600 hover:underline hover:underline-offset-1">código de conducta general</Link> al igual que los siguientes puntos puestos en este documento:
             </p>
         </aside>
       <Card className="p-10 flex flex-col gap-6">
