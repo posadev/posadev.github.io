@@ -12,7 +12,7 @@ const CodeOfConductSpeakers = () => {
         <aside className="flex flex-col gap-2">
             <h1 className="text-4xl gradient-text">Código de conducta de Speakers</h1>
             <p className="text-lg" itemProp="description">
-                Todo speaker debera cumplir con el <Link role="link" to={"/code-of-conduct"} className="text-primary-600 hover:underline hover:underline-offset-1">codigo de conducta general</Link> al igual que los siguientes puntos puestos en este documento:
+                Todo speaker deberá cumplir con el <Link role="link" to={"/code-of-conduct"} className="text-primary-600 hover:underline hover:underline-offset-1">código de conducta general</Link> al igual que los siguientes puntos puestos en este documento:
             </p>
         </aside>
       <Card className="p-10 flex flex-col gap-6">
@@ -26,7 +26,7 @@ const CodeOfConductSpeakers = () => {
                       Cualquier acción o comunicación  (intimidatorias, vejatorias, discriminatorias, violentas, abusivas, denigratorias, despectivas, sexistas o cualquiera que denigre a alguna minoria) será un comportamiento inaceptable asi como los chistes y referencias
                   </li>
                   <li>
-                      Tambien se incluye los puntos estipulados en comportamiento inaceptable que no deben ser agregados en el material utilizado para su presentacion
+                      Tambien se incluye los puntos estipulados en comportamiento inaceptable que no deben ser agregados en el material utilizado para su presentación
                   </li>
               </ul>
           </article>
@@ -37,15 +37,15 @@ const CodeOfConductSpeakers = () => {
               </p>
               <ul className="list-disc list-inside">
                   <strong className="text-alternative-700">Antes de la conferencia:</strong>
-                  <li>Dependiendo de la gravedad se puede cancelar su participacion como speaker (al igual que nos reservamos el derecho de admision)</li>
+                  <li>Dependiendo de la gravedad se puede cancelar su participacion como speaker (al igual que nos reservamos el derecho de admisión)</li>
               </ul>
               <ul className="list-disc list-inside">
                   <strong className="text-alternative-700">Durante la conferencia:</strong>
-                  <li>Cancelacion de la participacion y solicitar que se retire</li>
-                  <li>Llamado de atencion y un aviso de que al continuar su conducta se le retirara del evento</li>
+                  <li>Cancelación de la participación y solicitar que se retire</li>
+                  <li>Llamado de atención y un aviso de que al continuar su conducta se le retirará del evento</li>
               </ul>
               <ul className="list-disc list-inside">
-                  <strong className="text-alternative-700">Despues de la conferencia:</strong>
+                  <strong className="text-alternative-700">Después de la conferencia:</strong>
                   <li>En el caso de eventos sociales organizados por posadev nos reservamos pedir que se retire y al no respetarlo llevarlo con las autoridades correspondientes</li>
                   <li>Veto de eventos relacionados de GDL Devcomms (Esto incluye ediciones futuras de Posadev)</li>
               </ul>
