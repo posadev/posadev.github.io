@@ -15,7 +15,7 @@ const CodeOfConductSpeakers = () => {
                 Todo speaker deberá cumplir con el <Link role="link" to={"/code-of-conduct"} className="text-primary-600 hover:underline hover:underline-offset-1">código de conducta general</Link> al igual que los siguientes puntos puestos en este documento:
             </p>
         </aside>
-      <Card className="p-10 flex flex-col gap-6">
+      <Card className="p-6 md:p-10 flex flex-col gap-6">
           <article className="flex flex-col gap-2">
               <h2 className="text-3xl text-alternative-700 font-semibold">Material ofensivo</h2>
               <p>

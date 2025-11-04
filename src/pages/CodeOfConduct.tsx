@@ -24,7 +24,7 @@ const CodeOfConduct = () => {
                     neuronal, apariencia física, nacionalidad, edad, religión u otra categoría.
                 </p>
             </aside>
-            <Card className="p-10 flex flex-col gap-6">
+            <Card className="p-6 md:p-10 flex flex-col gap-6">
                 <aside className="flex flex-col gap-4">
                     <h2 className="text-3xl text-alternative-700 font-semibold">Comportamiento inaceptable</h2>
                     <p>
