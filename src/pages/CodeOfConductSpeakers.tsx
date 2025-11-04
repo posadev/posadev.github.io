@@ -6,7 +6,7 @@ import Report from "@/components/code-of-conduct/Report.tsx";
 const CodeOfConductSpeakers = () => {
   return (
     <Gradient
-        className="flex flex-col gap-8 px-20 py-10"
+        className="flex flex-col gap-8 px-4 md:px-20 py-10"
         aria-labelledby="code-of-conduct-heading"
     >
         <aside className="flex flex-col gap-2">
