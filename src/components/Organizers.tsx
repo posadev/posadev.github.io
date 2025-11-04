@@ -1,7 +1,7 @@
 import Gradient from "@/components/Gradient.tsx";
 import StarIcon from "@/components/ui/starIcon.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
-import {organizers} from "@/data/communites.ts";
+import {organizers} from "@/data/organizers.ts";
 import Community from "@/components/Community.tsx";
 import React from "react";
 import {ICommunity} from "@/types/types.ts";

@@ -32,7 +32,9 @@ export enum LinkType {
     Twitter = "Twitter",
     LinkedIn = "LinkedIn",
     GitHub = "GitHub",
-    Instagram = "Instagram"
+    Instagram = "Instagram",
+    Facebook = "Facebook",
+    TikTok = "TikTok"
 }
 
 export interface ICategory {

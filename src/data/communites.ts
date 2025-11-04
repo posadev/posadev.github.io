@@ -1,128 +1,136 @@
 import {ICommunity} from "@/types/types.ts";
-import LCDC from "@/img/organizers/laschicasdelcodigo.jpeg";
-import IxDA from "@/img/organizers/IxDA-Cover.png";
-import KUG from "@/img/organizers/KUG.png"
-import J4G from "@/img/organizers/j4g.png"
-import Golang from "@/img/organizers/Gopher.png"
-import Fedora from "@/img/organizers/fedora.png"
-import Pythonistas from "@/img/organizers/pythonistas.png"
-import GDLDevcomms from "@/img/organizers/gdl-devcomms.png"
-import JUG from "@/img/organizers/gljug.png"
-
-export const organizers: Array<ICommunity> = [
-    {
-        name: "Pythonistas",
-        description: "La comunidad de entusiastas de Python en Guadalajara",
-        link: "https://pythonistas-gdl.org/",
-        image: Pythonistas,
-        socials: {
-            facebook: "https://www.facebook.com/pythonistasgdl",
-            instagram: "https://www.instagram.com/pythonistas_gdl",
-            twitter: "https://twitter.com/pythonistas_gdl",
-            linkedin: "https://www.linkedin.com/groups/13193010",
-            tikTok: "https://www.tiktok.com/@pythonistas_gdl"
-        }
-    },
-    {
-        name: "Las Chicas del Código",
-        description: "Comunidad de mujeres en tecnología que busca visibilizar el talento femenino en el sector tecnológico a través de eventos.",
-        link: "https://linktr.ee/laschicasdelcodigo",
-        image: LCDC,
-        socials: {
-            facebook: "https://www.facebook.com/laschicasdelcodigo",
-            instagram: "https://www.instagram.com/laschicasdelcodigo/",
-            twitter: "https://x.com/chicasdelcodigo"
-        },
-    },
-    {
-        name: "IXDA (The Interaction Design Association)",
-        description: `
-        Organización respaldada por sus miembros, dedicada al diseño de interacción.
-        Con grupos locales en todo el mundo, conecta a profesionales de todos los niveles para compartir conocimientos y experiencias en la disciplina.`,
-        link: "https://ixda.org/",
-        image: IxDA,
-        socials: {
-            facebook: "https://www.facebook.com/ixdagdl",
-            instagram: "https://www.instagram.com/ixdagdl/",
-            linkedin: "http://linkedin.com/company/ixda-gdl"
-        },
-    },
-    {
-        name: "KUG",
-        description: "Comunidad de desarrolladores de Kotlin.",
-        link: "",
-        image: KUG,
-        socials: {
-            facebook: "https://www.facebook.com/GuadalajaraKUG/",
-            instagram: "",
-            twitter: ""
-        },
-    },
-    {
-        name: "GDL Devcomms",
-        description: "La comunidad de comunidades de Guadalajara.",
-        link: "",
-        image: GDLDevcomms,
-        socials: {
-            facebook: "https://www.facebook.com/gdldevcomms",
-            instagram: "",
-            twitter: ""
-        },
-    },
-    {
-        name: "J4G",
-        description: "Java User Group de Guadalajara.",
-        link: "",
-        image: J4G,
-        socials: {
-            facebook: "https://www.facebook.com/groups/293473358264641i",
-            instagram: "",
-            twitter: ""
-        }
-        },
-    {
-        name: "Golang",
-        description: "Comunidad de desarrolladores de Go.",
-        link: "",
-        image: Golang,
-        socials: {
-            facebook: "",
-            instagram: "",
-            twitter: ""
-        }
-    },
-    {
-        name: "Fedora",
-        description: "Comunidad en Mexico de Fedora Linux.",
-        link: "https://fedoramx.fedorapeople.org",
-        image: Fedora,
-        socials: {
-            facebook: "",
-            instagram: "",
-            twitter: "https://x.com/fedoramexico"
-        }
-    },
-    {
-        name: "JUG GDL",
-        description: `
-        Comunidad de Java en Guadalajara. Co-organizadores de la JConf GDL.`,
-        link: "http://juggdl.org",
-        image: JUG,
-        socials: {
-            facebook: "https://www.facebook.com/gdljug",
-            twitter: "https://twitter.com/java_gdl"
-        }
-    }
-]
+import {LinkType} from "@/types/speakers.ts";
+import wosecLogo from "@/img/communities/2025/WoSEC.png";
+import technologyEventsLogo from "@/img/communities/2025/technologyevents.png";
+import mdc from "@/img/communities/2025/mdc.png";
+import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
+import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
+import ajolotesAWSLogo from "@/img/communities/2025/ajolotes-aws.png";
 
 export const communitiesAllies: Array<ICommunity> = [
     {
         name: "Technology Events",
         description: "",
-        link: "https://www.meetup.com/devops-gdl/",
-        image: null,
-        socials: {
-            twitter: "https://x.com/DevOpsGDL"
+        link: "https://techyevents.com.mx/",
+        image: technologyEventsLogo,
+        socials: [{
+            title: "Instagram",
+            url: "https://www.instagram.com/technology_events_community?igsh=MXgydXFnYWRpcnRseg==",
+            linkType: LinkType.Instagram
         },
-    }
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/share/19r2SzioLV/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/technology-events-community/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Tiktok",
+                url: "https://www.tiktok.com/@technology.events?_t=ZS-8zTq13UhIl0&_r=1",
+                linkType: LinkType.TikTok
+            }
+        ]
+    },
+    {
+        name: "GDG Guadalajara",
+        description: "",
+        link: "https://gdg.community.dev/gdg-guadalajara-mexico-city",
+        image: GDGLogo,
+        socials: [{
+            title: "LinkedIn",
+            url: "https://www.linkedin.com/company/gdgguadalajara",
+            linkType: LinkType.LinkedIn
+        },{
+            title: "Instagram",
+            url: "https://www.instagram.com/gdg_guadalajara/",
+            linkType: LinkType.Instagram
+        }
+        ]
+    },
+    {
+        name: "WOSEC MEXICO",
+        description: "",
+        link: "https://wosecmexico.org/",
+        image: wosecLogo,
+        socials: [{
+            title: "LinkedIn",
+            url: "https://www.linkedin.com/company/wosecmexico/",
+            linkType: LinkType.LinkedIn
+        },{
+            title: "Instagram",
+            url: "https://www.instagram.com/wosec_mx/",
+            linkType: LinkType.Instagram
+        }
+        ]
+    },
+    {
+        name: "Mobile Developer Community (MDC)",
+        description: "",
+        link: "https://linktr.ee/mdcommunity",
+        image: mdc,
+        socials: [{
+            title: "Facebook",
+            url: "https://www.facebook.com/61576410909269",
+            linkType: LinkType.Facebook
+        },{
+            title: "Instagram",
+            url: "https://www.instagram.com/mobiledevelopercommunity/",
+            linkType: LinkType.Instagram
+        },{
+            title: "LinkedIn",
+            url: "https://www.linkedin.com/company/mobile-developer-community/",
+            linkType: LinkType.LinkedIn
+        }
+        ]
+    },
+    {
+        name: "AWS User Group Ajolotes en la Nube ",
+        description: "",
+        link: "https://devchixmexico.org/",
+        image: ajolotesAWSLogo,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/aws.ajolotes?igsh=MTk1ajFiZHdqand0aA%3D%3D&utm_source=qr",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/aws-ug-ajolotes-en-la-nube/",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "Playas on tech",
+        description: "",
+        link: "https://playasontech.com/",
+        image: playasOnTechLogo,
+        socials: [
+            {
+            title:"Facebook",
+            url:"https://www.facebook.com/playasontech",
+            linkType: LinkType.Facebook
+        },
+            {
+                title:"Instagram",
+                url:"https://www.instagram.com/playasontech_mzo/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title:"LinkedIn",
+                url:"https://www.linkedin.com/company/playasontech",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title:"TikTok",
+                url:"https://www.tiktok.com/@playasontech",
+                linkType: LinkType.TikTok
+            }
+        ]
+    },
 ];
