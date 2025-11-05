@@ -1,9 +1,7 @@
 import {ICommunity} from "@/types/types.ts";
 import React from "react";
-import {Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle} from "@/components/ui/card.tsx";
-import {FacebookIcon, Instagram, LinkedinIcon} from "lucide-react";
-import XTwitter from "@/components/ui/x-twitter.tsx";
-import TikTok from "@/components/ui/tiktok.tsx";
+import {Card, CardContent} from "@/components/ui/card.tsx";
+import SocialMedia from "@/components/SocialMedia.tsx";
 
 interface CommunityProps {
     community: ICommunity
@@ -31,41 +29,9 @@ const Community: React.FC<CommunityProps> = ({ community }) => {
                   </p>
               <div className="flex flex-row justify-end gap-4 text-alternative-500 mt-2">
                   {
-                      community.socials.facebook &&
-                      <a href={community.socials.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-alternative-400 transition-colors">
-                          <FacebookIcon height={26} width={26}>
-                                <title>Facebook</title>
-                          </FacebookIcon>
-                      </a>
-                  }
-                  {
-                      community.socials.instagram &&
-                      <a href={community.socials.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-alternative-400 transition-colors">
-                          <Instagram height={26} width={26}>
-                              <title>Instagram</title>
-                          </Instagram>
-                      </a>
-                  }
-                  {
-                      community.socials.twitter &&
-                      <a href={community.socials.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-alternative-400 transition-colors">
-                          <XTwitter height={26} width={26}>
-                              <title>Twitter</title>
-                          </XTwitter>
-                      </a>
-                  }
-                  { community.socials.linkedin &&
-                      <a href={community.socials.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-alternative-400 transition-colors">
-                          <LinkedinIcon height={26} width={26}>
-                              <title>Linkedin</title>
-                          </LinkedinIcon>
-                      </a>
-                  }
-                  {
-                      community.socials.tikTok &&
-                      <a href={community.socials.tikTok} target="_blank" rel="noopener noreferrer" className="hover:text-alternative-400 transition-colors">
-                          <TikTok />
-                      </a>
+                      community.socials.map((social) => (
+                          <SocialMedia key={social.url} link={social} />
+                      ))
                   }
               </div>
           </CardContent>

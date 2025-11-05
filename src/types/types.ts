@@ -1,15 +1,11 @@
+import {ILink} from "@/types/speakers.ts";
+
 export interface ICommunity {
     name?: string;
     description: string;
     link: string;
     image: string;
-    socials: {
-        facebook?: string;
-        instagram?: string;
-        twitter?: string;
-        linkedin?: string;
-        tikTok?: string;
-    }
+    socials: ILink[];
 }
 export interface IImage {
     id: number
