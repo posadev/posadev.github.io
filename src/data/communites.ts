@@ -38,7 +38,7 @@ export const communitiesAllies: Array<ICommunity> = [
     {
         name: "GDG Guadalajara",
         description: "",
-        link: "https://gdg.community.dev/gdg-guadalajara-mexico-city",
+        link: "https://gdg.community.dev/events/details/google-gdg-guadalajara-presents-devfest-2025-kickoff-in-guadalajara/",
         image: GDGLogo,
         socials: [{
             title: "LinkedIn",
@@ -90,7 +90,7 @@ export const communitiesAllies: Array<ICommunity> = [
     {
         name: "AWS User Group Ajolotes en la Nube ",
         description: "",
-        link: "https://devchixmexico.org/",
+        link: "",
         image: ajolotesAWSLogo,
         socials: [
             {
