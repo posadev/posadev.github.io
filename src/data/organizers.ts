@@ -126,7 +126,7 @@ export const organizers: Array<ICommunity> = [
         socials: [
             {
                 title: "Facebook",
-                url: "https://www.facebook.com/groups/293473358264641i",
+                url: "https://www.facebook.com/groups/293473358264641",
                 linkType: LinkType.Facebook
             }
         ]
