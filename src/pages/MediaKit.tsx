@@ -2,10 +2,10 @@ import {Button} from "@/components/ui/button.tsx";
 import React from "react";
 import {BriefcaseMedical, Download} from "lucide-react";
 import Pantone from "@/components/media-kit/Pantone.tsx";
-import LogoRojoBlanco from '@/img/media-kit/posadev_logo_rojo_blanco.png'
-import LogoBlanco from '@/img/media-kit/posadev_logo_blanco.png'
-import LogoNegro from '@/img/media-kit/posadev_logo_negro.png'
-import LogoRojoNegro from '@/img/media-kit/posadev_logo_rojo_negro.png'
+import LogoRojoBlanco from '/media-kit/posadev_logo_rojo_blanco.png'
+import LogoBlanco from '/media-kit/posadev_logo_blanco.png'
+import LogoNegro from '/media-kit/posadev_logo_negro.png'
+import LogoRojoNegro from '/media-kit/posadev_logo_rojo_negro.png'
 
 
 const MediaKit = () => {
@@ -27,7 +27,7 @@ const MediaKit = () => {
                 <div className="flex flex-col items-center gap-10 md:gap-4 md:w-1/3">
                     <img src={LogoRojoNegro} alt="Posadev Logo Fondo Blanco" className="w-full h-auto"/>
                     <div className="flex flex-row justify-center gap-4 w-full">
-                        <a href="@/img/media-kit/posadev_logo_rojo_negro.svg" download>
+                        <a href="/media-kit/posadev_logo_rojo_negro.svg" download>
                             <Button  >
                                 <Download/>
                                 SVG
@@ -44,7 +44,7 @@ const MediaKit = () => {
                 <div className="flex flex-col items-center gap-10 md:gap-4 md:w-1/3">
                      <img src={LogoNegro} alt="Posadev Logo" className="w-full h-auto"/>
                     <div className="flex flex-row gap-4 w-full justify-center">
-                        <a href="@/img/media-kit/posadev_logo_negro.svg" download>
+                        <a href="/media-kit/posadev_logo_negro.svg" download>
                             <Button  >
                                 <Download/>
                                 SVG
@@ -61,7 +61,7 @@ const MediaKit = () => {
                 <div className="flex flex-col items-center gap-10 md:gap-4 md:w-1/3">
                     <img src={LogoRojoBlanco} alt="Posadev Logo" className="w-full h-auto bg-black"/>
                     <div className="flex flex-row gap-4 justify-center w-full">
-                        <a href="@/img/media-kit/posadev_logo_rojo_blanco.svg" download>
+                        <a href="/media-kit/posadev_logo_rojo_blanco.svg" download>
                             <Button  >
                                 <Download/>
                                 SVG
@@ -78,7 +78,7 @@ const MediaKit = () => {
                 <div className="flex flex-col items-center gap-10 md:gap-4 md:w-1/3">
                     <img src={LogoBlanco} alt="Posadev Logo" className="w-full h-auto bg-black"/>
                     <div className="flex flex-row gap-4 w-full justify-center">
-                        <a href="@/img/media-kit/posadev_logo_blanco.svg" download>
+                        <a href="/media-kit/posadev_logo_blanco.svg" download>
                             <Button  >
                                 <Download/>
                                 SVG

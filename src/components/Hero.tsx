@@ -1,6 +1,6 @@
 import React from 'react';
-import {Calendar, MapPin} from 'lucide-react';
-import posadevLogo from '@/img/media-kit/posadev-logo.png';
+import { MapPin} from 'lucide-react';
+import posadevLogo from '/media-kit/posadev-logo.png';
 import Tickets from "@/components/Tickets.tsx";
 import CalendarCard from "@/components/CalendarCard.tsx";
 
