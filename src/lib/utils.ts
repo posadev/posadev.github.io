@@ -10,12 +10,15 @@ export const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
-export const handleCopy = async (toast, dismiss) => {
-  try {
-    await navigator.clipboard.writeText("");
-    toast();
+export const handleCopy = async (toast, dismiss, text: string) => {
+    let toastId;
+    try {
+    await navigator.clipboard.writeText(text);
+    toastId = toast({
+        title: `Copiado al portapapeles: ${text}`
+    }).id;
   } finally {
-    setTimeout(() => dismiss(), 3000);
+    setTimeout(() => dismiss(toastId), 3000);
   }
 };
 
