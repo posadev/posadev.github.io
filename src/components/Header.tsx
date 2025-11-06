@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Image, Menu, UserStar, X} from 'lucide-react';
-import posadevLogo from '@/img/posadev-logo.png';
+import posadevLogo from '@/img/media-kit/posadev-logo.png';
 import {useLocation, useNavigate} from "react-router-dom";
 import {cn} from "@/lib/utils.ts";
 
