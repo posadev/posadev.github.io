@@ -16,7 +16,7 @@ const MediaKit = () => {
                 <h1 className="text-3xl md:text-4xl gradient-text">Posadev Media Kit</h1>
                 <p className="text-xl md:text-2xl lg:w-1/2 md:p-10">¡Bienvenido al Media Kit de Posadev! Este documento funge como una guía sobre el uso adecuado de nuestro logo para mantener la coherencia y preservar nuestra identidad de marca.
                 </p>
-                <a href="@/img/media-kit/posadev-media-kit.zip" className="md:w-96 lg:min-[400px]:" download>
+                <a href="/posadev-media-kit.zip" className="md:w-96 lg:min-[400px]:" download>
                     <Button className="w-full py-6" >
                         Descarga todos nuestros assets
                     </Button>
