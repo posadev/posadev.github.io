@@ -6,6 +6,7 @@ import mdc from "@/img/communities/2025/mdc.png";
 import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
 import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
 import ajolotesAWSLogo from "@/img/communities/2025/ajolotes-aws.png";
+import linuxeroszapopan from "@/img/communities/2025/linuxeroszapopan.png";
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -130,6 +131,29 @@ export const communitiesAllies: Array<ICommunity> = [
                 title:"TikTok",
                 url:"https://www.tiktok.com/@playasontech",
                 linkType: LinkType.TikTok
+            }
+        ]
+    },
+    {
+        name: "Linuxeros Zapopan",
+        description: "",
+        link: "https://mx.linkedin.com/company/lnxzpn",
+        image: linuxeroszapopan,
+        socials: [
+            {
+                title:"Instagram",
+                url:"https://www.instagram.com/lnxzpn/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title:"LinkedIn",
+                url:"https://mx.linkedin.com/company/lnxzpn",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title:"Twitter",
+                url:"https://twitter.com/lnxzpn",
+                linkType: LinkType.Twitter
             }
         ]
     },
