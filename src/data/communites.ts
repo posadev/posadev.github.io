@@ -6,6 +6,7 @@ import mdc from "@/img/communities/2025/mdc.png";
 import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
 import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
 import ajolotesAWSLogo from "@/img/communities/2025/ajolotes-aws.png";
+import calzadacode from "@/img/communities/2025/calzadacode.png";
 import linuxeroszapopan from "@/img/communities/2025/linuxeroszapopan.png";
 
 export const communitiesAllies: Array<ICommunity> = [
@@ -135,6 +136,29 @@ export const communitiesAllies: Array<ICommunity> = [
         ]
     },
     {
+        name: "Calzada Code",
+        description: "",
+        link: "https://calzadacode.dev/",
+        image: calzadacode,
+        socials: [
+        {
+            title: "Facebook",
+            url: "https://www.facebook.com/share/18KRMKDy6U/",
+            linkType: LinkType.Facebook
+        },
+        {
+            title: "Twitter",
+            url: "https://twitter.com/CalzadaCode",
+            linkType: LinkType.Twitter
+        },
+        {
+            title: "Instagram",
+            url: "https://www.instagram.com/calzada.code",
+            linkType: LinkType.Instagram
+        }
+      ]
+    },
+    {
         name: "Linuxeros Zapopan",
         description: "",
         link: "https://mx.linkedin.com/company/lnxzpn",
@@ -156,5 +180,5 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.Twitter
             }
         ]
-    },
+    }
 ];
