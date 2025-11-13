@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import posadevLogo from "@/img/posadev-logo.png";
+import posadevLogo from "/media-kit/posadev-logo.png";
 import CaneCandy from "@/components/ui/caneCandy.tsx";
 
 const Loading =({ count = 3, size = 14, text = null })=> {
