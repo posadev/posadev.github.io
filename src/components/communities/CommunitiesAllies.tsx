@@ -13,7 +13,7 @@ const CommunitiesAllies = () => {
               <Adorno className="hidden md:block"/>
           </h2>
           <span className="w-28 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto my-8 rounded-full "/>
-          <div className="flex flex-col flex-wrap md:flex-row justify-center gap-10 w-full">
+          <div className="flex flex-col flex-wrap flex-grow md:flex-row justify-center gap-10 w-full">
               {
                   communitiesAllies.map((community) => (
                       <CommunityAlly key={community.name} community={community} />
