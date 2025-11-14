@@ -21,7 +21,7 @@ export interface ISponsor {
     link?: string;
     image: string;
     isPaid: boolean;
-    type?: 'gold' | 'silver' | 'bronze';
+    type?: 'gold' | 'diamond' | 'bronze' | 'silver';
 }
 
 export enum AppStatus {
