@@ -10,17 +10,27 @@ interface SponsorProps {
 const Sponsor: React.FC<SponsorProps> = ({sponsor}) => {
     if (!sponsor.isPaid) return;
     return (
-      <article className="w-full">
-          <div className="relative flex gap-4 md:gap-10 justify-center items-center h-52 ">
-              <img src={sponsor.image} alt={sponsor.name} className="w-72 max-w-72 z-10"/>
-              <div className="absolute flex md:top-1/3 top-1/2 w-full overflow-visible hidden">
-                  <Lights className="w-full h-auto" />
-                  <Lights className="w-full h-auto" />
-                  <Lights className="w-full h-auto" />
-                  <Lights className="w-full h-auto" />
-              </div>
-          </div>
-      </article>
+        <article className="relative w-full z-0 flex justify-center items-center">
+            <Lights className="w-full absolute left-1/2 md:hidden"/>
+            <div className="relative flex justify-center items-center
+                bg-white rounded-lg z-20
+                lg:px-10
+                 h-40 md:h-52 max-w-56 md:max-w-60 lg:max-w-[300px]">
+                <img
+                    src={sponsor.image}
+                    alt={sponsor.name}
+                    className="relative z-20 object-contain"
+                />
+            </div>
+            <Lights className="w-full absolute right-1/2 md:hidden" />
+            <div className="absolute inset-0 hidden md:flex md:top-1/3 top-1/3 w-full overflow-visible z-0">
+                <Lights className="md:w-full" />
+                <Lights className="hidden md:w-full" />
+                <Lights className="w-full hidden md:flex" />
+                <Lights className="w-full hidden lg:flex" />
+                <Lights className="w-full hidden lg:flex" />
+            </div>
+        </article>
   )
 }
 export default Sponsor

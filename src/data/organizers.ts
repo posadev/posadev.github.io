@@ -1,5 +1,5 @@
 import {ICommunity} from "@/types/types.ts";
-import LCDC from "@/img/organizers/laschicasdelcodigo.jpeg";
+import LCDC from "@/img/organizers/lcdc.png";
 import IxDA from "@/img/organizers/IxDA-Cover.png";
 import KUG from "@/img/organizers/KUG.png"
 import J4G from "@/img/organizers/j4g.png"

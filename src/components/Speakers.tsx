@@ -6,8 +6,9 @@ import {ISpeaker} from "@/types/speakers.ts";
 
 const Speakers = () => {
     const {speakers} = useAppContext();
+    const randomSpeakers = speakers.sort(() => 0.5 - Math.random());
 
-    const gridLg: GridConfig = {cols: 3, rows: 2, itemsPerSlide: 6};
+    const gridLg: GridConfig = {cols: 3, rows: 1, itemsPerSlide: 3};
     const gridMd: GridConfig = {cols: 2, rows: 1, itemsPerSlide: 2};
     const gridSm: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
 
@@ -22,7 +23,7 @@ const Speakers = () => {
         >
             <h1 className="text-3xl md:text-5xl font-bold text-white">Speakers</h1>
             <div className="mt-8 mb-20 md:w-60 w-24 h-1 bg-candy-stripes mx-auto rounded-full"></div>
-                <Carousel className="lg:gap-20" gridMd={gridMd} gridSm={gridSm} gridLg={gridLg} hideArrows items={speakers} renderItem={(speaker: ISpeaker) => <Speaker key={speaker.id} speaker={speaker} /> } />
+                <Carousel className="lg:gap-20" gridMd={gridMd} gridSm={gridSm} gridLg={gridLg} hideArrows items={randomSpeakers} renderItem={(speaker: ISpeaker) => <Speaker key={speaker.id} speaker={speaker} /> } />
         </section>
     );
 };

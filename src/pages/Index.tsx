@@ -6,6 +6,7 @@ import BecomeSponsor from "@/components/BecomeSponsor.tsx";
 import Organizers from "@/components/Organizers.tsx";
 import Speakers from "@/components/Speakers.tsx";
 import CommunitiesAllies from "@/components/communities/CommunitiesAllies.tsx";
+import Sponsors from "@/components/Sponsors.tsx";
 
 const Index = () => {
     const location = useLocation();
@@ -33,6 +34,7 @@ const Index = () => {
             <Speakers/>
             <BecomeSponsor/>
             <Organizers/>
+            <Sponsors />
             <CommunitiesAllies/>
             <Gallery/>
         </>
