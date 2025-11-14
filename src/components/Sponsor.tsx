@@ -10,7 +10,7 @@ interface SponsorProps {
 const Sponsor: React.FC<SponsorProps> = ({sponsor}) => {
     if (!sponsor.isPaid) return;
     return (
-        <article className="relative w-full z-0 flex justify-center items-center">
+        <article className="relative w-full z-0 flex justify-center items-center overflow-hidden">
             <Lights className="w-full absolute left-1/2 md:hidden"/>
             <div className="relative flex justify-center items-center
                 bg-white rounded-lg z-20
