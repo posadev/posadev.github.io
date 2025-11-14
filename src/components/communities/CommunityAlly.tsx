@@ -9,7 +9,7 @@ interface CommunityAllyProps {
 
 const CommunityAlly: React.FC<CommunityAllyProps> = ({community}) => {
   return (
-      <article className="h-60 md:w-1/4 flex flex-col justify-center items-center gap-4">
+      <article className="h-60 lg:w-1/4 flex flex-col justify-center items-center gap-4">
     <div className="border-0 bg-transparent shadow-none h-52 w-[300px]">
               <a href={community.link} target="_blank">
                   <img

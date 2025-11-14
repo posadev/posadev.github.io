@@ -3,6 +3,7 @@ import zillow from "@/img/sponsors/zillow.png"
 import howdy from "@/img/sponsors/howdy.png"
 import koch from "@/img/sponsors/Koch.png"
 import akamai from "@/img/sponsors/akamai.png"
+import sps from "@/img/sponsors/sps.png"
 
 export const sponsors: Array<ISponsor> = [
     {
@@ -32,5 +33,12 @@ export const sponsors: Array<ISponsor> = [
         image: akamai,
         isPaid: true,
         type: "gold"
+    },
+    {
+        id: "sponsor-5",
+        name: "SPS",
+        image: sps,
+        isPaid: true,
+        type: "bronze"
     }
 ]
