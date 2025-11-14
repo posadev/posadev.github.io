@@ -24,13 +24,13 @@ export const sponsors: Array<ISponsor> = [
         name: "Koch",
         image: koch,
         isPaid: true,
-        type: "gold"
+        type: "silver"
     },
     {
         id: "sponsor-4",
         name: "Akamai",
         image: akamai,
         isPaid: true,
-        type: "silver"
+        type: "gold"
     }
 ]
