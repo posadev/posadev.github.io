@@ -14,8 +14,8 @@ interface AppContextType {
     agenda: ITimeSlot[];
     appStatus: AppStatus;
     setAgenda: (agenda: ITimeSlot[]) => void;
-    savedSessions: Set<ISession>;
-    setSavedSessions: (sessions: Set<ISession>) => void;
+    savedSessions: Set<number>;
+    setSavedSessions: (sessions: Set<number>) => void;
     displayAll: boolean;
     setDisplayAll: (displayAll: boolean) => void;
 }
@@ -26,9 +26,22 @@ export const AppProvider = ({ children }) => {
     const [speakers, setSpeakers] = useState<ISpeaker[]>([]);
     const [agenda, setAgenda] = useState<ITimeSlot[]>([]);
     const [appStatus, setAppStatus] = useState(AppStatus.Loading);
-    const [savedSessions, setSavedSessions] = useState<Set<ISession>>(new Set());
     const [displayAll, setDisplayAll] = useState<boolean>(true);
     const [sessions, setSessions] = useState<ISession[]>([]);
+    const [savedSessions, setSavedSessions] = useState<Set<number>>(() => {
+        const raw = localStorage.getItem("savedSessions");
+        return raw ? new Set(JSON.parse(raw)) : new Set();
+    });
+
+    useEffect(() => {
+        localStorage.setItem("savedSessions", JSON.stringify([...savedSessions]));
+    }, [savedSessions]);
+
+
+    useEffect(() => {
+        console.log(savedSessions);
+        localStorage.setItem("savedSessions", JSON.stringify([...savedSessions]));
+    }, [savedSessions]);
 
     useEffect(() => {
         getAll().then((data) => {

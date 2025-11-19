@@ -15,22 +15,26 @@ const CardEvent: React.FC<CardEventProps> = ({ room }) => {
     const [isSaved, setIsSaved] = useState(false);
 
     useEffect(() => {
-        if (!displayAll && !savedSessions.has(session)) return;
-        setIsSaved(savedSessions.has(session));
+        if (!displayAll && !savedSessions.has(session.id)) return;
+        setIsSaved(savedSessions.has(session.id));
     }, []);
 
     const handleSaveSession = (session: ISession) => {
-        if (savedSessions.has(session)) {
-            savedSessions.delete(session);
-            setIsSaved(false);
-        } else {
-            savedSessions.add(session);
-            setIsSaved(true);
-        }
-        return setSavedSessions(savedSessions);
+        // @ts-ignore
+        setSavedSessions(prev  => {
+            const newSet = new Set(prev);
+            if (newSet.has(session.id)) {
+                newSet.delete(session.id);
+                setIsSaved(false);
+            } else {
+                newSet.add(session.id);
+                setIsSaved(true);
+            }
+            return newSet;
+        });
     };
 
-    if (!displayAll && !savedSessions.has(session)) return null;
+    if (!displayAll && !savedSessions.has(session.id)) return null;
     return (
         <div id={`session-${session.id}`} className="flex flex-col gap-4 mt-6 w-full">
             <h3 className="font-bold text-2xl">Sala: {room.name}</h3>
