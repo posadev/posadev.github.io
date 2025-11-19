@@ -15,6 +15,7 @@ import {AppProvider} from "@/context/AppContext.tsx";
 import TicketsPage from "@/pages/TicketsPage.tsx";
 import CodeOfConductSpeakers from "@/pages/CodeOfConductSpeakers.tsx";
 import Agenda from "@/pages/Agenda.tsx";
+import MediaKit from "@/pages/MediaKit.tsx";
 import SessionPage from "@/pages/SessionPage.tsx";
 
 const queryClient = new QueryClient();
@@ -33,11 +34,13 @@ const App = () => {
                 <Route path="/" element={<Index />} />
                 <Route path="*" element={<NotFound />} />
                 <Route path="/code-of-conduct" element={<CodeOfConduct />}/>
-                  <Route path="/codigo-de-conducta-speakers" element={<CodeOfConductSpeakers />}/>
+                <Route path="/codigo-de-conducta-speakers" element={<CodeOfConductSpeakers />}/>
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                 <Route path="/speaker/:speakerId" element={<SpeakerInfo/>}/>
                   <Route path="/boletos" element={<TicketsPage />} />
                   <Route path="/agenda" element={<Agenda/>} />
+                <Route path="/boletos" element={<TicketsPage />} />
+                <Route path="/media-kit" element={<MediaKit />} />
                   <Route path="session/:sessionId" element={<SessionPage />} />
               </Routes>
             </main>
