@@ -3,7 +3,8 @@ import {useAppContext} from "@/context/AppContext.tsx";
 import {useNavigate, useParams} from "react-router-dom";
 import Gradient from "@/components/Gradient.tsx";
 import {ChevronLeft} from "lucide-react";
-import React from "react";
+import React, {useEffect} from "react";
+import {scrollToTop} from "@/lib/utils.ts";
 
 const SessionPage = () => {
     const navigate = useNavigate()
@@ -12,14 +13,16 @@ const SessionPage = () => {
     const session = sessions.find(session => session.id == Number(sessionId))
 
     const handleGoBack = () => {
-        if (window.history.state && window.history.length > 2) {
-            console.log("back to ")
-            navigate(-1)
-        } else {
-            console.log("back to agenda")
-            navigate("/agenda")
-        }
+        navigate("/agenda", {
+            state: {
+                sessionId: session.id
+            }
+        })
     }
+
+    useEffect(() => {
+        scrollToTop()
+    }, []);
 
   return (
       <Gradient className="py-10 px-4 md:px-20 flex flex-col gap-6 min-h-[60vh]" >
@@ -37,10 +40,7 @@ const SessionPage = () => {
       after:transition-all after:duration-300
       hover:after:w-full
     ">
-    {
-        window.history.state && window.history.length > 2 ? "Volver a la agenda" : "Volver a atras"
-
-    }
+    Volver a la agenda
   </span>
           </button>
         <SessionCard session={session} />

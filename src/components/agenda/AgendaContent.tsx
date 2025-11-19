@@ -18,7 +18,7 @@ const AgendaContent = () => {
     if (agenda.length === 0) return (<></>)
 
     if (!displayAll && savedSessions.size === 0) {
-        return (<Card className="w-full pb-8 md:px-6 relative">
+        return (<Card className="w-full pb-8 md:px-6 relative shadow-gray-500">
             <nav className="flex gap-4 pt-8 pb-2 sticky bg-white w-full">
                 <Badge variant={`${displayAll ? "default" : "ghost"}`} onClick={() => setDisplayAll(true)} role="button">Display All</Badge>
                 <Badge variant={`${displayAll ? "ghost" : "default"}`} onClick={() => setDisplayAll(false)} role="button">Display Saved</Badge>
@@ -28,7 +28,7 @@ const AgendaContent = () => {
     }
 
   return (
-      <Card className="w-full pb-8 md:px-6 relative">
+      <Card className="w-full pb-8 md:px-6 relative shadow-gray-500">
           <nav className="flex gap-4 pt-8 pb-2 sticky bg-white w-full">
               <Badge variant={`${displayAll ? "default" : "ghost"}`} onClick={() => setDisplayAll(true)} role="button">Display All</Badge>
               <Badge variant={`${displayAll ? "ghost" : "default"}`} onClick={() => setDisplayAll(false)} role="button">Display Saved</Badge>

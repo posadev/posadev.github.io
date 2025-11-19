@@ -32,9 +32,9 @@ const CardEvent: React.FC<CardEventProps> = ({ room }) => {
 
     if (!displayAll && !savedSessions.has(session)) return null;
     return (
-        <div className="flex flex-col gap-4 mt-6 w-full">
+        <div id={`session-${session.id}`} className="flex flex-col gap-4 mt-6 w-full">
             <h3 className="font-bold text-2xl">Sala: {room.name}</h3>
-            <WrappedCardEvent className={`${isSaved ? "bg-primary-700" : "bg-white"} relative flex flex-col gap-2 border-2 border-primary-600 rounded-lg w-full min-h-52 h-full shadow-sm shadow-gray-600 p-4`}
+            <WrappedCardEvent className={`${isSaved ? "bg-primary-700" : "bg-white"} relative flex flex-col gap-2 border-2 border-primary-600 rounded-lg w-full min-h-52 h-full shadow-sm shadow-gray-600 p-4 hover:scale-105 transition-all duration-300`}
                 session={session}
             >
                 <h4 className={` text-2xl font-bold ${isSaved ? "text-white" : "text-alternative-600"}`}>
