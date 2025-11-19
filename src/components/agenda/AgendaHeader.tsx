@@ -27,12 +27,12 @@ const AgendaHeader = () => {
                   </ul>
               </Card>
               <div className="flex md:flex-row flex-col gap-10 justify-center items-center md:items-baseline text-primary-500 mt-[72px]">
-                  <AgendaItem time={'9:00 AM - 3:00 PM'} title={'Registro'} icon={IdCardLanyard } />
-                  <AgendaItem time={'9:30am - 11:00am'} title={'Coffee break'} icon={Coffee} />
-                  <AgendaItem time={'10:15 AM - 2:00 PM y 3:55 PM - 7:00 PM'} title={'Charlas'} icon={Megaphone} />
-                  <AgendaItem time={'2:05 PM - 3:55 PM'} title={'Comida'} icon={HandPlatter} />
-                  <AgendaItem time={'7:00 PM - 9:00 PM'} title={'Networking'} icon={CandyCane} />
-                  <AgendaItem time={'7:00 PM - 9:00 PM'} title={'Clausura'} icon={Beer} />
+                  <AgendaItem time={['9:00 AM - 3:00 PM']} title={'Registro'} icon={IdCardLanyard } />
+                  <AgendaItem time={['9:30am - 11:00am']} title={'Coffee break'} icon={Coffee} />
+                  <AgendaItem time={['10:15 AM - 2:00 PM','3:55 PM - 7:00 PM']} title={'Charlas'} icon={Megaphone} />
+                  <AgendaItem time={['2:05 PM - 3:55 PM']} title={'Comida'} icon={HandPlatter} />
+                  <AgendaItem time={['7:00 PM - 9:00 PM']} title={'Networking'} icon={CandyCane} />
+                  <AgendaItem time={['7:00 PM - 9:00 PM']} title={'Clausura'} icon={Beer} />
               </div>
           </aside>
       </>
