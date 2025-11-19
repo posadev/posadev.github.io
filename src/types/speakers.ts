@@ -1,3 +1,8 @@
+export interface ISpeakerId {
+    id: string
+    name: string
+}
+
 export interface ISpeaker {
     id: string
     firstName: string
@@ -17,8 +22,8 @@ export interface ISession {
     title: string
     description: string
     startAt: string
-    endAt: string
-    speakers: string[]
+    endsAt: string
+    speakers: ISpeakerId[]
     categoryItems: number[]
 }
 
@@ -42,13 +47,20 @@ export interface ICategory {
     name: string
 }
 
+export interface IRoom {
+    id: number
+    name: string
+}
+
+export interface IRoomData extends IRoom {
+    sessions: ISession[]
+}
+
 export interface IConferenceData {
     sessions: ISession[];
     speakers: ISpeaker[];
     categories: [{
         items: ICategory[]
     }]
-}
-export interface fetchResponse extends IConferenceData{
-    blob: Blob
+    rooms: IRoom[]
 }

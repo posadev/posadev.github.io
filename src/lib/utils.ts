@@ -35,3 +35,17 @@ export const addSessionSpeakers = (sessions: ISession[], speakers: ISpeaker[], c
 }
 
 export const findSpeaker = (speakers: ISpeaker[], id: string) => speakers.find((speaker) => speaker.id === id);
+
+export const formatTime =(timeString: string) => {
+  const [h, m, s] = timeString.split(":").map(Number);
+  const date = new Date();
+  date.setHours(h, m, s);
+
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    hour12: true,
+  });
+
+  return formatter.format(date);
+}
