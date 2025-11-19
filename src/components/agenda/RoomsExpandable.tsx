@@ -22,7 +22,7 @@ const RoomsExpandable = ({rooms, slotStart, endsAt, hide}) => {
                 <AccordionContent>
                     {rooms.map((room) => (
                         <div className="flex flex-col md:flex-row gap-6" key={room.id}>
-                            <CardCharla room={room} />
+                            <CardCharla room={room}/>
                         </div>
                     ))}
                 </AccordionContent>

@@ -15,10 +15,10 @@ const Rooms = ({rooms, slotStart, hide, endsAt}) => {
                 <time className="font-bold text-2xl text-white">{endsAt}</time>
               <h2 className="font-bold text-2xl text-gray-700"></h2>
           </Card>
-          <div className="flex flex-col md:flex-row gap-6 px-10 w-full">
-              {rooms.map((room) => (
-                  <CardCharla key={room.id} room={room}/>
-              ))}
+          <div className="flex flex-col flex-wrap flex-grow  md:flex-row gap-6 px-10 w-full">
+              {rooms.map((room) => {
+                    return <CardCharla key={room.id} room={room} />
+              })}
           </div>
       </>
   )

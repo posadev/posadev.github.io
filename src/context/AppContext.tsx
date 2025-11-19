@@ -1,10 +1,11 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import {ISession, ISpeaker, ITimeSlot} from "@/types/speakers.ts";
+import {ISession, ISpeaker} from "@/types/speakers.ts";
 import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
 import Loading from "@/pages/Loading.tsx";
 import {addSessionSpeakers} from "@/lib/utils.ts";
 import ErrorPage from "@/pages/ErrorPage.tsx";
+import {ITimeSlot} from "@/types/agenda.ts";
 
 
 interface AppContextType {
@@ -15,6 +16,8 @@ interface AppContextType {
     setAgenda: (agenda: ITimeSlot[]) => void;
     savedSessions: Set<ISession>;
     setSavedSessions: (sessions: Set<ISession>) => void;
+    displayAll: boolean;
+    setDisplayAll: (displayAll: boolean) => void;
 }
 
 const AppContext = createContext(null);
@@ -24,10 +27,14 @@ export const AppProvider = ({ children }) => {
     const [agenda, setAgenda] = useState<ITimeSlot[]>([]);
     const [appStatus, setAppStatus] = useState(AppStatus.Loading);
     const [savedSessions, setSavedSessions] = useState<Set<ISession>>(new Set());
+    const [displayAll, setDisplayAll] = useState<boolean>(true);
+    const [sessions, setSessions] = useState<ISession[]>([]);
+
     useEffect(() => {
         getAll().then((data) => {
             const getSpeakersWithSessions = addSessionSpeakers(data.sessions, data.speakers, data.categories[0].items);
             setSpeakers(getSpeakersWithSessions);
+            setSessions(data.sessions)
             setAppStatus(AppStatus.Success)
         }).catch(() => {
             setAppStatus(AppStatus.Error)
@@ -35,6 +42,9 @@ export const AppProvider = ({ children }) => {
     }, []);
 
     const value = {
+        sessions,
+        displayAll,
+        setDisplayAll,
         savedSessions,
         setSavedSessions,
         setAgenda,

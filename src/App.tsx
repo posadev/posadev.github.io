@@ -15,6 +15,7 @@ import {AppProvider} from "@/context/AppContext.tsx";
 import TicketsPage from "@/pages/TicketsPage.tsx";
 import CodeOfConductSpeakers from "@/pages/CodeOfConductSpeakers.tsx";
 import Agenda from "@/pages/Agenda.tsx";
+import SessionPage from "@/pages/SessionPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => {
                 <Route path="/speaker/:speakerId" element={<SpeakerInfo/>}/>
                   <Route path="/boletos" element={<TicketsPage />} />
                   <Route path="/agenda" element={<Agenda/>} />
+                  <Route path="session/:sessionId" element={<SessionPage />} />
               </Routes>
             </main>
             <Footer />
