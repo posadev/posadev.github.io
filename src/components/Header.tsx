@@ -64,7 +64,7 @@ const Header = () => {
                         </a>
                         <a
                             onClick={() => navigate('/agenda')}
-                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#galeria') && "text-posadev-brightPink")}
+                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/agenda') && "text-posadev-brightPink")}
                         >
                             <span>Agenda</span>
                         </a>
@@ -99,7 +99,7 @@ const Header = () => {
                             </a>
                             <a
                                 onClick={() => navigateMenu('/agenda')}
-                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/#galeria') && "text-posadev-brightPink")}
+                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/agenda') && "text-posadev-brightPink")}
                             >
                                 Agenda
                             </a>
