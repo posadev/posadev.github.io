@@ -11,12 +11,15 @@ import React from "react";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
 import Footer from "@/components/Footer.tsx";
 import SpeakerInfo from "@/components/SpeakerInfo.tsx";
-import {AppProvider} from "@/context/AppContext.tsx";
+import {AppProvider, useAppContext} from "@/context/AppContext.tsx";
 import TicketsPage from "@/pages/TicketsPage.tsx";
 import CodeOfConductSpeakers from "@/pages/CodeOfConductSpeakers.tsx";
 import Agenda from "@/pages/Agenda.tsx";
 import MediaKit from "@/pages/MediaKit.tsx";
 import SessionPage from "@/pages/SessionPage.tsx";
+import {AppStatus} from "@/types/types.ts";
+import Loading from "@/pages/Loading.tsx";
+import ErrorPage from "@/pages/ErrorPage.tsx";
 
 const queryClient = new QueryClient();
 

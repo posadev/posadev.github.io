@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {ISpeaker} from "@/types/speakers.ts";
 import {Card} from "@/components/ui/card.tsx";
 import SocialMedia from "@/components/SocialMedia.tsx";
@@ -10,6 +10,7 @@ interface SpeakerProps {
 
 const Speaker: React.FC<SpeakerProps> = ({speaker}) => {
     const navigate = useNavigate();
+    const [loaded, setLoaded] = useState(false);
 
     const handleClick = (speaker: ISpeaker) => {
         navigate(`/speaker/${speaker.id}`, {state: {speaker}});
@@ -17,7 +18,12 @@ const Speaker: React.FC<SpeakerProps> = ({speaker}) => {
 
     return (
         <article className="h-full w-full mx-1 flex flex-col justify-center items-center">
-                <img src={speaker.profilePicture} alt={speaker.fullName} className="h-60 w-60 rounded-3xl" loading="lazy"/>
+            <img
+                src={speaker.profilePicture}
+                alt={speaker.fullName}
+                className={`h-60 w-60 rounded-3xl transition-all duration-500 ${loaded ? "blur-0" : "blur-xl bg-gray-200"}`}
+                onLoad={() => setLoaded(true)}
+            />
                 <Card className="bg-white/10 border-0 shadow-none text-white flex flex-col justify-start gap-4 h-52 p-6 w-full max-w-[400px]">
                     <p className="text-2xl font-bold">{`${speaker.firstName.split(" ")[0]} ${speaker.lastName.split(" ")[0]}`}</p>
                     <p className="my-2 text-xl break-words line-clamp-2 overflow-hidden flex-shrink-0 rounded">{speaker.tagLine}</p>

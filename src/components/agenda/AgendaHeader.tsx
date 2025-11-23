@@ -11,7 +11,7 @@ const AgendaHeader = () => {
               <div className="w-20 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"/>
           </header>
           <aside className="flex flex-col gap-4 w-full lg:w-3/4">
-              <Card className="p-4 flex flex-col gap-4 border-none bg-transparent shadow-none">
+              <Card className="px-4 md:p-4 flex flex-col gap-4 border-none bg-transparent shadow-none">
                   <p className="text-primary-800 font-bold">En este evento te invitamos a:</p>
                   <ul className="w-full list-none grid gap-x-6 gap-y-2 grid-cols-2">
                       <Markup id="li-charlas" text="Asistir a las charlas" />
@@ -26,7 +26,7 @@ const AgendaHeader = () => {
                       <Markup id="li-diversion" text="Pásartela increible !!!" />
                   </ul>
               </Card>
-              <div className="flex md:flex-row flex-col gap-10 justify-center items-center md:items-baseline text-primary-500 mt-[72px]">
+              <div className="flex md:flex-row flex-col gap-10  justify-center items-baseline text-primary-500 mt-[72px] px-4 md:px-0">
                   <AgendaItem time={['9:00 AM - 3:00 PM']} title={'Registro'} icon={IdCardLanyard } />
                   <AgendaItem time={['9:30am - 11:00am']} title={'Coffee break'} icon={Coffee} />
                   <AgendaItem time={['10:15 AM - 2:00 PM','3:55 PM - 7:00 PM']} title={'Charlas'} icon={Megaphone} />
