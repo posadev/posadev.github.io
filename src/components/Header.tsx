@@ -38,7 +38,7 @@ const Header = () => {
         >
             <div className="container mx-auto px-4 pt-2">
                 <div className="flex items-center justify-between h-16">
-                        <a className="flex items-center space-x-2" onClick={() => navigate('/#inicio')}>
+                        <a className="flex items-center space-x-2" onClick={() => navigateMenu('/#inicio')}>
                             <img
                                 src={posadevLogo}
                                 alt="Posadev Logo"
@@ -105,7 +105,7 @@ const Header = () => {
                             </a>
                             <a
                                 onClick={() => navigateMenu('/#patrocinadores')}
-                                className={cn("w-full bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
+                                className={cn("w-full bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 gap-2", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
                             >
                                 <UserStar className="w-4 h-4" aria-hidden="true"/>
                                 Se un patrocinador

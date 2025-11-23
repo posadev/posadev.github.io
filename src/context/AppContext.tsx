@@ -39,7 +39,6 @@ export const AppProvider = ({ children }) => {
 
 
     useEffect(() => {
-        console.log(savedSessions);
         localStorage.setItem("savedSessions", JSON.stringify([...savedSessions]));
     }, [savedSessions]);
 

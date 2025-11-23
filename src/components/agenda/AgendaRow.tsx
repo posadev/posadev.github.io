@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from "react";
-import RoomsExpandable from "@/components/agenda/RoomsExpandable.tsx";
 import Rooms from "@/components/agenda/Rooms.tsx";
 import {useIsMobile} from "@/hooks/use-mobile.tsx";
 import {IRoomAgenda} from "@/types/agenda.ts";
 import {formatTime} from "@/lib/utils.ts";
 import {useAppContext} from "@/context/AppContext.tsx";
+import Adorno from "@/components/icons/Adorno.tsx";
+import {Card} from "@/components/ui/card.tsx";
 
 interface AgendaRowProps {
     slotStart: string;
@@ -49,8 +50,14 @@ const AgendaRow: React.FC<AgendaRowProps> = ({slotStart, rooms}) => {
               hasPassed ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}
       >
+          <Card className="flex items-center gap-4 p-2 bg-alternative-700 border-alternative-700 sticky top-[136px] z-10">
+              <Adorno className="h-8 w-8" />
+              <time className="font-bold text-2xl text-white">{formatTime(slotStart)}</time>
+              <span aria-label="a" className="font-bold text-2xl text-gray-500">-</span>
+              <time className="font-bold text-2xl text-white">{endTime}</time>
+              <h2 className="font-bold text-2xl text-gray-700"></h2>
+          </Card>
           <Rooms rooms={rooms} slotStart={slotStart} endsAt={endTime} hide={false} />
-          <RoomsExpandable rooms={rooms} slotStart={slotStart} endsAt={endTime} hide={true} />
       </section>
   )
 }

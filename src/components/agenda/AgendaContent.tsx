@@ -4,7 +4,6 @@ import {useEffect} from "react";
 import {getAgenda} from "@/https/fetch.ts";
 import {useAppContext} from "@/context/AppContext.tsx";
 import AgendaRow from "@/components/agenda/AgendaRow.tsx";
-import {ScrollArea} from "@/components/ui/scroll-area.tsx";
 
 const AgendaContent = () => {
     const {setAgenda, agenda, savedSessions} = useAppContext()
@@ -19,7 +18,7 @@ const AgendaContent = () => {
     if (agenda.length === 0) return (<></>)
 
     if (!displayAll && savedSessions.size === 0) {
-        return (<Card className="w-full pb-8 md:px-6 relative shadow-gray-500">
+        return (<Card className="w-full pb-8 md:px-6 relative shadow-gray-500 min-h-60">
             <nav className="flex gap-4 pt-8 pb-2 sticky bg-white w-full h-20">
                 <Badge variant={`${displayAll ? "default" : "ghost"}`} onClick={() => setDisplayAll(true)} role="button">Mostrar todos</Badge>
                 <Badge variant={`${displayAll ? "ghost" : "default"}`} onClick={() => setDisplayAll(false)} role="button">Mostrar guardados</Badge>
@@ -30,7 +29,7 @@ const AgendaContent = () => {
 
   return (
       <Card className="w-full pb-8 md:px-6 relative shadow-gray-500">
-          <nav className="flex gap-4 pt-8 pb-2 sticky top-[80px] z-10 bg-white w-full h-20">
+          <nav className="flex gap-4 mt-4 py-2 px-4 sticky top-[80px] z-20 bg-white w-full h-14">
               <Badge variant={`${displayAll ? "default" : "ghost"}`} onClick={() => setDisplayAll(true)} role="button">Mostrar todos</Badge>
               <Badge variant={`${displayAll ? "ghost" : "default"}`} onClick={() => setDisplayAll(false)} role="button">Mostrar guardados</Badge>
           </nav>
