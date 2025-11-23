@@ -15,20 +15,22 @@ const AgendaItem: React.FC<AgendaItemProps> = ({ icon: Icon, title, time }) => {
     const isSingleTime = time.length === 1;
 
     return (
-      <aside className="flex flex-col items-center text-center gap-2 w-[180px] hover:scale-105 transition-transform">
-      <span className="h-14 w-14 border-2 border-primary-500 flex items-center justify-center">
+      <aside className="flex md:flex-col items-start md:items-center justify-center gap-4 md:gap-2 w-full md:w-[180px] hover:scale-105 transition-transform">
+      <span className="h-14 min-w-14 max-w-14 border-2 border-primary-500 flex items-center justify-center">
         {Icon && <Icon className="h-6 w-6 text-primary-500" />}
       </span>
-            <p className="font-medium text-primary-800">{title}</p>
-          {
-              time.map((timeString, index) => (
-                  <time key={`time-${index}`} className={`flex ${isSingleTime ? "flex-col" : "flex-row flex-wrap gap-2"} items-center text-primary-600 text-sm leading-tight`}>
-                      <span>{splitTime(timeString).start}</span>
-                      {splitTime(timeString).end && <span className="text-xs">-</span>}
-                      <span>{splitTime(timeString).end}</span>
-                  </time>
-              ))
-          }
+            <div className="flex flex-col md:gap-y-2 w-full items-start justify-start md:items-center text-center h-full">
+                <p className="font-medium text-primary-800">{title}</p>
+                {
+                    time.map((timeString, index) => (
+                        <time key={`time-${index}`} className={`flex ${isSingleTime ? "md:flex-col lg:flex-row lg:gap-2" : "md:flex-col lg:flex-row flex-wrap lg:gap-2"} text-primary-600 text-sm leading-tight`}>
+                            <span>{splitTime(timeString).start}</span>
+                            {splitTime(timeString).end && <span aria-label="a" className="text-xs">-</span>}
+                            <span>{splitTime(timeString).end}</span>
+                        </time>
+                    ))
+                }
+            </div>
         </aside>
     )
 }

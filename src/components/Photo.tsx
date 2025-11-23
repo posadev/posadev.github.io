@@ -1,5 +1,5 @@
 import {ZoomIn} from "lucide-react";
-import React from "react";
+import React, {useState} from "react";
 import {IImage} from "@/types/types.ts";
 
 export interface PhotoProps {
@@ -9,6 +9,8 @@ export interface PhotoProps {
 }
 
 const Photo: React.FC<PhotoProps> = ({image, setSelectedImage, index}) => {
+    const [loaded, setLoaded] = useState(false);
+
     const openLightbox = (index: number) => {
         setSelectedImage(index);
         document.body.style.overflow = 'hidden';
@@ -27,7 +29,8 @@ const Photo: React.FC<PhotoProps> = ({image, setSelectedImage, index}) => {
                   alt={image.alt}
                   decoding="async"
                   loading="lazy"
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 hover-scale"
+                  className={`w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110 hover-scale ${loaded ? "blur-0" : "blur-xl bg-gray-200"}`}
+                  onLoad={() => setLoaded(true)}
               />
               {/* Overlay */}
               <div className="absolute inset-0 bg-black/20  lg:group-hover:bg-black/60 flex justify-between align-middle via-transparent to-transparent opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-300">

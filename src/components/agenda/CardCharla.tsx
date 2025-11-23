@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { IRoomAgenda } from "@/types/agenda.ts";
-import { Link } from "react-router-dom";
 import { useAppContext } from "@/context/AppContext.tsx";
 import {ISession} from "@/types/speakers.ts";
 import {Star} from "lucide-react";
+import {Button} from "@/components/ui/button.tsx";
+import {useNavigate} from "react-router-dom";
 
 interface CardEventProps {
     room: IRoomAgenda;
@@ -12,6 +13,7 @@ interface CardEventProps {
 const CardEvent: React.FC<CardEventProps> = ({ room }) => {
     const { savedSessions, setSavedSessions, displayAll } = useAppContext();
     const session = room.session;
+    const navigate = useNavigate();
     const [isSaved, setIsSaved] = useState(false);
 
     useEffect(() => {
@@ -21,11 +23,12 @@ const CardEvent: React.FC<CardEventProps> = ({ room }) => {
 
     const handleSaveSession = (session: ISession) => {
         // @ts-ignore
-        setSavedSessions(prev  => {
-            const newSet = new Set(prev);
+        setSavedSessions((prev: Set<number>) => {
+            const newSet: Set<number> = new Set(prev);
             if (newSet.has(session.id)) {
                 newSet.delete(session.id);
                 setIsSaved(false);
+                if (navigator.vibrate) navigator.vibrate(25);
             } else {
                 newSet.add(session.id);
                 setIsSaved(true);
@@ -36,30 +39,46 @@ const CardEvent: React.FC<CardEventProps> = ({ room }) => {
 
     if (!displayAll && !savedSessions.has(session.id)) return null;
     return (
-        <div id={`session-${session.id}`} className="flex flex-col gap-4 mt-6 w-full">
-            <h3 className="font-bold text-2xl">Sala: {room.name}</h3>
-            <WrappedCardEvent className={`${isSaved ? "bg-primary-700" : "bg-white"} relative flex flex-col gap-2 border-2 border-primary-600 rounded-lg w-full min-h-52 h-full shadow-sm shadow-gray-600 p-4`}
-                session={session}
+        <div id={`session-${session.id}`} className="flex flex-col gap-4 mt-6">
+            <h3 className={`font-bold text-2xl`}>Sala: {room.name}</h3>
+            <WrappedCardEvent className={`relative
+            bg-white shadow-sm shadow-gray-600 border-2 border-primary-600
+    flex flex-col gap-2 rounded-lg min-h-52 h-full p-4
+    transition-all duration-300
+  `}
+                              session={session}
             >
-                <h4 className={` text-2xl font-bold ${isSaved ? "text-white" : "text-alternative-600"}`}>
+                <aside className="flex w-full items-center">
+                    {isSaved && (
+                        <span className="bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow w-20 text-center justify-self-start">Guardado</span>
+                    )}
+                    <div className="flex-1" />
+                    <button
+                        type="button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            handleSaveSession(session);
+                        }}
+                        className={`bg-white justify-self-end group flex justify-center items-center gap-2 border border-primary-500 font-bold px-2 py-1 rounded-lg transition-colors duration-300`}
+                    >
+                        <Star className={`h-4 w-4 text-primary-500 ${isSaved ? "fill-primary-500" : "fill-white group-hover:fill-primary-500"}`}/>
+                    </button>
+                </aside>
+
+                <h4 className={` text-2xl font-bold text-alternative-600 ${isSaved ? "" : ""}`}>
                     {session.title}
                 </h4>
-                <aside className="h-full" hidden={session.speakers.length == 0}>
+                <div className="h-full" hidden={session.speakers.length == 0}>
                     {session.speakers.map((speaker) => (
-                        <p key={speaker.id} className={`${isSaved ? "text-gray-300" : "text-gray-500"} font-bold  text-2xl`}>{speaker.name}</p>
+                        <p key={speaker.id} className={`${isSaved ? "text-gray-600" : "text-gray-500"} font-bold  text-2xl`}>{speaker.name}</p>
                     ))}
-                </aside>
-                <p hidden={session.speakers.length > 0} className={`h-full ${isSaved ? "text-gray-300" : "text-gray-500"} font-bold  text-2xl`}>{session.description}</p>
-                <button
-                    type="button"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        handleSaveSession(session);
-                    }}
-                    className="self-end"
-                >
-                    <Star className={`h-8 w-8  ${isSaved ? " fill-white text-primary-700 hover:text-white hover:fill-primary-600" : "text-primary-600 hover:fill-primary-600"} transition-colors duration-300`} />
-                </button>
+                </div>
+                <p hidden={session.speakers.length > 0} className={`h-full ${isSaved ? "text-gray-600" : "text-gray-500"} font-bold  text-2xl`}>{session.description}</p>
+                { session.speakers.length > 0 && (
+                    <Button variant="ghost" onClick={() => navigate(`/session/${session.id}`)}>
+                        Ver detalles
+                    </Button>
+                )}
             </WrappedCardEvent>
         </div>
     );
@@ -73,11 +92,10 @@ interface WrappedCardEventProps {
 
 const WrappedCardEvent: React.FC<WrappedCardEventProps> = ({session, children, className}) => {
     if (session.speakers.length === 0) return (<div className={className}>{children}</div>)
-    return <Link
-        to={`/session/${session.id}`}
+    return <div
         className={className}
     >{children}
-    </Link>
+    </div>
 }
 
 export default CardEvent;

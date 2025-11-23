@@ -18,7 +18,7 @@ const AgendaContent = () => {
     if (agenda.length === 0) return (<></>)
 
     if (!displayAll && savedSessions.size === 0) {
-        return (<Card className="w-full pb-8 md:px-6 relative shadow-gray-500 min-h-60">
+        return (<Card className="w-full pb-8 md:px-6 shadow-gray-500 min-h-60">
             <nav className="flex gap-4 pt-8 pb-2 sticky bg-white w-full h-20">
                 <Badge variant={`${displayAll ? "default" : "ghost"}`} onClick={() => setDisplayAll(true)} role="button">Mostrar todos</Badge>
                 <Badge variant={`${displayAll ? "ghost" : "default"}`} onClick={() => setDisplayAll(false)} role="button">Mostrar guardados</Badge>
@@ -28,14 +28,16 @@ const AgendaContent = () => {
     }
 
   return (
-      <Card className="w-full pb-8 md:px-6 relative shadow-gray-500">
-          <nav className="flex gap-4 mt-4 py-2 px-4 sticky top-[80px] z-20 bg-white w-full h-14">
+      <Card className="w-full pb-8 shadow-gray-500">
+          <nav className="flex gap-4 mt-4 py-2 px-4 sticky top-[80px] z-20 bg-white w-full h-14 border-b border-gray-200">
               <Badge variant={`${displayAll ? "default" : "ghost"}`} onClick={() => setDisplayAll(true)} role="button">Mostrar todos</Badge>
               <Badge variant={`${displayAll ? "ghost" : "default"}`} onClick={() => setDisplayAll(false)} role="button">Mostrar guardados</Badge>
           </nav>
+          <aside className="flex flex-col md:px-6">
               {agenda.map(({slotStart, rooms}) => (
                   <AgendaRow key={slotStart} slotStart={slotStart} rooms={rooms}/>
               ))}
+          </aside>
       </Card>
   )
 }
