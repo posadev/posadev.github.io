@@ -8,6 +8,9 @@ import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
 import ajolotesAWSLogo from "@/img/communities/2025/ajolotes-aws.png";
 import calzadacode from "@/img/communities/2025/calzadacode.png";
 import linuxeroszapopan from "@/img/communities/2025/linuxeroszapopan.png";
+import techQuiero from "@/img/communities/2025/techquiero.png";
+import rubymx from "@/img/communities/2025/rubymx.png";
+import webdevtalksLogo from "@/img/communities/2025/webdevtalks.png";
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -178,6 +181,80 @@ export const communitiesAllies: Array<ICommunity> = [
                 title:"Twitter",
                 url:"https://twitter.com/lnxzpn",
                 linkType: LinkType.Twitter
+            }
+        ]
+    },
+    {
+        name: "TechQuiero",
+        description: "",
+        link: "https://techquiero.com/es",
+        image: techQuiero,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/techquieromx/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/TechQuiero",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/tech-quiero/posts/?feedView=all",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "Comunidad RubyMX",
+        description: "",
+        link: "https://comunidadruby.mx/",
+        image: rubymx,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/comunidadrubymx",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://mx.linkedin.com/company/comunidadrubymx",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/comunidadrubymx",
+                linkType: LinkType.Twitter
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/comunidadrubymx",
+                linkType: LinkType.Instagram
+            }
+        ]
+    },
+    {
+        name: "WebDevTalks",
+        description: "",
+        link: "https://webdevtalks.mx",
+        image: webdevtalksLogo,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/webdevtalksmx",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/ColimaWebDevTalks",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/web-dev-talks",
+                linkType: LinkType.LinkedIn
             }
         ]
     }
