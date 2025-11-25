@@ -1,8 +1,8 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import {ISession, ISpeaker} from "@/types/speakers.ts";
+import {ISession, ISessionInfo, ISpeaker} from "@/types/speakers.ts";
 import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
-import {addSessionSpeakers} from "@/lib/utils.ts";
+import {addSessionSpeakers, getCategoryNameSessions} from "@/lib/utils.ts";
 import {ITimeSlot} from "@/types/agenda.ts";
 import ErrorPage from "@/pages/ErrorPage.tsx";
 import Loading from "@/pages/Loading.tsx";
@@ -10,7 +10,7 @@ import Loading from "@/pages/Loading.tsx";
 
 interface AppContextType {
     speakers: ISpeaker[];
-    sessions: ISession[];
+    sessions: ISessionInfo[];
     agenda: ITimeSlot[];
     appStatus: AppStatus;
     setAgenda: (agenda: ITimeSlot[]) => void;
@@ -27,7 +27,7 @@ export const AppProvider = ({ children }) => {
     const [agenda, setAgenda] = useState<ITimeSlot[]>([]);
     const [appStatus, setAppStatus] = useState(AppStatus.Loading);
     const [displayAll, setDisplayAll] = useState<boolean>(true);
-    const [sessions, setSessions] = useState<ISession[]>([]);
+    const [sessions, setSessions] = useState<ISessionInfo[]>([]);
     const [savedSessions, setSavedSessions] = useState<Set<number>>(() => {
         const raw = localStorage.getItem("savedSessions");
         return raw ? new Set<number>(JSON.parse(raw)) : new Set<number>();
@@ -40,13 +40,14 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         getAll()
             .then((data) => {
+                const categories = data.categories[0].items
                 const getSpeakersWithSessions = addSessionSpeakers(
                     data.sessions,
                     data.speakers,
-                    data.categories[0].items
+                    categories
                 );
                 setSpeakers(getSpeakersWithSessions);
-                setSessions(data.sessions);
+                setSessions(getCategoryNameSessions(categories, data.sessions));
                 setAppStatus(AppStatus.Success);
             })
             .catch(() => {

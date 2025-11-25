@@ -27,6 +27,10 @@ export interface ISession {
     categoryItems: number[]
 }
 
+export interface ISessionInfo extends ISession {
+    category: string
+}
+
 export interface ILink {
     title: string
     url: string

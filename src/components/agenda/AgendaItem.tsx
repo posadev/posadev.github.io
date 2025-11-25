@@ -23,7 +23,7 @@ const AgendaItem: React.FC<AgendaItemProps> = ({ icon: Icon, title, time }) => {
                 <p className="font-medium text-primary-800">{title}</p>
                 {
                     time.map((timeString, index) => (
-                        <time key={`time-${index}`} className={`flex ${isSingleTime ? "md:flex-col lg:flex-row lg:gap-2" : "md:flex-col lg:flex-row flex-wrap lg:gap-2"} text-primary-600 text-sm leading-tight`}>
+                        <time key={`time-${index}`} className={`flex gap-1 md:gap-0.5 lg:gap-x-2 lg:gap-y-1 ${isSingleTime ? "md:flex-col  lg:flex-row " : "md:flex-col lg:flex-row flex-wrap"} text-primary-600 justify-center text-sm leading-tight`}>
                             <span>{splitTime(timeString).start}</span>
                             {splitTime(timeString).end && <span aria-label="a" className="text-xs">-</span>}
                             <span>{splitTime(timeString).end}</span>

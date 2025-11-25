@@ -4,6 +4,7 @@ import {Speech} from "lucide-react";
 import React from "react";
 
 const SessionCard = ({session}) => {
+    const category = session.category
   return (
       <Card className="py-8 px-6 flex flex-col gap-4">
           <h2 className="text-3xl font-bold text-alternative-700">
@@ -15,7 +16,7 @@ const SessionCard = ({session}) => {
           <span className="text-lg text-primary-600 font-semibold">Descripción</span>
           <p className="text-lg text-gray-700">{session.description}</p>
           <CardFooter className="p-0">
-              <Badge variant="default" className="flex gap-2"><Speech/> Track: {session.category}</Badge>
+              <Badge variant="default" className="flex gap-2"><Speech/> Track: {category}</Badge>
           </CardFooter>
       </Card>
   )
