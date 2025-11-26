@@ -7,6 +7,8 @@ import Organizers from "@/components/Organizers.tsx";
 import Speakers from "@/components/Speakers.tsx";
 import CommunitiesAllies from "@/components/communities/CommunitiesAllies.tsx";
 import Sponsors from "@/components/Sponsors.tsx";
+import VenueMap from "@/components/venue-map/VenueMap.tsx";
+import VenueMapSection from "@/components/venue-map/VenueMapSection.tsx";
 
 const Index = () => {
     const location = useLocation();
@@ -32,6 +34,7 @@ const Index = () => {
         <>
             <Hero/>
             <Speakers/>
+            <VenueMapSection/>
             <BecomeSponsor/>
             <Organizers/>
             <Sponsors />
