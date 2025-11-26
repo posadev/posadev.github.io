@@ -1,7 +1,13 @@
 import Gradient from "@/components/Gradient.tsx";
 import Tree from "@/components/icons/Tree.tsx";
+import React from "react";
 
-const ErrorPage = () => {
+interface ErrorPageProps {
+    error?: Error
+}
+
+const ErrorPage: React.FC<ErrorPageProps> = ({error}) => {
+    console.log(error)
     return (
         <Gradient className="min-h-screen flex flex-col gap-4 items-center justify-center text-center">
             <Tree/>

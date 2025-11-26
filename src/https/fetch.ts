@@ -1,4 +1,5 @@
-import {IAgenda, IConferenceData, ISpeaker} from "@/types/speakers.ts";
+import {IConferenceData, ISpeaker} from "@/types/speakers.ts";
+import {IAgenda} from "@/types/agenda.ts";
 
 export const getSpeakers = async () => {
     const response = await fetch('https://sessionize.com/api/v2/n25df8kw/view/Speakers');

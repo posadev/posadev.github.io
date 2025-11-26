@@ -2,9 +2,16 @@ import {Card, CardFooter} from "@/components/ui/card.tsx";
 import {Badge} from "@/components/ui/badge.tsx";
 import {Speech} from "lucide-react";
 import React from "react";
+import {ISessionInfo} from "@/types/sessions.ts";
 
-const SessionCard = ({session}) => {
+interface SessionCardProps {
+    session: ISessionInfo
+}
+
+const SessionCard: React.FC<SessionCardProps> = ({session}) => {
     const category = session.category
+    const startTime = new Date(session.startsAt).toLocaleTimeString(["en-US"], {hour: '2-digit', minute:'2-digit'})
+    const endTime = new Date(session.endsAt).toLocaleTimeString(["en-US"], {hour: '2-digit', minute:'2-digit'})
   return (
       <Card className="py-8 px-6 flex flex-col gap-4">
           <h2 className="text-3xl font-bold text-alternative-700">
@@ -13,6 +20,9 @@ const SessionCard = ({session}) => {
           <h3 className="text-2xl text-gray-700 font-semibold">
               {session.title}
           </h3>
+          { startTime && endTime &&
+              <h1 className="text-lg font-bold text-alternative-700"><time dateTime={startTime}>{startTime}</time> <span aria-label="a">-</span> <time dateTime={endTime}>{endTime}</time></h1>
+          }
           <span className="text-lg text-primary-600 font-semibold">Descripción</span>
           <p className="text-lg text-gray-700">{session.description}</p>
           <CardFooter className="p-0">

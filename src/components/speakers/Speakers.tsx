@@ -1,5 +1,5 @@
 import React from 'react';
-import Speaker from "@/components/Speaker.tsx";
+import Speaker from "@/components/speakers/Speaker.tsx";
 import Carousel, {GridConfig} from "@/components/Carousel.tsx";
 import {useAppContext} from "@/context/AppContext.tsx";
 import {ISpeaker} from "@/types/speakers.ts";

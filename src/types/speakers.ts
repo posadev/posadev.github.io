@@ -1,3 +1,5 @@
+import {ISession, ISessionData, ISessionInfo} from "@/types/sessions.ts";
+
 export interface ISpeakerId {
     id: string
     name: string
@@ -11,24 +13,22 @@ export interface ISpeaker {
     bio: string
     tagLine: string
     profilePicture: string
-    sessions: ISession
+    sessions: ISessionInfo[]
     isTopSpeaker: boolean
     links: ILink[]
-    category: string
 }
 
-export interface ISession {
-    id: number
-    title: string
-    description: string
-    startAt: string
-    endsAt: string
-    speakers: ISpeakerId[]
-    categoryItems: number[]
-}
-
-export interface ISessionInfo extends ISession {
-    category: string
+export interface ISpeakerData {
+    id: string
+    firstName: string
+    lastName: string
+    fullName: string
+    bio: string
+    tagLine: string
+    profilePicture: string
+    sessions: number[]
+    isTopSpeaker: boolean
+    links: ILink[]
 }
 
 export interface ILink {
@@ -61,8 +61,8 @@ export interface IRoomData extends IRoom {
 }
 
 export interface IConferenceData {
-    sessions: ISession[];
-    speakers: ISpeaker[];
+    sessions: ISessionData[];
+    speakers: ISpeakerData[];
     categories: [{
         items: ICategory[]
     }]

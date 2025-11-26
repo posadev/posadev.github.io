@@ -10,7 +10,7 @@ import Header from "@/components/Header.tsx";
 import React from "react";
 import PrivacyPolicy from "@/pages/PrivacyPolicy.tsx";
 import Footer from "@/components/Footer.tsx";
-import SpeakerInfo from "@/components/SpeakerInfo.tsx";
+import SpeakerInfo from "@/components/speakers/SpeakerInfo.tsx";
 import {AppProvider, useAppContext} from "@/context/AppContext.tsx";
 import TicketsPage from "@/pages/TicketsPage.tsx";
 import CodeOfConductSpeakers from "@/pages/CodeOfConductSpeakers.tsx";
