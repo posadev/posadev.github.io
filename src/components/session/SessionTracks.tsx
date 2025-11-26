@@ -15,7 +15,7 @@ interface SessionTracksProps {
 const SessionTracks: React.FC<SessionTracksProps> = ({sessions, category, currentSession}) => {
     const tracks = sessions.filter(session => session.category === category && session.id !== currentSession.id);
     return (
-      <Card className="py-8 px-6 flex flex-col gap-8">
+      <Card className="py-8 px-6 flex flex-col gap-6 md:gap-8">
           <Badge variant="alternative" className="flex gap-2"><Speech/> Charlas de {category}</Badge>
           <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 w-full h-full">
           {
@@ -26,7 +26,7 @@ const SessionTracks: React.FC<SessionTracksProps> = ({sessions, category, curren
                             <span aria-label="a">-</span>
                             <time>{formatTiemstamp(session.endsAt)}</time>
                         </h3>
-                        <CardCharla className="m-0 min-h-[318px]" session={session} room={null} />
+                        <CardCharla className="m-0 w-full min-h-[318px]" session={session} room={null} />
                     </article>
               ))
           }
