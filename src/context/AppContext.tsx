@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import {ISession, ISessionInfo, ISpeaker} from "@/types/speakers.ts";
+import { ISpeaker} from "@/types/speakers.ts";
 import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
-import {addSessionSpeakers, getCategoryNameSessions} from "@/lib/utils.ts";
+import {addInformationToSession, addSessionSpeakers} from "@/lib/utils.ts";
 import {ITimeSlot} from "@/types/agenda.ts";
 import ErrorPage from "@/pages/ErrorPage.tsx";
 import Loading from "@/pages/Loading.tsx";
+import {ISessionInfo} from "@/types/sessions.ts";
 
 
 interface AppContextType {
@@ -13,6 +14,7 @@ interface AppContextType {
     sessions: ISessionInfo[];
     agenda: ITimeSlot[];
     appStatus: AppStatus;
+    setAppStatus: (status: AppStatus) => void
     setAgenda: (agenda: ITimeSlot[]) => void;
     savedSessions: Set<number>;
     setSavedSessions: (sessions: Set<number>) => void;
@@ -28,6 +30,7 @@ export const AppProvider = ({ children }) => {
     const [appStatus, setAppStatus] = useState(AppStatus.Loading);
     const [displayAll, setDisplayAll] = useState<boolean>(true);
     const [sessions, setSessions] = useState<ISessionInfo[]>([]);
+    const [error, setError] = useState<Error>(null)
     const [savedSessions, setSavedSessions] = useState<Set<number>>(() => {
         const raw = localStorage.getItem("savedSessions");
         return raw ? new Set<number>(JSON.parse(raw)) : new Set<number>();
@@ -39,18 +42,20 @@ export const AppProvider = ({ children }) => {
 
     useEffect(() => {
         getAll()
-            .then((data) => {
-                const categories = data.categories[0].items
+            .then(({categories, sessions, speakers, rooms}) => {
+                const categoriesItems = categories[0].items
+                const sessionsInfo = sessions.map(session => addInformationToSession(session, speakers, categoriesItems))
                 const getSpeakersWithSessions = addSessionSpeakers(
-                    data.sessions,
-                    data.speakers,
-                    categories
+                    sessionsInfo,
+                    speakers
                 );
+                console.log(getSpeakersWithSessions[0]);
                 setSpeakers(getSpeakersWithSessions);
-                setSessions(getCategoryNameSessions(categories, data.sessions));
+                setSessions(sessionsInfo);
                 setAppStatus(AppStatus.Success);
             })
-            .catch(() => {
+            .catch(e => {
+                setError(e);
                 setAppStatus(AppStatus.Error);
             });
     }, []);
@@ -65,6 +70,7 @@ export const AppProvider = ({ children }) => {
         speakers,
         agenda,
         appStatus,
+        setAppStatus
     };
 
     return (
@@ -75,7 +81,7 @@ export const AppProvider = ({ children }) => {
                 </div>
             )}
 
-            {appStatus === AppStatus.Error && <ErrorPage />}
+            {appStatus === AppStatus.Error && <ErrorPage error={error} />}
 
             {appStatus === AppStatus.Success && children}
         </AppContext.Provider>
