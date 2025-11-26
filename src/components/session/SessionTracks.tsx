@@ -17,7 +17,7 @@ const SessionTracks: React.FC<SessionTracksProps> = ({sessions, category, curren
     return (
       <Card className="py-8 px-6 flex flex-col gap-6 md:gap-8">
           <Badge variant="alternative" className="flex gap-2"><Speech/> Charlas de {category}</Badge>
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 w-full h-full">
+          <div className="grid md:grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6 w-full h-full">
           {
               tracks.map(session => (
                     <article className="flex flex-col gap-y-2 h-full" key={`track-${session.id}`}>

@@ -49,7 +49,6 @@ export const AppProvider = ({ children }) => {
                     sessionsInfo,
                     speakers
                 );
-                console.log(getSpeakersWithSessions[0]);
                 setSpeakers(getSpeakersWithSessions);
                 setSessions(sessionsInfo);
                 setAppStatus(AppStatus.Success);

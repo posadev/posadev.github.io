@@ -7,7 +7,6 @@ interface ErrorPageProps {
 }
 
 const ErrorPage: React.FC<ErrorPageProps> = ({error}) => {
-    console.log(error)
     return (
         <Gradient className="min-h-screen flex flex-col gap-4 items-center justify-center text-center">
             <Tree/>
