@@ -11,6 +11,7 @@ import linuxeroszapopan from "@/img/communities/2025/linuxeroszapopan.png";
 import techQuiero from "@/img/communities/2025/techquiero.png";
 import rubymx from "@/img/communities/2025/rubymx.png";
 import webdevtalksLogo from "@/img/communities/2025/webdevtalks.png";
+import kcdLogo from "@/img/communities/2025/kcd.jpeg"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -255,6 +256,39 @@ export const communitiesAllies: Array<ICommunity> = [
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/company/web-dev-talks",
                 linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "Kubernetes Community Day México",
+        description: "",
+        link: "https://community.cncf.io/kcd-guadalajara/",
+        image: kcdLogo,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/kcdmexico/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/kcdmexico/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/showcase/kcd-m%C3%A9xico/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/kcd_mexico",
+                linkType: LinkType.Twitter
+            },
+            {
+                title: "Tiktok",
+                url: "https://www.tiktok.com/@kcdmexico",
+                linkType: LinkType.TikTok
             }
         ]
     }
