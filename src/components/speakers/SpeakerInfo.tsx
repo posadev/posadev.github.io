@@ -11,15 +11,17 @@ import Shared from "@/components/Shared.tsx";
 import Loading from "@/pages/Loading.tsx";
 import SessionCard from "@/components/session/SessionCard.tsx";
 import SessionTracks from "@/components/session/SessionTracks.tsx";
+import {ISession} from "@/types/sessions.ts";
 
 const SpeakerInfo = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const { speakerId } = useParams();
-    const { speakers, sessions } = useAppContext();
+    const { speakers, sessions, rooms } = useAppContext();
     const speaker = location.state?.speaker as ISpeaker;
     const [currentSpeaker, setCurrentSpeaker] = useState<ISpeaker>()
     const fullUrl = `${window.location.origin}${location.pathname}${location.search}${location.hash}`;
+    const getRoomName = (session: ISession) => rooms.find(room => room.id == Number(session.roomId)).name;
 
     useEffect(() => {
         scrollToTop()
@@ -78,12 +80,12 @@ const SpeakerInfo = () => {
 
               {
                   currentSpeaker.sessions.map(session => (
-                      <SessionCard key={session.id} session={session}/>
+                      <SessionCard key={session.id} session={session} room={getRoomName(session)}/>
                   ))
               }
           </article>
           { currentSpeaker.sessions.length == 1 &&
-              <SessionTracks currentSession={currentSpeaker.sessions[0]} sessions={sessions} category={currentSpeaker.sessions[0].category} />
+              <SessionTracks currentSession={currentSpeaker.sessions[0]} sessions={sessions} category={currentSpeaker.sessions[0].category} rooms={rooms} />
           }
       </Gradient>
   )

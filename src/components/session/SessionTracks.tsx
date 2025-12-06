@@ -5,15 +5,22 @@ import {Speech} from "lucide-react";
 import {Badge} from "@/components/ui/badge.tsx";
 import {formatTiemstamp} from "@/lib/utils.ts";
 import {ISessionInfo} from "@/types/sessions.ts";
+import {IRoom} from "@/types/speakers.ts";
 
 interface SessionTracksProps {
     currentSession?: ISessionInfo
     sessions: ISessionInfo[]
     category: string
+    rooms: IRoom[]
 }
 
-const SessionTracks: React.FC<SessionTracksProps> = ({sessions, category, currentSession}) => {
+const SessionTracks: React.FC<SessionTracksProps> = ({sessions, category, currentSession, rooms}) => {
     const tracks = sessions.filter(session => session.category === category && session.id !== currentSession.id);
+
+    const findRoomName = (id: string) => {
+        return rooms.find(room => room.id === Number(id)).name
+    }
+
     return (
       <Card className="py-8 px-6 flex flex-col gap-6 md:gap-8">
           <Badge variant="alternative" className="flex gap-2"><Speech/> Charlas de {category}</Badge>
@@ -21,6 +28,7 @@ const SessionTracks: React.FC<SessionTracksProps> = ({sessions, category, curren
           {
               tracks.map(session => (
                     <article className="flex flex-col gap-y-2 h-full" key={`track-${session.id}`}>
+                        <h3 className="text-xl font-bold text-alternative-700 px-2">Sala: {findRoomName(session.roomId)}</h3>
                         <h3 className="text-xl font-bold text-alternative-700 px-2 flex gap-2">
                             <time>{formatTiemstamp(session.startsAt)}</time>
                             <span aria-label="a">-</span>
