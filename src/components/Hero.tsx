@@ -47,7 +47,7 @@ const Hero = () => {
                         <CalendarCard />
                         {/* Ubicación */}
                         <a
-                            href="https://maps.app.goo.gl/8ayZ57xJf9Uvod6o7"
+                            href="https://maps.app.goo.gl/Gr35rz6WHsGgfeFd9"
                             target="_blank"
                             className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
                             <MapPin
