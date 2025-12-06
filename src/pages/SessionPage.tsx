@@ -9,9 +9,10 @@ import SessionTracks from "@/components/session/SessionTracks.tsx";
 
 const SessionPage = () => {
     const navigate = useNavigate()
-    const {sessions} = useAppContext()
+    const {sessions, rooms} = useAppContext()
     const { sessionId } = useParams();
     const session = sessions.find(session => session.id == Number(sessionId))
+    const getRoom = rooms.find(room => room.id === Number(session?.roomId)).name
 
     const handleGoBack = () => {
         if (window.history.length > 1){
@@ -48,8 +49,8 @@ const SessionPage = () => {
                   {window.history.length > 1 ? "Volver atras" : "Volver a la agenda"}
   </span>
           </button>
-        <SessionCard session={session} />
-          <SessionTracks sessions={sessions} category={session.category} currentSession={session}/>
+        <SessionCard session={session} room={getRoom} />
+          <SessionTracks sessions={sessions} category={session.category} currentSession={session} rooms={rooms}/>
       </Gradient>
   )
 }

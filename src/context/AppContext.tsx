@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import { ISpeaker} from "@/types/speakers.ts";
+import {IRoom, ISpeaker} from "@/types/speakers.ts";
 import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
 import {addInformationToSession, addSessionSpeakers} from "@/lib/utils.ts";
@@ -20,6 +20,7 @@ interface AppContextType {
     setSavedSessions: (sessions: Set<number>) => void;
     displayAll: boolean;
     setDisplayAll: (displayAll: boolean) => void;
+    rooms: IRoom[];
 }
 
 const AppContext = createContext(null);
@@ -30,6 +31,7 @@ export const AppProvider = ({ children }) => {
     const [appStatus, setAppStatus] = useState(AppStatus.Loading);
     const [displayAll, setDisplayAll] = useState<boolean>(true);
     const [sessions, setSessions] = useState<ISessionInfo[]>([]);
+    const [rooms, setRooms] = useState<IRoom[]>([]);
     const [error, setError] = useState<Error>(null)
     const [savedSessions, setSavedSessions] = useState<Set<number>>(() => {
         const raw = localStorage.getItem("savedSessions");
@@ -49,6 +51,7 @@ export const AppProvider = ({ children }) => {
                     sessionsInfo,
                     speakers
                 );
+                setRooms(rooms);
                 setSpeakers(getSpeakersWithSessions);
                 setSessions(sessionsInfo);
                 setAppStatus(AppStatus.Success);
@@ -69,7 +72,8 @@ export const AppProvider = ({ children }) => {
         speakers,
         agenda,
         appStatus,
-        setAppStatus
+        setAppStatus,
+        rooms
     };
 
     return (
