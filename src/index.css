@@ -118,7 +118,6 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    cursor: url('./img/icons/duck-face.png') 4 4, all-scroll !important;
   }
 
   a,
@@ -128,7 +127,7 @@ All colors MUST be HSL.
   input,
   input[type="button"],
   label {
-    cursor: url('./img/icons/duck-yellow.png') 4 4, pointer;
+    cursor: pointer;
   }
 }
 
