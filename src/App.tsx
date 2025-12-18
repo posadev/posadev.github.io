@@ -20,6 +20,7 @@ import SessionPage from "@/pages/SessionPage.tsx";
 import {AppStatus} from "@/types/types.ts";
 import Loading from "@/pages/Loading.tsx";
 import ErrorPage from "@/pages/ErrorPage.tsx";
+import Estadisticas from "@/pages/Estadisticas.tsx";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +46,7 @@ const App = () => {
                 <Route path="/boletos" element={<TicketsPage />} />
                 <Route path="/media-kit" element={<MediaKit />} />
                   <Route path="session/:sessionId" element={<SessionPage />} />
+                <Route path="/estadisticas" element={<Estadisticas />} />
               </Routes>
             </main>
             <Footer />

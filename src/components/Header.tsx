@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Image, Menu, UserStar, X} from 'lucide-react';
+import {Image, Menu, UserStar, X, BarChart3} from 'lucide-react';
 import posadevLogo from '/media-kit/posadev-logo.png';
 import {useLocation, useNavigate} from "react-router-dom";
 import {cn} from "@/lib/utils.ts";
@@ -69,6 +69,13 @@ const Header = () => {
                             <span>Agenda</span>
                         </a>
                         <a
+                            onClick={() => navigate('/estadisticas')}
+                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/estadisticas') && "text-posadev-brightPink")}
+                        >
+                            <BarChart3 className="w-4 h-4" aria-hidden="true"/>
+                            <span>Estadísticas</span>
+                        </a>
+                        <a
                             onClick={() => {
                                 navigate('/code-of-conduct')
                             }}
@@ -102,6 +109,13 @@ const Header = () => {
                                 className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/agenda') && "text-posadev-brightPink")}
                             >
                                 Agenda
+                            </a>
+                            <a
+                                onClick={() => navigateMenu('/estadisticas')}
+                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/estadisticas') && "text-posadev-brightPink")}
+                            >
+                                <BarChart3 className="w-4 h-4" aria-hidden="true"/>
+                                Estadísticas
                             </a>
                             <a
                                 onClick={() => navigateMenu('/#patrocinadores')}
