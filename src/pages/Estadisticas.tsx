@@ -205,7 +205,7 @@ const Estadisticas = () => {
               Identidad de Género
             </h2>
             <div className="flex justify-center">
-              <ChartContainer config={chartConfig} className="h-[400px] w-full">
+              <ChartContainer config={chartConfig} className="h-[300px] md:h-[400px] w-full">
                 <PieChart>
                   <Pie
                     data={datosGenero}
@@ -228,30 +228,35 @@ const Estadisticas = () => {
           </div>
 
           {/* Gráfica de Barras */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-            <h2 className="text-2xl font-semibold mb-4 text-black text-center">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
+            <h2 className="text-2xl font-semibold mb-3 md:mb-4 text-black text-center">
               Cantidad por Género
             </h2>
-            <ChartContainer config={chartConfig} className="h-[400px]">
-              <BarChart data={datosGenero} layout="vertical">
+            <ChartContainer config={chartConfig} className="h-[260px] md:h-[360px] w-full">
+              <BarChart 
+                data={datosGenero} 
+                layout="vertical"
+                margin={{ top: 5, right: 8, left: 60, bottom: 5 }}
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
                 <XAxis 
                   type="number"
                   stroke="#ffffff80"
-                  tick={{ fill: '#ffffff' }}
+                  tick={{ fill: '#ffffff', fontSize: 10 }}
                 />
                 <YAxis 
                   type="category"
                   dataKey="response"
                   stroke="#ffffff80"
-                  tick={{ fill: '#ffffff' }}
-                  width={120}
+                  tick={{ fill: '#ffffff', fontSize: 10 }}
+                  width={70}
                 />
                 <ChartTooltip content={customTooltip} />
                 <Bar 
                   dataKey="count" 
                   fill="#FF6B9D" 
-                  radius={[0, 8, 8, 0]}
+                  radius={[0, 6, 6, 0]}
+                  barSize={22}
                 />
               </BarChart>
             </ChartContainer>
@@ -266,7 +271,7 @@ const Estadisticas = () => {
               Distribución por Edad
             </h2>
             <div className="flex justify-center">
-              <ChartContainer config={chartConfig} className="h-[400px] w-full">
+              <ChartContainer config={chartConfig} className="h-[300px] md:h-[400px] w-full">
                 <PieChart>
                   <Pie
                     data={datosEdad}
@@ -289,24 +294,27 @@ const Estadisticas = () => {
           </div>
 
           {/* Gráfica de Línea - Edad */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-            <h2 className="text-2xl font-semibold mb-4 text-black text-center">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
+            <h2 className="text-2xl font-semibold mb-3 md:mb-4 text-black text-center">
               Distribución por Rango de Edad
             </h2>
-            <ChartContainer config={chartConfig} className="h-[400px]">
-              <LineChart data={datosEdad}>
+            <ChartContainer config={chartConfig} className="h-[260px] md:h-[360px] w-full">
+              <LineChart 
+                data={datosEdad}
+                margin={{ top: 5, right: 8, left: 8, bottom: 32 }}
+              >
                 <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
                 <XAxis 
                   dataKey="age_range"
                   stroke="#ffffff80"
-                  tick={{ fill: '#ffffff' }}
-                  angle={-45}
+                  tick={{ fill: '#ffffff', fontSize: 10 }}
+                  angle={-35}
                   textAnchor="end"
-                  height={80}
+                  height={50}
                 />
                 <YAxis 
                   stroke="#ffffff80"
-                  tick={{ fill: '#ffffff' }}
+                  tick={{ fill: '#ffffff', fontSize: 10 }}
                 />
                 <ChartTooltip content={customTooltipEdad} />
                 <Line 
@@ -314,8 +322,8 @@ const Estadisticas = () => {
                   dataKey="count" 
                   stroke="#FF6B9D" 
                   strokeWidth={3}
-                  dot={{ fill: "#FF6B9D", r: 6 }}
-                  activeDot={{ r: 8 }}
+                  dot={{ fill: "#FF6B9D", r: 5 }}
+                  activeDot={{ r: 7 }}
                 />
               </LineChart>
             </ChartContainer>
@@ -331,7 +339,7 @@ const Estadisticas = () => {
                 Años de Experiencia
               </h2>
               <div className="flex justify-center">
-                <ChartContainer config={chartConfig} className="h-[400px] w-full">
+                <ChartContainer config={chartConfig} className="h-[300px] md:h-[400px] w-full">
                   <PieChart>
                     <Pie
                       data={datosExperiencia}
@@ -358,12 +366,12 @@ const Estadisticas = () => {
         {/* Sección de Especialidades */}
         <div className="grid grid-cols-1 gap-8 mb-8">
           {/* Gráfica de Pastel - Especialidades */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-            <h2 className="text-3xl font-bold mb-6 text-black text-center border-b border-white/20 pb-3">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
+            <h2 className="text-3xl font-bold mb-3 md:mb-6 text-black text-center border-b border-white/20 pb-3">
               Especialidades
             </h2>
             <div className="flex justify-center">
-              <ChartContainer config={chartConfig} className="h-[600px] w-full">
+              <ChartContainer config={chartConfig} className="h-[320px] md:h-[480px] w-full">
                 <PieChart>
                   <Pie
                     data={datosEspecialidades}
@@ -372,12 +380,12 @@ const Estadisticas = () => {
                     labelLine={false}
                     label={({ specialty_group, percentage }) => {
                       // Solo mostrar etiquetas para porcentajes mayores a 2%
-                      if (percentage > 2) {
+                      if (percentage > 3) {
                         return `${specialty_group}: ${percentage}%`;
                       }
                       return '';
                     }}
-                    outerRadius={180}
+                    outerRadius={150}
                     fill="#8884d8"
                     dataKey="count"
                   >
@@ -395,34 +403,35 @@ const Estadisticas = () => {
         {/* Sección de Tecnologías */}
         <div className="grid grid-cols-1 gap-8 mb-8">
           {/* Gráfica de Barras - Tecnologías */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-            <h2 className="text-3xl font-bold mb-6 text-black text-center border-b border-white/20 pb-3">
+          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
+            <h2 className="text-3xl font-bold mb-3 md:mb-6 text-black text-center border-b border-white/20 pb-3">
               Tecnologías
             </h2>
-            <ChartContainer config={chartConfig} className="h-[800px]">
+            <ChartContainer config={chartConfig} className="h-[420px] md:h-[640px] w-full">
               <BarChart 
                 data={[...datosTecnologias].sort((a, b) => b.mention_count - a.mention_count)} 
                 layout="vertical"
-                margin={{ top: 5, right: 30, left: 150, bottom: 5 }}
+                margin={{ top: 5, right: 8, left: 80, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
                 <XAxis 
                   type="number"
                   stroke="#ffffff80"
-                  tick={{ fill: '#ffffff' }}
+                  tick={{ fill: '#ffffff', fontSize: 10 }}
                 />
                 <YAxis 
                   type="category"
                   dataKey="technology_name"
                   stroke="#ffffff80"
-                  tick={{ fill: '#ffffff' }}
-                  width={140}
+                  tick={{ fill: '#ffffff', fontSize: 10 }}
+                  width={90}
                 />
                 <ChartTooltip content={customTooltipTecnologias} />
                 <Bar 
                   dataKey="mention_count" 
                   fill="#FF6B9D" 
-                  radius={[0, 8, 8, 0]}
+                  radius={[0, 6, 6, 0]}
+                  barSize={18}
                 >
                   {datosTecnologias.map((entry, index) => (
                     <Cell key={`cell-tech-${index}`} fill={entry.color} />
