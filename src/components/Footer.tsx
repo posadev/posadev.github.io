@@ -69,7 +69,7 @@ const Footer = () => {
                                 onClick={() => navigate('/#patrocinadores')}
                                 className="block text-posadev-lightPink hover:text-posadev-brightPink transition-colors duration-300"
                             >
-                                Patrocinadores
+                                Patrocinadores del 2025
                             </a>
                         </nav>
                     </div>

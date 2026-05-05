@@ -27,7 +27,7 @@ const Sponsors = () => {
             >
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-primary-600 text-secondary-600 text-center pt-20 z-20">
-                Patrocinadores
+                Patrocinadores del 2025
             </h2>
             <div
                 className="my-10 w-40 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>

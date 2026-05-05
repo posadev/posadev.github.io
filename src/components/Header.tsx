@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Image, Menu, UserStar, X, BarChart3} from 'lucide-react';
+import {Image, Menu, UserStar, X, BarChart3, Download} from 'lucide-react';
 import posadevLogo from '/media-kit/posadev-logo.png';
 import {useLocation, useNavigate} from "react-router-dom";
 import {cn} from "@/lib/utils.ts";
@@ -48,25 +48,21 @@ const Header = () => {
 
                     <nav className="hidden md:flex items-center space-x-8">
                         <a
+                            href="/posadev_brochure2026_02.pdf"
+                            download
+                            className="text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1"
+                        >
+                            <Download className="w-4 h-4" aria-hidden="true"/>
+                            <span>Brochure</span>
+                        </a>
+                        <a
                             onClick={() => navigate('/#patrocinadores')}
                             className={cn(
                                 "bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-posadev-brightPink/25 transition-all duration-300 flex items-center space-x-1 hover:underline hover:shadow-posadev-brightPink/25",
                                 isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25"
                             )}>
                             <UserStar className="w-4 h-4" aria-hidden="true"/>
-                            <span>Se un Patrocinador</span>
-                        </a>
-                        <a
-                            onClick={() => navigate('/#speakers')}
-                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/#comunidades') && "text-posadev-brightPink")}
-                        >
-                            <span>Speakers</span>
-                        </a>
-                        <a
-                            onClick={() => navigate('/agenda')}
-                            className={cn("text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center space-x-1", isActive('/agenda') && "text-posadev-brightPink")}
-                        >
-                            <span>Agenda</span>
+                            <span>Únete como Patrocinador</span>
                         </a>
                         <a
                             onClick={() => navigate('/estadisticas')}
@@ -99,18 +95,6 @@ const Header = () => {
                         className="md:hidden absolute top-16 left-0 right-0 bg-black/95 rounded-b-xl backdrop-blur-md border-b border-posadev-darkPink/20">
                         <nav className="flex flex-col gap-2 px-4 py-4 space-y-4">
                             <a
-                                onClick={() => navigateMenu('/#speakers')}
-                                className={cn("w-full text-white hover:text-posadev-brightPink transition-colors duration-300 flex items-center px-4 py-1 space-x-2", isActive('/#comunidades') && "text-posadev-brightPink")}
-                            >
-                                Speakers
-                            </a>
-                            <a
-                                onClick={() => navigateMenu('/agenda')}
-                                className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/agenda') && "text-posadev-brightPink")}
-                            >
-                                Agenda
-                            </a>
-                            <a
                                 onClick={() => navigateMenu('/estadisticas')}
                                 className={cn("w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300 space-x-2", isActive('/estadisticas') && "text-posadev-brightPink")}
                             >
@@ -118,11 +102,19 @@ const Header = () => {
                                 Estadísticas
                             </a>
                             <a
+                                href="/posadev_brochure2026_02.pdf"
+                                download
+                                className="w-full flex items-center gap-2 text-white hover:text-posadev-brightPink transition-colors px-4 py-1 duration-300"
+                            >
+                                <Download className="w-4 h-4" aria-hidden="true"/>
+                                Brochure
+                            </a>
+                            <a
                                 onClick={() => navigateMenu('/#patrocinadores')}
                                 className={cn("w-full bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink text-white px-4 py-3 rounded-lg flex items-center space-x-2 gap-2", isActive('/#patrocinadores') && "underline shadow-posadev-brightPink/25")}
                             >
                                 <UserStar className="w-4 h-4" aria-hidden="true"/>
-                                Se un patrocinador
+                                Únete como Patrocinador
                             </a>
                             <a
                                 onClick={() => {

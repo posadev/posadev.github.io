@@ -3,10 +3,8 @@ import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
 import {useLocation} from "react-router-dom";
 import BecomeSponsor from "@/components/BecomeSponsor.tsx";
-import Organizers from "@/components/Organizers.tsx";
-import Speakers from "@/components/speakers/Speakers.tsx";
-import CommunitiesAllies from "@/components/communities/CommunitiesAllies.tsx";
 import Sponsors from "@/components/Sponsors.tsx";
+import Estadisticas from "@/pages/Estadisticas.tsx";
 
 const Index = () => {
     const location = useLocation();
@@ -15,7 +13,7 @@ const Index = () => {
             const element = document.querySelector(location.hash);
             if (element) {
                 setTimeout(() => {
-                    const headerOffset = 80; // ajusta según el alto de tu navbar
+                    const headerOffset = 80;
                     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
                     const offsetPosition = elementPosition - headerOffset;
 
@@ -31,11 +29,11 @@ const Index = () => {
     return (
         <>
             <Hero/>
-            <Speakers/>
-            <BecomeSponsor/>
-            <Organizers/>
-            <Sponsors />
-            <CommunitiesAllies/>
+            <Estadisticas/>
+            <section id="patrocinadores">
+                <BecomeSponsor/>
+                <Sponsors />
+            </section>
             <Gallery/>
         </>
     );

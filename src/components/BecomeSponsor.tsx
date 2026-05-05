@@ -15,8 +15,7 @@ const BecomeSponsor = () => {
     };
 
     return (
-        <section id="patrocinadores"
-                 className="py-20 bg-gradient-to-b from-white to-posadev-lightPink/20 mx-auto px-4 w-full">
+        <section className="py-20 bg-gradient-to-b from-white to-posadev-lightPink/20 mx-auto px-4 w-full">
             {/* Section header */}
             <div className="text-center mb-16">
                 <h2 className="text-3xl md:text-5xl font-bold text-posadev-black mb-6">
@@ -82,7 +81,7 @@ const BecomeSponsor = () => {
                             Conoce todos los detalles sobre los paquetes de patrocinio y beneficios
                         </p>
                         <a
-                            href="/posadev_brochure2025.pdf"
+                            href="/posadev_brochure2026_02.pdf"
                             download
                             onClick={handleBrochureClick}
                             className="flex gap-x-2 bg-white text-posadev-darkPink px-6 py-3 rounded-lg font-semibold hover:bg-posadev-lightPink transition-colors duration-300 items-center w-60"
