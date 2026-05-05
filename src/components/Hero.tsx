@@ -1,20 +1,16 @@
 import React from 'react';
-import { MapPin} from 'lucide-react';
 import posadevLogo from '/media-kit/posadev-logo.png';
-import Tickets from "@/components/Tickets.tsx";
-import CalendarCard from "@/components/CalendarCard.tsx";
 
 const Hero = () => {
     return (
         <section id="inicio"
-                 className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden pt-7 md:pt-0"
+                 className="min-h-screen gradient-bg flex flex-col items-center justify-center relative pt-7 md:pt-0"
                  itemScope
                  itemType="https://schema.org/Event"
                  aria-labelledby="hero-title"
         >
-            <div className="container mx-auto px-4 relative z-10 mt-16 lg:pt-0">
+            <div className="flex-1 flex items-center justify-center container mx-auto px-4 relative z-10">
                 <div className="text-center">
-                    {/* Main title */}
                     <div className="mb-6 flex flex-col justify-center items-center">
                         <img
                             src={posadevLogo}
@@ -24,7 +20,6 @@ const Hero = () => {
                         <title id="hero-title" className="sr-only">
                             Posadev 2025 – El evento anual de comunidades tecnológicas
                         </title>
-                        <Tickets />
                         <div className="mt-8 w-60 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
                         <p
                             itemProp="description"
@@ -32,41 +27,13 @@ const Hero = () => {
                             El evento anual que reúne a la comunidades tecnológicas
                         </p>
                     </div>
-                    {/* Subtitle */}
-                    {/* Event details */}
-                    <section
-                        className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-4xl mx-auto"
-                        itemScope
-                        itemType="https://schema.org/Event"
-                        aria-labelledby="event-details-title"
-                    >
-                        <title id="event-details-title" className="sr-only">
-                            Detalles del evento
-                        </title>
-                        {/* Fecha */}
-                        <CalendarCard />
-                        {/* Ubicación */}
-                        <a
-                            href="https://maps.app.goo.gl/Gr35rz6WHsGgfeFd9"
-                            target="_blank"
-                            className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 hover-scale text-center">
-                            <MapPin
-                                className="w-8 h-8 text-posadev-brightPink mx-auto mb-3"
-                                aria-hidden="true"
-                            />
-                            <h3 className="text-white font-semibold mb-2">Ubicación</h3>
-                            <p
-                                className="text-posadev-lightPink"
-                                itemProp="location"
-                                itemScope
-                                itemType="https://schema.org/Place"
-                            >
-                                Tec de Monterrey Campus Guadalajara
-                            </p>
-                            <p className="text-xs text-posadev-lightPink/70 mt-2">(Haz clic para ir al mapa)</p>
-                        </a>
-                    </section>
                 </div>
+            </div>
+            <div className="flex flex-col items-center gap-2 text-white/90 animate-bounce pb-10 mt-auto">
+                <span className="text-sm font-light tracking-widest uppercase">Más información</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
             </div>
         </section>
     );
