@@ -1,450 +1,336 @@
 import React from 'react';
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-import {
-  BarChart,
-  Bar,
-  LineChart,
-  Line,
-  PieChart,
-  Pie,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Legend,
-} from "recharts";
-import Gradient from "@/components/Gradient.tsx";
+import Win from '@/components/Win';
 
-const Estadisticas = () => {
-  // Datos de género
-  const datosGenero = [
-    { response: "Hombre", count: 340, percentage: 77.27, color: "#FF6B9D" },
-    { response: "Mujer", count: 95, percentage: 21.59, color: "#C44569" },
-    { response: "No binario", count: 3, percentage: 0.68, color: "#F8B500" },
-    { response: "Prefiero no decir", count: 2, percentage: 0.45, color: "#4ECDC4" },
-  ];
+/* ── Data ─────────────────────────────────────────────────────────── */
+const ATTENDANCE = [
+  { year: "'17", count: 302 },
+  { year: "'18", count: 247 },
+  { year: "'19", count: 343 },
+  { year: "'20", count: 1000, virtual: true },
+  { year: "'21", count: 1000, virtual: true },
+  { year: "'22", count: 259 },
+  { year: "'23", count: 316 },
+  { year: "'24", count: 350 },
+  { year: "'25", count: 440 },
+];
 
-  // Datos de edad
-  const datosEdad = [
-    { age_range: "< 17", count: 3, percentage: 0.68, color: "#FF6B9D" },
-    { age_range: "18-24", count: 174, percentage: 39.55, color: "#C44569" },
-    { age_range: "25-34", count: 162, percentage: 36.82, color: "#F8B500" },
-    { age_range: "35-44", count: 73, percentage: 16.59, color: "#4ECDC4" },
-    { age_range: "45-54", count: 25, percentage: 5.68, color: "#95E1D3" },
-    { age_range: "> 55", count: 2, percentage: 0.45, color: "#FFA07A" },
-    { age_range: "prefiero no decir", count: 1, percentage: 0.23, color: "#98D8C8" },
-  ];
+const EXPERIENCE = [
+  { label: '1 - 3 años', pct: 51 },
+  { label: '4 - 6 años', pct: 18 },
+  { label: '7+ años',    pct: 30 },
+];
 
-  // Datos de experiencia
-  const datosExperiencia = [
-    { experience_years: "1 - 3", count: 226, percentage: 51.36, color: "#FF6B9D" },
-    { experience_years: "4 - 6", count: 81, percentage: 18.41, color: "#C44569" },
-    { experience_years: "> 7", count: 133, percentage: 30.23, color: "#F8B500" },
-  ];
+const INTERESTS = [
+  { label: 'Backend Developer',      pct: 22 },
+  { label: 'Full Stack Developer',   pct: 19 },
+  { label: 'Software Dev (General)', pct: 6  },
+  { label: 'Frontend Developer',     pct: 6  },
+  { label: 'DevOps / SRE',          pct: 6  },
+  { label: 'QA / Testing',          pct: 5  },
+  { label: 'Mobile Developer',       pct: 4  },
+  { label: 'Otros',                  pct: 32 },
+];
 
-  // Datos de especialidades
-  const datosEspecialidades = [
-    { specialty_group: "Backend Developer", count: 95, percentage: 21.59, color: "#FF6B9D" },
-    { specialty_group: "Full Stack Developer", count: 83, percentage: 18.86, color: "#C44569" },
-    { specialty_group: "Software Developer (General)", count: 28, percentage: 6.36, color: "#F8B500" },
-    { specialty_group: "Frontend Developer", count: 27, percentage: 6.14, color: "#4ECDC4" },
-    { specialty_group: "DevOps/SRE", count: 25, percentage: 5.68, color: "#95E1D3" },
-    { specialty_group: "QA/Testing", count: 21, percentage: 4.77, color: "#FFA07A" },
-    { specialty_group: "Mobile Developer", count: 16, percentage: 3.64, color: "#98D8C8" },
-    { specialty_group: "Programming Languages", count: 15, percentage: 3.41, color: "#FFD700" },
-    { specialty_group: "UX/UI Design", count: 14, percentage: 3.18, color: "#87CEEB" },
-    { specialty_group: "Data Science/Analytics", count: 12, percentage: 2.73, color: "#DDA0DD" },
-    { specialty_group: "Student", count: 11, percentage: 2.50, color: "#F0E68C" },
-    { specialty_group: "AI/Machine Learning", count: 9, percentage: 2.05, color: "#20B2AA" },
-    { specialty_group: "Project Management", count: 8, percentage: 1.82, color: "#FF6347" },
-    { specialty_group: "Software Engineer", count: 7, percentage: 1.59, color: "#4682B4" },
-    { specialty_group: "No Specialty/Other", count: 6, percentage: 1.36, color: "#32CD32" },
-    { specialty_group: "Cloud/Infrastructure", count: 4, percentage: 0.91, color: "#FF1493" },
-    { specialty_group: "Cybersecurity", count: 4, percentage: 0.91, color: "#00CED1" },
-    { specialty_group: "Fotografo", count: 2, percentage: 0.45, color: "#FF8C00" },
-    { specialty_group: "Software Architect", count: 2, percentage: 0.45, color: "#9370DB" },
-    { specialty_group: "Tech Recruiting", count: 2, percentage: 0.45, color: "#3CB371" },
-  ];
+const GENDER = [
+  { label: 'Hombre',          pct: 77, color: '#FF0A55' },
+  { label: 'Mujer',           pct: 22, color: '#0E5C3A' },
+  { label: 'No binario / NS', pct: 1,  color: '#D4AF37' },
+];
 
-  // Datos de tecnologías
-  const datosTecnologias = [
-    { technology_name: "JavaScript", mention_count: 56, unique_attendees: 56, percentage_of_mentions: 18.54, color: "#FF6B9D" },
-    { technology_name: "Java", mention_count: 49, unique_attendees: 49, percentage_of_mentions: 16.23, color: "#C44569" },
-    { technology_name: "Python", mention_count: 43, unique_attendees: 43, percentage_of_mentions: 14.24, color: "#F8B500" },
-    { technology_name: "Node.js", mention_count: 32, unique_attendees: 32, percentage_of_mentions: 10.60, color: "#4ECDC4" },
-    { technology_name: "React", mention_count: 16, unique_attendees: 16, percentage_of_mentions: 5.30, color: "#95E1D3" },
-    { technology_name: "C#", mention_count: 12, unique_attendees: 12, percentage_of_mentions: 3.97, color: "#FFA07A" },
-    { technology_name: "C++", mention_count: 10, unique_attendees: 10, percentage_of_mentions: 3.31, color: "#98D8C8" },
-    { technology_name: "PHP", mention_count: 10, unique_attendees: 10, percentage_of_mentions: 3.31, color: "#FFD700" },
-    { technology_name: "TypeScript", mention_count: 8, unique_attendees: 8, percentage_of_mentions: 2.65, color: "#87CEEB" },
-    { technology_name: "Android", mention_count: 7, unique_attendees: 7, percentage_of_mentions: 2.32, color: "#DDA0DD" },
-    { technology_name: "React Native", mention_count: 7, unique_attendees: 7, percentage_of_mentions: 2.32, color: "#F0E68C" },
-    { technology_name: "Angular", mention_count: 6, unique_attendees: 6, percentage_of_mentions: 1.99, color: "#20B2AA" },
-    { technology_name: "C", mention_count: 6, unique_attendees: 6, percentage_of_mentions: 1.99, color: "#FF6347" },
-    { technology_name: "Linux", mention_count: 6, unique_attendees: 6, percentage_of_mentions: 1.99, color: "#4682B4" },
-    { technology_name: "HTML/CSS", mention_count: 5, unique_attendees: 5, percentage_of_mentions: 1.66, color: "#32CD32" },
-    { technology_name: "iOS", mention_count: 5, unique_attendees: 5, percentage_of_mentions: 1.66, color: "#FF1493" },
-    { technology_name: "SQL/SQL Server", mention_count: 4, unique_attendees: 4, percentage_of_mentions: 1.32, color: "#00CED1" },
-    { technology_name: "AWS", mention_count: 3, unique_attendees: 3, percentage_of_mentions: 0.99, color: "#FF8C00" },
-    { technology_name: "Go", mention_count: 3, unique_attendees: 3, percentage_of_mentions: 0.99, color: "#9370DB" },
-    { technology_name: "MongoDB", mention_count: 3, unique_attendees: 3, percentage_of_mentions: 0.99, color: "#3CB371" },
-    { technology_name: "Kotlin", mention_count: 2, unique_attendees: 2, percentage_of_mentions: 0.66, color: "#8B4513" },
-    { technology_name: "Ruby", mention_count: 2, unique_attendees: 2, percentage_of_mentions: 0.66, color: "#CD5C5C" },
-    { technology_name: "Azure", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#4169E1" },
-    { technology_name: "Mulesoft", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#FF69B4" },
-    { technology_name: "PostgreSQL", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#00FA9A" },
-    { technology_name: "Rust", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#FFD700" },
-    { technology_name: "Salesforce", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#00BFFF" },
-    { technology_name: "SAP", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#FF6347" },
-    { technology_name: "Spring", mention_count: 1, unique_attendees: 1, percentage_of_mentions: 0.33, color: "#9370DB" },
-  ];
+const AGE = [
+  { label: '18-24', pct: 40, color: '#FF0A55' },
+  { label: '25-34', pct: 37, color: '#0E5C3A' },
+  { label: '35-44', pct: 17, color: '#D4AF37' },
+  { label: '45+',   pct: 6,  color: '#7A0428' },
+];
 
-  const chartConfig = {
-    count: {
-      label: "Cantidad",
-      color: "#FF6B9D",
-    },
-    percentage: {
-      label: "Porcentaje",
-      color: "#C44569",
-    },
-  };
+const MAX_ATT = Math.max(...ATTENDANCE.map(d => d.count));
+const CHART_H  = 220;
 
-  // Formatear el tooltip para mostrar count y percentage
-  const customTooltip = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      const label = data.response || data.age_range;
-      return (
-        <div className="bg-black/90 backdrop-blur-md rounded-lg border border-white/20 p-3 shadow-xl">
-          <p className="text-white font-semibold mb-2">{label}</p>
-          <p className="text-white text-sm">Cantidad: {data.count}</p>
-          <p className="text-white text-sm">Porcentaje: {data.percentage}%</p>
-        </div>
-      );
-    }
-    return null;
-  };
+/* ── Pixel pie chart (SVG, crispEdges) ───────────────────────────── */
+interface PieSlice { label: string; pct: number; color: string }
 
-  // Tooltip específico para edad
-  const customTooltipEdad = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      return (
-        <div className="bg-black/90 backdrop-blur-md rounded-lg border border-white/20 p-3 shadow-xl">
-          <p className="text-white font-semibold mb-2">{data.age_range}</p>
-          <p className="text-white text-sm">Cantidad: {data.count}</p>
-          <p className="text-white text-sm">Porcentaje: {data.percentage}%</p>
-        </div>
-      );
-    }
-    return null;
-  };
+function polarToXY(cx: number, cy: number, r: number, angleDeg: number) {
+  const rad = ((angleDeg - 90) * Math.PI) / 180;
+  return { x: cx + r * Math.cos(rad), y: cy + r * Math.sin(rad) };
+}
 
-  // Tooltip específico para experiencia
-  const customTooltipExperiencia = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      return (
-        <div className="bg-black/90 backdrop-blur-md rounded-lg border border-white/20 p-3 shadow-xl">
-          <p className="text-white font-semibold mb-2">{data.experience_years} años</p>
-          <p className="text-white text-sm">Cantidad: {data.count}</p>
-          <p className="text-white text-sm">Porcentaje: {data.percentage}%</p>
-        </div>
-      );
-    }
-    return null;
-  };
+const PixelPie = ({ data, size = 160 }: { data: PieSlice[]; size?: number }) => {
+  const cx = size / 2;
+  const cy = size / 2;
+  const r  = size / 2 - 4;
 
-  // Tooltip específico para especialidades
-  const customTooltipEspecialidades = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      return (
-        <div className="bg-black/90 backdrop-blur-md rounded-lg border border-white/20 p-3 shadow-xl">
-          <p className="text-white font-semibold mb-2">{data.specialty_group}</p>
-          <p className="text-white text-sm">Cantidad: {data.count}</p>
-          <p className="text-white text-sm">Porcentaje: {data.percentage}%</p>
-        </div>
-      );
-    }
-    return null;
-  };
-
-  // Tooltip específico para tecnologías
-  const customTooltipTecnologias = ({ active, payload }: any) => {
-    if (active && payload && payload.length) {
-      const data = payload[0].payload;
-      return (
-        <div className="bg-black/90 backdrop-blur-md rounded-lg border border-white/20 p-3 shadow-xl">
-          <p className="text-white font-semibold mb-2">{data.technology_name}</p>
-          <p className="text-white text-sm">Menciones: {data.mention_count}</p>
-          <p className="text-white text-sm">Asistentes únicos: {data.unique_attendees}</p>
-          <p className="text-white text-sm">Porcentaje: {data.percentage_of_mentions}%</p>
-        </div>
-      );
-    }
-    return null;
-  };
+  let cumAngle = 0;
+  const slices = data.map(d => {
+    const startAngle = cumAngle;
+    const sweep = (d.pct / 100) * 360;
+    cumAngle += sweep;
+    return { ...d, startAngle, sweep };
+  });
 
   return (
-    <Gradient className="min-h-screen py-12">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-8 text-black">
-          Numeralia Posadev 2025
-        </h1>
+    <svg
+      width={size} height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      style={{ imageRendering: 'pixelated', display: 'block' }}
+      shapeRendering="crispEdges"
+    >
+      {/* Pixel-grid overlay pattern */}
+      <defs>
+        <pattern id="px-grid" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+          <rect x="0" y="0" width="4" height="4" fill="transparent" />
+          <rect x="0" y="0" width="2" height="2" fill="rgba(0,0,0,0.12)" />
+        </pattern>
+        {/* Scanline pattern per color */}
+        {slices.map((s, i) => (
+          <pattern key={i} id={`scan-${i}`} x="0" y="0" width="4" height="6" patternUnits="userSpaceOnUse">
+            <rect width="4" height="6" fill={s.color} />
+            <rect y="4" width="4" height="2" fill="rgba(0,0,0,0.22)" />
+          </pattern>
+        ))}
+      </defs>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Gráfica de Pastel */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-            <h2 className="text-3xl font-bold mb-6 text-black text-center border-b border-white/20 pb-3">
-              Identidad de Género
-            </h2>
-            <div className="flex justify-center">
-              <ChartContainer config={chartConfig} className="h-[300px] md:h-[400px] w-full">
-                <PieChart>
-                  <Pie
-                    data={datosGenero}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ response, percentage }) => `${response}: ${percentage}%`}
-                    outerRadius={140}
-                    fill="#8884d8"
-                    dataKey="count"
-                  >
-                    {datosGenero.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <ChartTooltip content={customTooltip} />
-                </PieChart>
-              </ChartContainer>
-            </div>
-          </div>
+      {slices.map((s, i) => {
+        if (s.sweep >= 360) {
+          return (
+            <g key={i}>
+              <circle cx={cx} cy={cy} r={r} fill={`url(#scan-${i})`} stroke="var(--ink)" strokeWidth="2" />
+              <circle cx={cx} cy={cy} r={r} fill="url(#px-grid)" />
+            </g>
+          );
+        }
+        const start   = polarToXY(cx, cy, r, s.startAngle);
+        const end     = polarToXY(cx, cy, r, s.startAngle + s.sweep);
+        const large   = s.sweep > 180 ? 1 : 0;
+        const d = [
+          `M ${cx} ${cy}`,
+          `L ${start.x.toFixed(1)} ${start.y.toFixed(1)}`,
+          `A ${r} ${r} 0 ${large} 1 ${end.x.toFixed(1)} ${end.y.toFixed(1)}`,
+          'Z',
+        ].join(' ');
 
-          {/* Gráfica de Barras */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
-            <h2 className="text-2xl font-semibold mb-3 md:mb-4 text-black text-center">
-              Cantidad por Género
-            </h2>
-            <ChartContainer config={chartConfig} className="h-[260px] md:h-[360px] w-full">
-              <BarChart 
-                data={datosGenero} 
-                layout="vertical"
-                margin={{ top: 5, right: 8, left: 60, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
-                <XAxis 
-                  type="number"
-                  stroke="#ffffff80"
-                  tick={{ fill: '#ffffff', fontSize: 10 }}
-                />
-                <YAxis 
-                  type="category"
-                  dataKey="response"
-                  stroke="#ffffff80"
-                  tick={{ fill: '#ffffff', fontSize: 10 }}
-                  width={70}
-                />
-                <ChartTooltip content={customTooltip} />
-                <Bar 
-                  dataKey="count" 
-                  fill="#FF6B9D" 
-                  radius={[0, 6, 6, 0]}
-                  barSize={22}
-                />
-              </BarChart>
-            </ChartContainer>
-          </div>
-        </div>
+        return (
+          <g key={i}>
+            <path d={d} fill={`url(#scan-${i})`} stroke="var(--ink)" strokeWidth="2" />
+            <path d={d} fill="url(#px-grid)" />
+          </g>
+        );
+      })}
 
-        {/* Sección de Distribución por Edad */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Gráfica de Pastel - Edad */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20">
-            <h2 className="text-3xl font-bold mb-6 text-black text-center border-b border-white/20 pb-3">
-              Distribución por Edad
-            </h2>
-            <div className="flex justify-center">
-              <ChartContainer config={chartConfig} className="h-[300px] md:h-[400px] w-full">
-                <PieChart>
-                  <Pie
-                    data={datosEdad}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ age_range, percentage }) => `${age_range}: ${percentage}%`}
-                    outerRadius={140}
-                    fill="#8884d8"
-                    dataKey="count"
-                  >
-                    {datosEdad.map((entry, index) => (
-                      <Cell key={`cell-edad-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <ChartTooltip content={customTooltipEdad} />
-                </PieChart>
-              </ChartContainer>
-            </div>
-          </div>
-
-          {/* Gráfica de Línea - Edad */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
-            <h2 className="text-2xl font-semibold mb-3 md:mb-4 text-black text-center">
-              Distribución por Rango de Edad
-            </h2>
-            <ChartContainer config={chartConfig} className="h-[260px] md:h-[360px] w-full">
-              <LineChart 
-                data={datosEdad}
-                margin={{ top: 5, right: 8, left: 8, bottom: 32 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
-                <XAxis 
-                  dataKey="age_range"
-                  stroke="#ffffff80"
-                  tick={{ fill: '#ffffff', fontSize: 10 }}
-                  angle={-35}
-                  textAnchor="end"
-                  height={50}
-                />
-                <YAxis 
-                  stroke="#ffffff80"
-                  tick={{ fill: '#ffffff', fontSize: 10 }}
-                />
-                <ChartTooltip content={customTooltipEdad} />
-                <Line 
-                  type="monotone" 
-                  dataKey="count" 
-                  stroke="#FF6B9D" 
-                  strokeWidth={3}
-                  dot={{ fill: "#FF6B9D", r: 5 }}
-                  activeDot={{ r: 7 }}
-                />
-              </LineChart>
-            </ChartContainer>
-          </div>
-        </div>
-
-        {/* Sección de Años de Experiencia */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-          {/* Gráfica de Pastel - Experiencia */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 lg:col-span-2 flex justify-center">
-            <div className="w-full max-w-2xl">
-              <h2 className="text-3xl font-bold mb-6 text-black text-center border-b border-white/20 pb-3">
-                Años de Experiencia
-              </h2>
-              <div className="flex justify-center">
-                <ChartContainer config={chartConfig} className="h-[300px] md:h-[400px] w-full">
-                  <PieChart>
-                    <Pie
-                      data={datosExperiencia}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ experience_years, percentage }) => `${experience_years} años: ${percentage}%`}
-                      outerRadius={140}
-                      fill="#8884d8"
-                      dataKey="count"
-                    >
-                      {datosExperiencia.map((entry, index) => (
-                        <Cell key={`cell-exp-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                    <ChartTooltip content={customTooltipExperiencia} />
-                  </PieChart>
-                </ChartContainer>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Sección de Especialidades */}
-        <div className="grid grid-cols-1 gap-8 mb-8">
-          {/* Gráfica de Pastel - Especialidades */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
-            <h2 className="text-3xl font-bold mb-3 md:mb-6 text-black text-center border-b border-white/20 pb-3">
-              Especialidades
-            </h2>
-            <div className="flex justify-center">
-              <ChartContainer config={chartConfig} className="h-[320px] md:h-[480px] w-full">
-                <PieChart>
-                  <Pie
-                    data={datosEspecialidades}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={({ specialty_group, percentage }) => {
-                      // Solo mostrar etiquetas para porcentajes mayores a 2%
-                      if (percentage > 3) {
-                        return `${specialty_group}: ${percentage}%`;
-                      }
-                      return '';
-                    }}
-                    outerRadius={150}
-                    fill="#8884d8"
-                    dataKey="count"
-                  >
-                    {datosEspecialidades.map((entry, index) => (
-                      <Cell key={`cell-esp-${index}`} fill={entry.color} />
-                    ))}
-                  </Pie>
-                  <ChartTooltip content={customTooltipEspecialidades} />
-                </PieChart>
-              </ChartContainer>
-            </div>
-          </div>
-        </div>
-
-        {/* Sección de Tecnologías */}
-        <div className="grid grid-cols-1 gap-8 mb-8">
-          {/* Gráfica de Barras - Tecnologías */}
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 md:p-6 border border-white/20">
-            <h2 className="text-3xl font-bold mb-3 md:mb-6 text-black text-center border-b border-white/20 pb-3">
-              Tecnologías
-            </h2>
-            <ChartContainer config={chartConfig} className="h-[420px] md:h-[640px] w-full">
-              <BarChart 
-                data={[...datosTecnologias].sort((a, b) => b.mention_count - a.mention_count)} 
-                layout="vertical"
-                margin={{ top: 5, right: 8, left: 80, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#ffffff20" />
-                <XAxis 
-                  type="number"
-                  stroke="#ffffff80"
-                  tick={{ fill: '#ffffff', fontSize: 10 }}
-                />
-                <YAxis 
-                  type="category"
-                  dataKey="technology_name"
-                  stroke="#ffffff80"
-                  tick={{ fill: '#ffffff', fontSize: 10 }}
-                  width={90}
-                />
-                <ChartTooltip content={customTooltipTecnologias} />
-                <Bar 
-                  dataKey="mention_count" 
-                  fill="#FF6B9D" 
-                  radius={[0, 6, 6, 0]}
-                  barSize={18}
-                >
-                  {datosTecnologias.map((entry, index) => (
-                    <Cell key={`cell-tech-${index}`} fill={entry.color} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ChartContainer>
-          </div>
-        </div>
-      </div>
-    </Gradient>
+      {/* Center hole — donut style */}
+      <circle cx={cx} cy={cy} r={r * 0.38} fill="var(--paper)" stroke="var(--ink)" strokeWidth="2" />
+    </svg>
   );
 };
 
-export default Estadisticas;
+/* ── Legend ──────────────────────────────────────────────────────── */
+const PieLegend = ({ data }: { data: PieSlice[] }) => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: 8, justifyContent: 'center' }}>
+    {data.map(d => (
+      <div key={d.label} style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+        <div style={{
+          width: 12, height: 12, flexShrink: 0,
+          background: `repeating-linear-gradient(0deg, ${d.color} 0 4px, rgba(0,0,0,.22) 4px 6px)`,
+          border: '1.5px solid var(--ink)',
+        }} />
+        <span style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: 13, color: 'var(--ink)', lineHeight: 1 }}>
+          {d.label}
+        </span>
+        <span style={{ fontFamily: '"Press Start 2P", monospace', fontSize: 8, color: 'var(--ink-2)', marginLeft: 'auto' }}>
+          {d.pct}%
+        </span>
+      </div>
+    ))}
+  </div>
+);
 
+/* ── Horizontal bar ──────────────────────────────────────────────── */
+const HBar = ({ label, pct }: { label: string; pct: number }) => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 12 }}>
+    <div style={{
+      fontFamily: '"Space Grotesk", sans-serif', fontSize: 13,
+      color: 'var(--ink)', width: '35%', flexShrink: 0, lineHeight: 1.35,
+    }}>
+      {label}
+    </div>
+    <div style={{
+      flex: 1, height: 16, background: 'var(--paper-2)',
+      border: '1.5px solid var(--ink)', position: 'relative', overflow: 'hidden',
+    }}>
+      <div style={{
+        position: 'absolute', inset: 0, width: `${pct}%`,
+        background: 'repeating-linear-gradient(0deg, var(--pink) 0 4px, rgba(0,0,0,.18) 4px 6px)',
+      }} />
+    </div>
+    <div style={{
+      fontFamily: '"Press Start 2P", monospace', fontSize: 9,
+      color: 'var(--ink)', width: 34, textAlign: 'right', flexShrink: 0,
+    }}>
+      {pct}%
+    </div>
+  </div>
+);
+
+/* ── Chart panel wrapper ─────────────────────────────────────────── */
+const ChartPanel = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div style={{
+    border: '2px solid var(--ink)', background: 'var(--paper)',
+    boxShadow: 'var(--win-shadow-sm)', padding: '18px 20px',
+  }}>
+    <div style={{
+      fontFamily: '"Pixelify Sans", monospace', fontWeight: 700,
+      fontSize: 17, color: 'var(--ink)', marginBottom: 16,
+    }}>
+      {title}
+    </div>
+    {children}
+  </div>
+);
+
+/* ── Main component ──────────────────────────────────────────────── */
+const Estadisticas = () => (
+  <section id="estadisticas" style={{ scrollMarginTop: 40 }}>
+    <Win
+      title="📊 Numeralia Posadev 2025.xls"
+      footer={
+        <>
+          <span>4,257+ asistentes · 2017–2025</span>
+          <span>fuente: registros históricos</span>
+        </>
+      }
+    >
+
+      {/* ── Header ─────────────────────────────────────────────── */}
+      <div className="stats-intro">
+        <h2 style={{
+          fontFamily: '"Pixelify Sans", monospace', fontWeight: 700,
+          fontSize: 'clamp(30px, 4.5vw, 54px)', lineHeight: 1.05, color: 'var(--ink)', margin: 0,
+        }}>
+          Quiero saber<br />los números<span style={{ color: 'var(--pink)' }}>.</span>
+        </h2>
+        <p style={{
+          fontFamily: '"Space Grotesk", sans-serif', fontSize: 15,
+          color: 'var(--ink-2)', lineHeight: 1.65, margin: 0, paddingTop: 6,
+        }}>
+          Datos históricos de Posadev 2017–2025 en Guadalajara.
+          9 ediciones, más de 4,257 asistentes: esto es quiénes son,
+          cuántos años llevan en la industria y qué tecnologías usan.
+        </p>
+      </div>
+
+      {/* ── Stats grid ─────────────────────────────────────────── */}
+      <div className="stats-kpi">
+        <div className="stats-kpi-cell" style={{ background: 'var(--pink)' }}>
+          <div style={{ fontFamily: '"Press Start 2P", monospace', fontSize: 7, letterSpacing: '0.08em', color: 'rgba(255,255,255,0.8)', textTransform: 'uppercase', marginBottom: 10, lineHeight: 1.6 }}>
+            Asistentes acumulados
+          </div>
+          <div style={{ fontFamily: '"Pixelify Sans", monospace', fontWeight: 700, fontSize: 'clamp(28px,3vw,44px)', color: 'var(--paper)', lineHeight: 1, marginBottom: 10 }}>
+            4,257<sup style={{ fontSize: '0.55em', verticalAlign: 'super' }}>+</sup>
+          </div>
+          <div style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: 12, color: 'rgba(255,255,255,0.85)', lineHeight: 1.4 }}>
+            Suma histórica 2017–2025 (incl. 2 ediciones virtuales).
+          </div>
+        </div>
+        {[
+          { label: 'Asistentes 2025',    n: '440', sub: 'Edición 2025 presencial · GDL.' },
+          { label: 'Ediciones',          n: '9',   sub: '2017–2025 · 2 ediciones virtuales.' },
+          { label: 'Tecnologías top',    n: 'JS',  sub: 'JavaScript · Java · Python.' },
+        ].map(({ label, n, sub }) => (
+          <div key={label} className="stats-kpi-cell" style={{ background: 'var(--paper)' }}>
+            <div style={{ fontFamily: '"Press Start 2P", monospace', fontSize: 7, letterSpacing: '0.08em', color: 'var(--ink-2)', textTransform: 'uppercase', marginBottom: 10, lineHeight: 1.6 }}>
+              {label}
+            </div>
+            <div style={{ fontFamily: '"Pixelify Sans", monospace', fontWeight: 700, fontSize: 'clamp(28px,3.5vw,44px)', color: 'var(--ink)', lineHeight: 1, marginBottom: 10 }}>
+              {n}
+            </div>
+            <div style={{ fontFamily: '"Space Grotesk", sans-serif', fontSize: 12, color: 'var(--ink-2)', lineHeight: 1.4 }}>
+              {sub}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Attendance bar chart ────────────────────────────────── */}
+      <div className="stats-bar-outer">
+      <div className="stats-bar-inner">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20, flexWrap: 'wrap', gap: 10 }}>
+          <div style={{ fontFamily: '"Pixelify Sans", monospace', fontWeight: 700, fontSize: 20, color: 'var(--ink)' }}>
+            Asistencia por edición
+          </div>
+          <div style={{ display: 'flex', gap: 18, alignItems: 'center' }}>
+            {[
+              { label: 'PRESENCIAL', green: false },
+              { label: 'VIRTUAL',    green: true  },
+            ].map(({ label, green }) => (
+              <span key={label} style={{ display: 'flex', alignItems: 'center', gap: 6, fontFamily: '"Press Start 2P", monospace', fontSize: 7, color: 'var(--ink-2)' }}>
+                <span style={{
+                  width: 12, height: 12, display: 'inline-block', border: '1.5px solid var(--ink)',
+                  background: green
+                    ? 'repeating-linear-gradient(0deg, #0E5C3A 0 4px, rgba(0,0,0,.2) 4px 6px)'
+                    : 'repeating-linear-gradient(0deg, var(--pink) 0 4px, rgba(0,0,0,.2) 4px 6px)',
+                }} />
+                {label}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div style={{ position: 'relative' }}>
+          {[250, 500, 750, 1000].map(v => (
+            <div key={v} style={{ position: 'absolute', left: 0, right: 0, bottom: 24 + (v / MAX_ATT) * CHART_H, borderTop: '1px dashed rgba(0,0,0,0.12)', zIndex: 0 }} />
+          ))}
+          <div style={{ display: 'flex', alignItems: 'flex-end', gap: 6, height: CHART_H + 24, paddingBottom: 24, borderBottom: '2px solid var(--ink)', position: 'relative', zIndex: 1 }}>
+            {ATTENDANCE.map(({ year, count, virtual: isVirtual }) => {
+              const h = Math.round((count / MAX_ATT) * CHART_H);
+              return (
+                <div key={year} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-end', height: '100%' }}>
+                  <div style={{ fontFamily: '"Press Start 2P", monospace', fontSize: 6, color: 'var(--ink-2)', marginBottom: 4, textAlign: 'center' }}>{isVirtual ? '1k+' : count}</div>
+                  <div style={{
+                    width: '78%', height: h, border: '2px solid var(--ink)',
+                    background: isVirtual
+                      ? 'repeating-linear-gradient(0deg, #0E5C3A 0 5px, rgba(0,0,0,.18) 5px 7px)'
+                      : 'repeating-linear-gradient(0deg, var(--pink) 0 5px, rgba(0,0,0,.18) 5px 7px)',
+                  }} />
+                </div>
+              );
+            })}
+          </div>
+          <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
+            {ATTENDANCE.map(({ year }) => (
+              <div key={year} style={{ flex: 1, textAlign: 'center', fontFamily: '"Press Start 2P", monospace', fontSize: 7, color: 'var(--ink-2)' }}>{year}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+      </div>
+
+      {/* ── Pie charts row ──────────────────────────────────────── */}
+      <div className="stats-2col">
+        <ChartPanel title="Identidad de género">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <PixelPie data={GENDER} size={130} />
+            <PieLegend data={GENDER} />
+          </div>
+        </ChartPanel>
+        <ChartPanel title="Distribución por edad">
+          <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+            <PixelPie data={AGE} size={130} />
+            <PieLegend data={AGE} />
+          </div>
+        </ChartPanel>
+      </div>
+
+      {/* ── Horizontal bars row ─────────────────────────────────── */}
+      <div className="stats-2col">
+        <ChartPanel title="Experiencia en la industria">
+          {EXPERIENCE.map(d => <HBar key={d.label} {...d} />)}
+        </ChartPanel>
+        <ChartPanel title="Área de interés principal">
+          {INTERESTS.map(d => <HBar key={d.label} {...d} />)}
+        </ChartPanel>
+      </div>
+
+    </Win>
+  </section>
+);
+
+export default Estadisticas;

@@ -19,6 +19,13 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				pixel: ['"Pixelify Sans"', 'ui-sans-serif', 'monospace'],
+				grotesk: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+				vt: ['"VT323"', 'ui-monospace', 'monospace'],
+				silk: ['"Silkscreen"', 'ui-monospace', 'monospace'],
+				tiny: ['"Press Start 2P"', 'ui-monospace', 'monospace'],
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 			},
