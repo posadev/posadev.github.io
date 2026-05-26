@@ -30,7 +30,7 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Header />
-            <main className="flex flex-col flex-1">
+            <main className="flex flex-col flex-1" style={{ minHeight: 0 }}>
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="*" element={<NotFound />} />
