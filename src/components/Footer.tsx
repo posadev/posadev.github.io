@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="site-footer-logo">
         Posa<span>dev</span>
         <span style={{ fontSize: 11, fontFamily: '"Press Start 2P", monospace', marginLeft: 10, color: 'var(--ink-2)' }}>
-          2018–2026
+          2017–2026
         </span>
       </div>
 

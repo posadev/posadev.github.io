@@ -51,7 +51,7 @@ const Hero = () => (
         </div>
         <div className="hero-meta-cell" role="listitem">
           <div className="hero-meta-key">Cuánto</div>
-          <div className="hero-meta-val"><em>$500</em> MXN</div>
+          <div className="hero-meta-val"><em>$600</em> MXN</div>
         </div>
         <div className="hero-meta-cell" role="listitem">
           <div className="hero-meta-key">CFP</div>
