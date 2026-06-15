@@ -10,7 +10,7 @@ const Hero = () => (
       footer={
         <>
           <span>1 ítem · Sáb 28.11.2026</span>
-          <span>Cupo 350 · $500 MXN</span>
+          <span>Cupo 350 · $600 MXN</span>
         </>
       }
     >
@@ -21,7 +21,7 @@ const Hero = () => (
         <span className="hero-eyebrow-div" aria-hidden="true" />
         <span>Holiday Inn Guadalajara Expo</span>
         <span className="hero-eyebrow-div" aria-hidden="true" />
-        <span>$500 MXN · cupo 350</span>
+        <span>$600 MXN · cupo 350</span>
       </div>
 
       {/* Logo + COMUNIDADES.JOIN() en la misma caja rosa con scanlines */}
