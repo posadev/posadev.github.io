@@ -60,7 +60,7 @@ const BrochureCta = () => {
           de materiales en un PDF de 12 páginas.
         </p>
         <a
-          href="/posadev_brochure2026_02.pdf"
+          href="/posadev_brochure2026_03.pdf"
           download
           onClick={() => toast({ title: 'Descargando brochure...', description: 'El documento se está descargando.' })}
           style={{
