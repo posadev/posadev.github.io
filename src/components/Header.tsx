@@ -54,7 +54,7 @@ const Header = () => {
         </button>
         <button className="mobile-nav-item" onClick={() => go('/estadisticas')}>Estadísticas</button>
         <button className="mobile-nav-item" onClick={() => go('/code-of-conduct')}>Código de Conducta</button>
-        <a href="/posadev_brochure2026_02.pdf" download className="mobile-nav-item">
+        <a href="/posadev_brochure2026_03.pdf" download className="mobile-nav-item">
           Descargar Brochure
         </a>
       </nav>
