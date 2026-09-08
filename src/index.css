@@ -485,6 +485,28 @@
   .stat-cell:nth-child(4) { border-top: 2px solid var(--ink); }
 }
 
+/* ── Comunidades aliadas ─────────────────────────────────────────── */
+.ally-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.ally-logo {
+  display: flex; align-items: center; justify-content: center;
+  height: 108px; padding: 18px;
+  background: var(--paper); border: 2px solid var(--ink);
+  box-shadow: var(--win-shadow-sm);
+  transition: transform 80ms, box-shadow 80ms;
+}
+.ally-logo:hover { transform: translate(3px, 3px); box-shadow: none; }
+.ally-logo.dark { background: var(--ink); }
+.ally-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+@media (max-width: 768px) {
+  .ally-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 500px) {
+  .ally-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* ── Patrocinio / BecomeSponsor ──────────────────────────────────── */
 .patron-grid {
   display: grid; grid-template-columns: 1.1fr 1fr;

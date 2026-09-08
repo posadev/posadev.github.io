@@ -116,6 +116,7 @@ export const communitiesAllies: Array<ICommunity> = [
         description: "",
         link: "https://playasontech.com/",
         image: playasOnTechLogo,
+        darkBg: true,
         socials: [
             {
             title:"Facebook",

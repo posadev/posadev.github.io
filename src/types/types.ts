@@ -6,6 +6,7 @@ export interface ICommunity {
     link: string;
     image: string;
     socials: ILink[];
+    darkBg?: boolean;
 }
 export interface IImage {
     id: number

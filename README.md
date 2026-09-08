@@ -1,33 +1,46 @@
 # Posadev
 
-## Requirements
+## Cómo arrancar el proyecto localmente
 
-Node version 20+
+### Requisitos
 
-Recommended to use a node package manager like nvm or fnm https://github.com/Schniz/fnm or nvm
+- Node version 20+
+- Se recomienda usar un gestor de versiones de Node como [nvm](https://github.com/nvm-sh/nvm) o [fnm](https://github.com/Schniz/fnm)
 
-run 
-```
-npm i
-```
-
-Add eslint please
-
-Follow these steps:
+### Pasos
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Paso 1: Clonar el repositorio usando la URL de Git del proyecto.
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Paso 2: Entrar al directorio del proyecto.
+cd posadev.github.io
 
-# Step 3: Install the necessary dependencies.
+# Paso 3: Instalar las dependencias necesarias.
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Paso 4: Levantar el servidor de desarrollo con auto-reload y preview instantáneo.
 npm run dev
 ```
+
+Por defecto el servidor queda disponible en `http://localhost:5173`.
+
+### Otros comandos disponibles
+
+```sh
+# Compilar la aplicación para producción
+npm run build
+
+# Compilar en modo desarrollo
+npm run build:dev
+
+# Previsualizar el build de producción localmente
+npm run preview
+
+# Ejecutar el linter (eslint)
+npm run lint
+```
+
 **Use GitHub Codespaces**
 
 - Navigate to the main page of your repository.
