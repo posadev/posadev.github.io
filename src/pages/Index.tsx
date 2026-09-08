@@ -3,7 +3,6 @@ import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
 import { useLocation } from 'react-router-dom';
 import BecomeSponsor from '@/components/BecomeSponsor';
-import Sponsors from '@/components/Sponsors';
 import Estadisticas from '@/pages/Estadisticas';
 
 const STRIPE_ITEMS = [
@@ -58,10 +57,8 @@ const Index = () => {
         <Estadisticas />
         <section id="patrocinadores">
           <BecomeSponsor />
-          <div style={{ marginTop: 36 }}>
-            <Sponsors />
-          </div>
         </section>
+        {/* Sección de comunidades aliadas oculta temporalmente, ver CommunityAllies.tsx */}
         <Gallery />
       </div>
     </div>
