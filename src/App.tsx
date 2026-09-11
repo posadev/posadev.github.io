@@ -13,6 +13,7 @@ import Footer from "@/components/Footer.tsx";
 import {AppProvider, useAppContext} from "@/context/AppContext.tsx";
 import CodeOfConductSpeakers from "@/pages/CodeOfConductSpeakers.tsx";
 import MediaKit from "@/pages/MediaKit.tsx";
+import PressKit from "@/pages/PressKit.tsx";
 import SessionPage from "@/pages/SessionPage.tsx";
 import {AppStatus} from "@/types/types.ts";
 import Loading from "@/pages/Loading.tsx";
@@ -38,6 +39,7 @@ const App = () => {
                 <Route path="/codigo-de-conducta-speakers" element={<CodeOfConductSpeakers />}/>
                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
 <Route path="/media-kit" element={<MediaKit />} />
+                  <Route path="/kit-de-prensa" element={<PressKit />} />
                   <Route path="session/:sessionId" element={<SessionPage />} />
                 <Route path="/estadisticas" element={<Estadisticas />} />
               </Routes>
