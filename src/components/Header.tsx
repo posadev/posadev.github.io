@@ -30,6 +30,7 @@ const Header = () => {
         <button className="menubar-item" onClick={() => go('/')}>Inicio</button>
         <button className="menubar-item" onClick={() => go('/#patrocinadores')}>Patrocinadores</button>
         <button className="menubar-item" onClick={() => go('/estadisticas')}>Estadísticas</button>
+        <button className="menubar-item" onClick={() => go('/kit-de-prensa')}>Kit de prensa</button>
         <button className="menubar-item" onClick={() => go('/code-of-conduct')}>Conducta</button>
         <button
           className="menubar-hamburger"
@@ -53,6 +54,7 @@ const Header = () => {
           Únete como Patrocinador
         </button>
         <button className="mobile-nav-item" onClick={() => go('/estadisticas')}>Estadísticas</button>
+        <button className="mobile-nav-item" onClick={() => go('/kit-de-prensa')}>Kit de prensa</button>
         <button className="mobile-nav-item" onClick={() => go('/code-of-conduct')}>Código de Conducta</button>
         <a href="/posadev_brochure2026_03.pdf" download className="mobile-nav-item">
           Descargar Brochure
