@@ -55,7 +55,11 @@ const Hero = () => (
         </div>
         <div className="hero-meta-cell" role="listitem">
           <div className="hero-meta-key">CFP</div>
-          <div className="hero-meta-val">Cierra 25 sep</div>
+          <div className="hero-meta-val">
+            <a href="https://sessionize.com/posadev-2026/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink)', textDecoration: 'underline' }}>
+              Cierra 30 sep
+            </a>
+          </div>
         </div>
       </div>
 

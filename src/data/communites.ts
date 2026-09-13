@@ -1,7 +1,6 @@
 import {ICommunity} from "@/types/types.ts";
 import {LinkType} from "@/types/speakers.ts";
-import wosecLogo from "@/img/communities/2025/WoSEC.png";
-import technologyEventsLogo from "@/img/communities/2025/technologyevents.png";
+import technologyEventsLogo from "@/img/communities/2026/tech-events.png";
 import mdc from "@/img/communities/2025/mdc.png";
 import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
 import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
@@ -17,13 +16,14 @@ export const communitiesAllies: Array<ICommunity> = [
     {
         name: "Technology Events",
         description: "",
-        link: "https://techyevents.com.mx/",
+        link: "https://www.facebook.com/share/19r2SzioLV/",
         image: technologyEventsLogo,
-        socials: [{
+        socials: [
+            {
             title: "Instagram",
             url: "https://www.instagram.com/technology_events_community?igsh=MXgydXFnYWRpcnRseg==",
             linkType: LinkType.Instagram
-        },
+            },
             {
                 title: "Facebook",
                 url: "https://www.facebook.com/share/19r2SzioLV/",
@@ -40,7 +40,7 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.TikTok
             }
         ]
-    },
+    }/*,
     {
         name: "GDG Guadalajara",
         description: "",
@@ -53,22 +53,6 @@ export const communitiesAllies: Array<ICommunity> = [
         },{
             title: "Instagram",
             url: "https://www.instagram.com/gdg_guadalajara/",
-            linkType: LinkType.Instagram
-        }
-        ]
-    },
-    {
-        name: "WOSEC MEXICO",
-        description: "",
-        link: "https://wosecmexico.org/",
-        image: wosecLogo,
-        socials: [{
-            title: "LinkedIn",
-            url: "https://www.linkedin.com/company/wosecmexico/",
-            linkType: LinkType.LinkedIn
-        },{
-            title: "Instagram",
-            url: "https://www.instagram.com/wosec_mx/",
             linkType: LinkType.Instagram
         }
         ]
@@ -292,5 +276,5 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.TikTok
             }
         ]
-    }
+    }*/
 ];
