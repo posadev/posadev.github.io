@@ -1,4 +1,5 @@
 import React from "react";
+import { cn } from "@/lib/utils";
 import { ICommunity } from "@/types/types.ts";
 
 interface CommunityAllyLogoProps {
@@ -9,7 +10,11 @@ const CommunityAllyLogo: React.FC<CommunityAllyLogoProps> = ({ community }) => {
   const badge = (
     <div className="ally-circle">
       <div className="ally-circle-inner">
-        <img src={community.image} alt={community.name} />
+        <img
+          src={community.image}
+          alt={community.name}
+          className={cn(community.sticker !== false && "sticker")}
+        />
       </div>
     </div>
   );

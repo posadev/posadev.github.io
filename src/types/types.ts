@@ -7,6 +7,7 @@ export interface ICommunity {
     image: string;
     socials: ILink[];
     darkBg?: boolean;
+    sticker?: boolean;
 }
 export interface IImage {
     id: number

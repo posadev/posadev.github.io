@@ -18,6 +18,7 @@ export const communitiesAllies: Array<ICommunity> = [
         description: "",
         link: "https://www.facebook.com/share/19r2SzioLV/",
         image: technologyEventsLogo,
+        sticker: false,
         socials: [
             {
             title: "Instagram",
@@ -40,11 +41,11 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.TikTok
             }
         ]
-    }/*,
+    },
     {
         name: "GDG Guadalajara",
         description: "",
-        link: "https://gdg.community.dev/events/details/google-gdg-guadalajara-presents-devfest-2025-kickoff-in-guadalajara/",
+        link: "https://www.instagram.com/gdg_guadalajara/",
         image: GDGLogo,
         socials: [{
             title: "LinkedIn",
@@ -55,6 +56,35 @@ export const communitiesAllies: Array<ICommunity> = [
             url: "https://www.instagram.com/gdg_guadalajara/",
             linkType: LinkType.Instagram
         }
+        ]
+    },
+    {
+        name: "Playas on tech",
+        description: "",
+        link: "https://playasontech.com/",
+        image: playasOnTechLogo,
+        sticker: false,
+        socials: [
+            {
+                title:"Facebook",
+                url:"https://www.facebook.com/playasontech",
+                linkType: LinkType.Facebook
+            },
+            {
+                title:"Instagram",
+                url:"https://www.instagram.com/playasontech_mzo/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title:"LinkedIn",
+                url:"https://www.linkedin.com/company/playasontech",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title:"TikTok",
+                url:"https://www.tiktok.com/@playasontech",
+                linkType: LinkType.TikTok
+            }
         ]
     },
     {
@@ -76,7 +106,7 @@ export const communitiesAllies: Array<ICommunity> = [
             linkType: LinkType.LinkedIn
         }
         ]
-    },
+    }/*,
     {
         name: "AWS User Group Ajolotes en la Nube ",
         description: "",
@@ -92,35 +122,6 @@ export const communitiesAllies: Array<ICommunity> = [
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/company/aws-ug-ajolotes-en-la-nube/",
                 linkType: LinkType.LinkedIn
-            }
-        ]
-    },
-    {
-        name: "Playas on tech",
-        description: "",
-        link: "https://playasontech.com/",
-        image: playasOnTechLogo,
-        darkBg: true,
-        socials: [
-            {
-            title:"Facebook",
-            url:"https://www.facebook.com/playasontech",
-            linkType: LinkType.Facebook
-        },
-            {
-                title:"Instagram",
-                url:"https://www.instagram.com/playasontech_mzo/",
-                linkType: LinkType.Instagram
-            },
-            {
-                title:"LinkedIn",
-                url:"https://www.linkedin.com/company/playasontech",
-                linkType: LinkType.LinkedIn
-            },
-            {
-                title:"TikTok",
-                url:"https://www.tiktok.com/@playasontech",
-                linkType: LinkType.TikTok
             }
         ]
     },
@@ -249,6 +250,7 @@ export const communitiesAllies: Array<ICommunity> = [
         description: "",
         link: "https://community.cncf.io/kcd-guadalajara/",
         image: kcdLogo,
+        sticker: false,
         socials: [
             {
                 title: "Facebook",
