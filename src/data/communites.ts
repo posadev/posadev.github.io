@@ -40,11 +40,11 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.TikTok
             }
         ]
-    }/*,
+    },
     {
         name: "GDG Guadalajara",
         description: "",
-        link: "https://gdg.community.dev/events/details/google-gdg-guadalajara-presents-devfest-2025-kickoff-in-guadalajara/",
+        link: "https://www.instagram.com/gdg_guadalajara/",
         image: GDGLogo,
         socials: [{
             title: "LinkedIn",
@@ -56,7 +56,7 @@ export const communitiesAllies: Array<ICommunity> = [
             linkType: LinkType.Instagram
         }
         ]
-    },
+    }/*,
     {
         name: "Mobile Developer Community (MDC)",
         description: "",
