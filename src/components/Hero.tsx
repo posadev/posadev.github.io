@@ -10,7 +10,7 @@ const Hero = () => (
       footer={
         <>
           <span>1 ítem · Sáb 28.11.2026</span>
-          <span>Cupo 350 · $600 MXN</span>
+          <span>Cupo 350 · $650 MXN</span>
         </>
       }
     >
@@ -21,7 +21,7 @@ const Hero = () => (
         <span className="hero-eyebrow-div" aria-hidden="true" />
         <span>Holiday Inn Guadalajara Expo</span>
         <span className="hero-eyebrow-div" aria-hidden="true" />
-        <span>$600 MXN · cupo 350</span>
+        <span>$650 MXN · cupo 350</span>
       </div>
 
       {/* Logo + COMUNIDADES.JOIN() en la misma caja rosa con scanlines */}
@@ -51,7 +51,16 @@ const Hero = () => (
         </div>
         <div className="hero-meta-cell" role="listitem">
           <div className="hero-meta-key">Cuánto</div>
-          <div className="hero-meta-val"><em>$600</em> MXN</div>
+          <div className="hero-meta-val">
+            <a
+              href="https://boletos.chrisomlab.com/event/1/posadev-2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: 'underline' }}
+            >
+              <em>$650</em> MXN
+            </a>
+          </div>
         </div>
         <div className="hero-meta-cell" role="listitem">
           <div className="hero-meta-key">CFP</div>
@@ -65,8 +74,16 @@ const Hero = () => (
 
       {/* CTAs */}
       <div className="hero-ctas">
-        <a href="/#patrocinadores" className="retro-btn primary">
+        <a
+          href="https://boletos.chrisomlab.com/event/1/posadev-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="retro-btn primary"
+        >
           <span className="hero-btn-square" aria-hidden="true" />
+          Comprar boleto
+        </a>
+        <a href="/#patrocinadores" className="retro-btn ghost">
           Patrocinar Posadev
         </a>
         {/*<a href="#programa" className="retro-btn ghost">Ver programa</a>*/}
