@@ -28,6 +28,14 @@ const Header = () => {
           <span className="menubar-star" aria-hidden="true" />
         </span>
         <button className="menubar-item" onClick={() => go('/')}>Inicio</button>
+        <a
+          href="https://boletos.chrisomlab.com/event/1/posadev-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="menubar-item"
+        >
+          Comprar boleto
+        </a>
         <button className="menubar-item" onClick={() => go('/#patrocinadores')}>Patrocinadores</button>
         <button className="menubar-item" onClick={() => go('/estadisticas')}>Estadísticas</button>
         <button className="menubar-item" onClick={() => go('/kit-de-prensa')}>Kit de prensa</button>
@@ -50,7 +58,16 @@ const Header = () => {
       </header>
       <nav id="mobile-nav" className={`mobile-nav${menuOpen ? ' open' : ''}`} aria-label="Menú principal">
         <button className="mobile-nav-item" onClick={() => go('/')}>Inicio</button>
-        <button className="mobile-nav-item primary" onClick={() => go('/#patrocinadores')}>
+        <a
+          href="https://boletos.chrisomlab.com/event/1/posadev-2026"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mobile-nav-item primary"
+          onClick={() => setMenuOpen(false)}
+        >
+          Comprar boleto
+        </a>
+        <button className="mobile-nav-item" onClick={() => go('/#patrocinadores')}>
           Únete como Patrocinador
         </button>
         <button className="mobile-nav-item" onClick={() => go('/estadisticas')}>Estadísticas</button>
