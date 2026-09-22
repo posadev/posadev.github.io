@@ -1,6 +1,5 @@
 import {ICommunity} from "@/types/types.ts";
 import {LinkType} from "@/types/speakers.ts";
-import technologyEventsLogo from "@/img/communities/2026/tech-events.png";
 import mdc from "@/img/communities/2025/mdc.png";
 import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
 import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
@@ -13,6 +12,7 @@ import techQuiero from "@/img/communities/2025/techquiero.png";
 import rubymx from "@/img/communities/2025/rubymx.png";
 import webdevtalksLogo from "@/img/communities/2025/webdevtalks.png";
 import kcdLogo from "@/img/communities/2025/kcd.jpeg"
+import ketherLogo from "@/img/communities/2026/ketherlabs.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -180,6 +180,18 @@ export const communitiesAllies: Array<ICommunity> = [
             {
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/company/web-dev-talks",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },{
+        name: "KetherLabs",
+        description: "",
+        link: "https://www.linkedin.com/company/ketherlabs/",
+        image: ketherLogo,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/ketherlabs/",
                 linkType: LinkType.LinkedIn
             }
         ]
