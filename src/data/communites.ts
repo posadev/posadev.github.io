@@ -1,10 +1,10 @@
 import {ICommunity} from "@/types/types.ts";
 import {LinkType} from "@/types/speakers.ts";
-import technologyEventsLogo from "@/img/communities/2026/tech-events.png";
 import mdc from "@/img/communities/2025/mdc.png";
 import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
 import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
 import WOSECLogo from "@/img/communities/2025/WoSEC.png";
+import ESGLogo from "@/img/communities/2026/ESG.png"
 import ajolotesAWSLogo from "@/img/communities/2025/ajolotes-aws.png";
 import calzadacode from "@/img/communities/2025/calzadacode.png";
 import linuxeroszapopan from "@/img/communities/2025/linuxeroszapopan.png";
@@ -12,34 +12,20 @@ import techQuiero from "@/img/communities/2025/techquiero.png";
 import rubymx from "@/img/communities/2025/rubymx.png";
 import webdevtalksLogo from "@/img/communities/2025/webdevtalks.png";
 import kcdLogo from "@/img/communities/2025/kcd.jpeg"
+import ketherLogo from "@/img/communities/2026/ketherlabs.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
-        name: "Technology Events",
+        name: "Embedded Systems Geeks",
         description: "",
-        link: "https://www.facebook.com/share/19r2SzioLV/",
-        image: technologyEventsLogo,
-        sticker: false,
+        link: "https://www.linkedin.com/in/frank-zeyda/",
+        image: ESGLogo,
+        sticker: true,
         socials: [
             {
-            title: "Instagram",
-            url: "https://www.instagram.com/technology_events_community?igsh=MXgydXFnYWRpcnRseg==",
-            linkType: LinkType.Instagram
-            },
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/share/19r2SzioLV/",
-                linkType: LinkType.Facebook
-            },
-            {
                 title: "LinkedIn",
-                url: "https://www.linkedin.com/company/technology-events-community/",
+                url: "https://www.linkedin.com/in/frank-zeyda//",
                 linkType: LinkType.LinkedIn
-            },
-            {
-                title: "Tiktok",
-                url: "https://www.tiktok.com/@technology.events?_t=ZS-8zTq13UhIl0&_r=1",
-                linkType: LinkType.TikTok
             }
         ]
     },
@@ -127,7 +113,7 @@ export const communitiesAllies: Array<ICommunity> = [
             linkType: LinkType.LinkedIn
         }
         ]
-    }/*,
+    },
     {
         name: "Calzada Code",
         description: "",
@@ -174,6 +160,42 @@ export const communitiesAllies: Array<ICommunity> = [
             }
         ]
     },
+    {
+        name: "WebDevTalks",
+        description: "",
+        link: "https://webdevtalks.mx",
+        image: webdevtalksLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/webdevtalksmx",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/ColimaWebDevTalks",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/web-dev-talks",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },{
+        name: "KetherLabs",
+        description: "",
+        link: "https://www.linkedin.com/company/ketherlabs/",
+        image: ketherLogo,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/ketherlabs/",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    }/*,
     {
         name: "TechQuiero",
         description: "",
