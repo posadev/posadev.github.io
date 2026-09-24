@@ -13,6 +13,9 @@ import rubymx from "@/img/communities/2025/rubymx.png";
 import webdevtalksLogo from "@/img/communities/2025/webdevtalks.png";
 import kcdLogo from "@/img/communities/2025/kcd.jpeg"
 import ketherLogo from "@/img/communities/2026/ketherlabs.png"
+import awsUnivaLogo from "@/img/communities/2026/awsUniva.png"
+import hgLogo from "@/img/communities/2026/hg.svg"
+import guayabaLogo from "@/img/communities/2026/Guayabadevs.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -192,6 +195,66 @@ export const communitiesAllies: Array<ICommunity> = [
             {
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/company/ketherlabs/",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "AWS SBG Univa",
+        description: "",
+        link: "https://www.instagram.com/aws.univa/",
+        image: awsUnivaLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/aws.univa/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/aws-student-builder-group-at-univa/",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "Hacker Garage",
+        description: "",
+        link: "https://hackergarage.mx/",
+        image: hgLogo,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/techquieromx/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/TechQuiero",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/tech-quiero/posts/?feedView=all",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "Guayaba Devs",
+        description: "",
+        link: "https://guayabadev.com/",
+        image: guayabaLogo,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/guayaba_devs_official/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/guayaba-devs/posts/",
                 linkType: LinkType.LinkedIn
             }
         ]
