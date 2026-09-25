@@ -21,9 +21,9 @@ export interface ISponsor {
     name: string;
     description?: string;
     link?: string;
-    image: string;
+    image?: string;
     isPaid: boolean;
-    type?: 'gold' | 'diamond' | 'bronze' | 'silver';
+    type?: 'diamond' | 'gold' | 'silver' | 'virtual' | 'bronze';
 }
 
 export enum AppStatus {

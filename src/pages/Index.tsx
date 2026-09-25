@@ -3,6 +3,7 @@ import Hero from '@/components/Hero';
 import Gallery from '@/components/Gallery';
 import { useLocation } from 'react-router-dom';
 import BecomeSponsor from '@/components/BecomeSponsor';
+import Sponsors from '@/components/Sponsors';
 import CommunityAllies from '@/components/CommunityAllies';
 import Estadisticas from '@/pages/Estadisticas';
 
@@ -56,13 +57,16 @@ const Index = () => {
         <Hero />
         <Stripe />
         <Estadisticas />
-        <section id="patrocinadores">
-          <BecomeSponsor />
+        <section id="sponsors">
+          <Sponsors />
         </section>
         <section id="comunidades">
           <CommunityAllies />
         </section>
         <Gallery />
+        <section id="patrocinadores">
+          <BecomeSponsor />
+        </section>
       </div>
     </div>
   );

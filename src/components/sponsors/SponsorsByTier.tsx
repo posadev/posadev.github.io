@@ -1,18 +1,44 @@
-import Sponsor from "@/components/Sponsor.tsx";
 import React from "react";
+import Sponsor from "@/components/Sponsor.tsx";
+import { ISponsor } from "@/types/types.ts";
 
-const SponsorsByTier = ({sponsors}) => {
-  const paid = sponsors.filter(s => s.isPaid);
-  const isOdd = paid.length % 2 !== 0;
+interface SponsorsByTierProps {
+  sponsors: ISponsor[];
+}
+
+const TIERS: { key: NonNullable<ISponsor["type"]>; label: string; icon: string }[] = [
+  { key: "diamond", label: "Diamond", icon: "💎" },
+  { key: "gold", label: "Gold", icon: "⭐" },
+  { key: "silver", label: "Silver", icon: "🌟" },
+  { key: "virtual", label: "Virtual", icon: "🖥" },
+];
+
+const SponsorsByTier: React.FC<SponsorsByTierProps> = ({ sponsors }) => {
+  const paid = sponsors.filter((s) => s.isPaid);
+
+  const tiersWithSponsors = TIERS.map((tier) => ({
+    ...tier,
+    sponsors: paid.filter((s) => s.type === tier.key),
+  })).filter((tier) => tier.sponsors.length > 0);
 
   return (
-      <section className="grid grid-cols-2 gap-8 py-10 px-4 max-w-2xl mx-auto">
-          {paid.map((sponsor, index) => (
-              <div key={sponsor.id} className={isOdd && index === paid.length - 1 ? 'col-span-2 mx-auto w-1/2' : ''}>
-                  <Sponsor sponsor={sponsor} />
-              </div>
-          ))}
-      </section>
-  )
-}
+    <>
+      {tiersWithSponsors.map((tier) => (
+        <div className="sponsor-tier" key={tier.key}>
+          <div className="sponsor-tier-label">
+            <span aria-hidden="true">{tier.icon}</span>
+            <span>{tier.label}</span>
+            <span className="sponsor-tier-line" aria-hidden="true" />
+          </div>
+          <div className="sponsor-tier-box">
+            {tier.sponsors.map((sponsor) => (
+              <Sponsor key={sponsor.id} sponsor={sponsor} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
+
 export default SponsorsByTier;

@@ -1,20 +1,28 @@
 import React from "react";
-import {ISponsor} from "@/types/types.ts";
+import { ISponsor } from "@/types/types.ts";
 
 interface SponsorProps {
-    sponsor: ISponsor;
+  sponsor: ISponsor;
 }
 
-const Sponsor: React.FC<SponsorProps> = ({sponsor}) => {
-    if (!sponsor.isPaid) return;
+const Sponsor: React.FC<SponsorProps> = ({ sponsor }) => {
+  if (!sponsor.isPaid) return null;
+
+  const content = sponsor.image ? (
+    <img src={sponsor.image} alt={sponsor.name} className="sponsor-logo" />
+  ) : (
+    <span className="sponsor-name">{sponsor.name}</span>
+  );
+
+  if (sponsor.link) {
     return (
-        <article className="flex justify-center items-center bg-white rounded-xl p-6 h-40 md:h-52 w-full">
-            <img
-                src={sponsor.image}
-                alt={sponsor.name}
-                className="object-contain max-h-full max-w-full"
-            />
-        </article>
-    )
-}
-export default Sponsor
+      <a href={sponsor.link} target="_blank" rel="noopener noreferrer" className="sponsor-item">
+        {content}
+      </a>
+    );
+  }
+
+  return <div className="sponsor-item">{content}</div>;
+};
+
+export default Sponsor;

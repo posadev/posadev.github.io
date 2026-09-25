@@ -5,17 +5,17 @@ import playasOnTechLogo from "@/img/communities/2025/playas-logo.webp";
 import GDGLogo from "@/img/communities/2025/GDG-Guadalajara.png";
 import WOSECLogo from "@/img/communities/2025/WoSEC.png";
 import ESGLogo from "@/img/communities/2026/ESG.png"
-import ajolotesAWSLogo from "@/img/communities/2025/ajolotes-aws.png";
 import calzadacode from "@/img/communities/2025/calzadacode.png";
 import linuxeroszapopan from "@/img/communities/2025/linuxeroszapopan.png";
-import techQuiero from "@/img/communities/2025/techquiero.png";
-import rubymx from "@/img/communities/2025/rubymx.png";
+import techQuieroLogo from "@/img/communities/2025/techquiero.png";
 import webdevtalksLogo from "@/img/communities/2025/webdevtalks.png";
-import kcdLogo from "@/img/communities/2025/kcd.jpeg"
+import kcdLogo from "@/img/communities/2026/kcd.png"
 import ketherLogo from "@/img/communities/2026/ketherlabs.png"
 import awsUnivaLogo from "@/img/communities/2026/awsUniva.png"
 import hgLogo from "@/img/communities/2026/hg.svg"
 import guayabaLogo from "@/img/communities/2026/Guayabadevs.png"
+import cloudNativeLogo from "@/img/communities/2026/cloud-native-cdmx.png"
+import mexAiLogo from "@/img/communities/2026/edited_mex_ai.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -224,21 +224,6 @@ export const communitiesAllies: Array<ICommunity> = [
         link: "https://hackergarage.mx/",
         image: hgLogo,
         socials: [
-            {
-                title: "Instagram",
-                url: "https://www.instagram.com/techquieromx/",
-                linkType: LinkType.Instagram
-            },
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/TechQuiero",
-                linkType: LinkType.Facebook
-            },
-            {
-                title: "LinkedIn",
-                url: "https://www.linkedin.com/company/tech-quiero/posts/?feedView=all",
-                linkType: LinkType.LinkedIn
-            }
         ]
     },
     {
@@ -258,30 +243,71 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.LinkedIn
             }
         ]
-    }/*,
+    },
     {
-        name: "TechQuiero",
+        name: "Cloud Native CDMX",
         description: "",
-        link: "https://techquiero.com/es",
-        image: techQuiero,
+        link: "https://ocgroups.dev/cncf/group/e5vgp72",
+        image: cloudNativeLogo,
         socials: [
             {
-                title: "Instagram",
-                url: "https://www.instagram.com/techquieromx/",
-                linkType: LinkType.Instagram
-            },
-            {
                 title: "Facebook",
-                url: "https://www.facebook.com/TechQuiero",
+                url: "https://www.facebook.com/cloudnativecdmx/",
                 linkType: LinkType.Facebook
             },
             {
                 title: "LinkedIn",
-                url: "https://www.linkedin.com/company/tech-quiero/posts/?feedView=all",
+                url: "https://www.instagram.com/cloudnative_cdmx",
                 linkType: LinkType.LinkedIn
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@cloudnative_cdmx",
+                linkType: LinkType.TikTok
             }
         ]
     },
+    {
+        name: "KCD Mexico",
+        description: "",
+        link: "https://community.cncf.io/kcd-guadalajara/",
+        image: kcdLogo,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/kcdmexico/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "hhttps://www.linkedin.com/showcase/kcd-m%C3%A9xico/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/kcdmexico/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/kcd_mexico",
+                linkType: LinkType.Instagram
+            }
+        ]
+    },
+    {
+        name: "MexAI",
+        description: "",
+        link: "https://www.eventbrite.com.mx/o/mexai-comunidad-de-ia-106303535081",
+        image: mexAiLogo,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/mexai-community/posts/",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    }/*,
     {
         name: "Comunidad RubyMX",
         description: "",
