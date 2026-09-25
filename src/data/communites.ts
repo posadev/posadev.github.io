@@ -16,6 +16,9 @@ import hgLogo from "@/img/communities/2026/hg.svg"
 import guayabaLogo from "@/img/communities/2026/Guayabadevs.png"
 import cloudNativeLogo from "@/img/communities/2026/cloud-native-cdmx.png"
 import mexAiLogo from "@/img/communities/2026/edited_mex_ai.png"
+import gluchLogo from "@/img/communities/2026/gluch.png"
+import chidasLogo from "@/img/communities/2026/chidas-tech.png"
+import awsColimaLogo from "@/img/communities/2026/aws-colima.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -272,6 +275,7 @@ export const communitiesAllies: Array<ICommunity> = [
         description: "",
         link: "https://community.cncf.io/kcd-guadalajara/",
         image: kcdLogo,
+        sticker: false,
         socials: [
             {
                 title: "Facebook",
@@ -300,6 +304,7 @@ export const communitiesAllies: Array<ICommunity> = [
         description: "",
         link: "https://www.eventbrite.com.mx/o/mexai-comunidad-de-ia-106303535081",
         image: mexAiLogo,
+        sticker: false,
         socials: [
             {
                 title: "LinkedIn",
@@ -307,7 +312,86 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.LinkedIn
             }
         ]
-    }/*,
+    },
+    {
+        name: "TechQuiero",
+        description: "",
+        link: "https://techquiero.com/es",
+        image: techQuieroLogo,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/TechQuiero",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/tech-quiero/posts/?feedView=all",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/techquieromx/",
+                linkType: LinkType.Instagram
+            }
+        ]
+    },
+    {
+        name: "GLUCH",
+        description: "",
+        link: "https://www.gluch.org.mx/",
+        image: gluchLogo,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/groups/219085400136",
+                linkType: LinkType.Facebook
+            }
+        ]
+    },
+    {
+        name: "Chidas Tech",
+        description: "",
+        link: "https://www.facebook.com/chidastech/",
+        image: chidasLogo,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/chidastech/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/chidas-tech/posts/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/chidastech/",
+                linkType: LinkType.Instagram
+            }
+        ]
+    },
+    {
+        name: "AWS Colima",
+        description: "",
+        link: "https://www.meetup.com/aws-user-group-colima/",
+        image: awsColimaLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/aws-user-group-colima/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "hhttps://www.instagram.com/awsugcolima/",
+                linkType: LinkType.Instagram
+            }
+        ]
+    }
+    /*,
     {
         name: "Comunidad RubyMX",
         description: "",
