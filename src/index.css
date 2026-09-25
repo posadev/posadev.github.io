@@ -616,6 +616,42 @@
   .presskit-decor-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* ── Patrocinadores (sponsors actuales) ──────────────────────────── */
+.sponsors-head {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 16px;
+}
+.sponsors-duck { width: 110px; height: auto; flex-shrink: 0; }
+@media (max-width: 600px) {
+  .sponsors-duck { width: 72px; }
+}
+
+.sponsor-tier { margin-bottom: 24px; }
+.sponsor-tier:last-child { margin-bottom: 0; }
+.sponsor-tier-label {
+  display: flex; align-items: center; gap: 10px;
+  font-family: "Pixelify Sans", monospace; font-weight: 700;
+  font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); margin-bottom: 12px;
+}
+.sponsor-tier-line { flex: 1; height: 2px; background: var(--ink); }
+
+.sponsor-tier-box {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-around;
+  gap: 24px; border: 2px solid var(--ink); background: var(--paper);
+  padding: 28px 24px; box-shadow: var(--win-shadow-sm);
+}
+.sponsor-item { display: flex; align-items: center; justify-content: center; }
+.sponsor-logo { max-height: 192px; max-width: 660px; object-fit: contain; }
+.sponsor-name {
+  font-family: "Pixelify Sans", monospace; font-weight: 700;
+  font-size: 20px; color: var(--ink);
+}
+@media (max-width: 600px) {
+  .sponsor-logo { max-height: 132px; max-width: 90%; }
+  .sponsor-name { font-size: 16px; }
+}
+
 /* ── Patrocinio / BecomeSponsor ──────────────────────────────────── */
 .patron-grid {
   display: grid; grid-template-columns: 1.1fr 1fr;
