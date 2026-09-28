@@ -9,7 +9,7 @@ const Sponsor: React.FC<SponsorProps> = ({ sponsor }) => {
   if (!sponsor.isPaid) return null;
 
   const content = sponsor.image ? (
-    <img src={sponsor.image} alt={sponsor.name} className="sponsor-logo" />
+    <img src={sponsor.image} alt={sponsor.name} loading="lazy" decoding="async" className="sponsor-logo" />
   ) : (
     <span className="sponsor-name">{sponsor.name}</span>
   );

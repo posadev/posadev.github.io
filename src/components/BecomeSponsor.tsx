@@ -189,7 +189,7 @@ const BecomeSponsor = () => (
 
           {/* Duck — overflows card intentionally */}
           <img
-            src="/media-kit/posadev-duck.png"
+            src="/media-kit/posadev-duck.webp"
             alt="Pato mascota de Posadev con lentes"
             className="patron-duck"
           />

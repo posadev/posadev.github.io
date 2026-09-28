@@ -1,10 +1,10 @@
 import { IOrganizer } from "@/types/types.ts";
-import hazzimAnaya from "@/img/organizers/2026/hazzim-anaya.png";
-import araceliHeredia from "@/img/organizers/2026/araceli-heredia.png";
-import christianGomez from "@/img/organizers/2026/christian-gomez.png";
-import orlandoCano from "@/img/organizers/2026/orlando-cano.png";
-import kimberlyEscobedo from "@/img/organizers/2026/kimberly-escobedo.png";
-import danielGongora from "@/img/organizers/2026/daniel-gongora.png";
+import hazzimAnaya from "@/img/organizers/2026/hazzim-anaya.webp";
+import araceliHeredia from "@/img/organizers/2026/araceli-heredia.webp";
+import christianGomez from "@/img/organizers/2026/christian-gomez.webp";
+import orlandoCano from "@/img/organizers/2026/orlando-cano.webp";
+import kimberlyEscobedo from "@/img/organizers/2026/kimberly-escobedo.webp";
+import danielGongora from "@/img/organizers/2026/daniel-gongora.webp";
 
 export const organizers: Array<IOrganizer> = [
     {

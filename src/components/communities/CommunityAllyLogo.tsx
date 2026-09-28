@@ -13,6 +13,8 @@ const CommunityAllyLogo: React.FC<CommunityAllyLogoProps> = ({ community }) => {
         <img
           src={community.image}
           alt={community.name}
+          loading="lazy"
+          decoding="async"
           className={cn(community.sticker !== false && "sticker")}
         />
       </div>
