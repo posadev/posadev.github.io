@@ -1,172 +1,59 @@
-import {ICommunity} from "@/types/types.ts";
-import LCDC from "@/img/organizers/lcdc.png";
-import IxDA from "@/img/organizers/IxDA-Cover.png";
-import KUG from "@/img/organizers/KUG.png"
-import J4G from "@/img/organizers/j4g.png"
-import Golang from "@/img/organizers/Gopher.png"
-import Fedora from "@/img/organizers/fedora.png"
-import Pythonistas from "@/img/organizers/pythonistas.png"
-import GDLDevcomms from "@/img/organizers/gdl-devcomms.png"
-import JUG from "@/img/organizers/gljug.png"
-import {LinkType} from "@/types/speakers.ts";
+import { IOrganizer } from "@/types/types.ts";
+import hazzimAnaya from "@/img/organizers/2026/hazzim-anaya.png";
+import araceliHeredia from "@/img/organizers/2026/araceli-heredia.png";
+import christianGomez from "@/img/organizers/2026/christian-gomez.png";
+import orlandoCano from "@/img/organizers/2026/orlando-cano.png";
+import kimberlyEscobedo from "@/img/organizers/2026/kimberly-escobedo.png";
+import danielGongora from "@/img/organizers/2026/daniel-gongora.png";
 
-export const organizers: Array<ICommunity> = [
+export const organizers: Array<IOrganizer> = [
     {
-        name: "Pythonistas",
-        description: "La comunidad de entusiastas de Python en Guadalajara",
-        link: "https://pythonistas-gdl.org/",
-        image: Pythonistas,
-        socials: [
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/pythonistasgdl",
-                linkType: LinkType.Facebook
-            },
-            {
-                title: "Instagram",
-                url: "https://www.instagram.com/pythonistas_gdl",
-                linkType: LinkType.Instagram
-            },
-            {
-                title: "Twitter",
-                url: "https://twitter.com/pythonistas_gdl",
-                linkType: LinkType.Twitter
-            },
-            {
-                title: "LinkedIn",
-                url: "https://www.linkedin.com/groups/13193010",
-                linkType: LinkType.LinkedIn
-            },
-            {
-                title: "TikTok",
-                url: "https://www.tiktok.com/@pythonistas_gdl",
-                linkType: LinkType.TikTok
-            }
-        ]
+        name: "Hazzim Anaya",
+        role: "Sponsors & CFP",
+        image: hazzimAnaya,
+        communities: [
+            { name: "Fedora Mexico", link: "https://fedoramx.fedorapeople.org" },
+            { name: "KCD Mexico", link: "https://community.cncf.io/kcd-guadalajara/" },
+        ],
     },
     {
-        name: "Las Chicas del Código",
-        description: "Comunidad de mujeres en tecnología que busca visibilizar el talento femenino en el sector tecnológico a través de eventos.",
-        link: "https://linktr.ee/laschicasdelcodigo",
-        image: LCDC,
-        socials: [
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/laschicasdelcodigo",
-                linkType: LinkType.Facebook
-            },
-            {
-                title: "Instagram",
-                url: "https://www.instagram.com/laschicasdelcodigo/",
-                linkType: LinkType.Instagram
-            },
-            {
-                title: "Twitter",
-                url: "https://x.com/chicasdelcodigo",
-                linkType: LinkType.Twitter
-            }
-        ]
+        name: "Araceli Heredia",
+        role: "Design & Social Media",
+        image: araceliHeredia,
+        communities: [
+            { name: "Interaction Design Association Guadalajara", link: "https://ixda.org/" },
+        ],
     },
     {
-        name: "IXDA (The Interaction Design Association)",
-        description: `
-        Organización respaldada por sus miembros, dedicada al diseño de interacción.
-        Con grupos locales en todo el mundo, conecta a profesionales de todos los niveles para compartir conocimientos y experiencias en la disciplina.`,
-        link: "https://ixda.org/",
-        image: IxDA,
-        socials: [
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/ixdagdl",
-                linkType: LinkType.Facebook
-            },
-            {
-                title: "Instagram",
-                url: "https://www.instagram.com/ixdagdl/",
-                linkType: LinkType.Instagram
-            },
-            {
-                title: "LinkedIn",
-                url: "http://linkedin.com/company/ixda-gdl",
-                linkType: LinkType.LinkedIn
-            }
-        ]
+        name: "Christian Gómez",
+        role: "IT solutions & Sponsors",
+        image: christianGomez,
+        communities: [
+            { name: "JUG GDL", link: "http://juggdl.org" },
+        ],
     },
     {
-        name: "KUG",
-        description: "Comunidad de desarrolladores de Kotlin.",
-        link: "",
-        image: KUG,
-        socials: [
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/GuadalajaraKUG/",
-                linkType: LinkType.Facebook
-            }
-        ]
+        name: "Orlando Cano",
+        role: "Sponsors & Swag",
+        image: orlandoCano,
+        communities: [
+            { name: "J4Guanatos", link: "https://www.facebook.com/groups/293473358264641" },
+        ],
     },
     {
-        name: "GDL Devcomms",
-        description: "La comunidad de comunidades de Guadalajara.",
-        link: "",
-        image: GDLDevcomms,
-        socials: [
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/gdldevcomms",
-                linkType: LinkType.Facebook
-            }
-        ]
+        name: "Kimberly Escobedo",
+        role: "Management & Logistics",
+        image: kimberlyEscobedo,
+        communities: [
+            { name: "GDLDevcoms", link: "https://www.facebook.com/gdldevcomms" },
+        ],
     },
     {
-        name: "J4G",
-        description: "Java User Group de Guadalajara.",
-        link: "",
-        image: J4G,
-        socials: [
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/groups/293473358264641",
-                linkType: LinkType.Facebook
-            }
-        ]
+        name: "Daniel Gongora",
+        role: "Communities & Volunteering",
+        image: danielGongora,
+        communities: [
+            { name: "Mobile Developer Community", link: "https://linktr.ee/mdcommunity" },
+        ],
     },
-    {
-        name: "Golang",
-        description: "Comunidad de desarrolladores de Go.",
-        link: "",
-        image: Golang,
-        socials: []
-    },
-    {
-        name: "Fedora",
-        description: "Comunidad en Mexico de Fedora Linux.",
-        link: "https://fedoramx.fedorapeople.org",
-        image: Fedora,
-        socials: [
-            {
-                title: "Twitter",
-                url: "https://x.com/fedoramexico",
-                linkType: LinkType.Twitter
-            }
-        ]
-    },
-    {
-        name: "JUG GDL",
-        description: `
-        Comunidad de Java en Guadalajara. Co-organizadores de la JConf GDL.`,
-        link: "http://juggdl.org",
-        image: JUG,
-        socials: [{
-            title: "Facebook",
-            url: "https://www.facebook.com/gdljug",
-            linkType: LinkType.Facebook
-        },
-            {
-                title: "Twitter",
-                url: "https://twitter.com/java_gdl",
-                linkType: LinkType.Twitter
-            }
-        ]
-    }
-]
+];

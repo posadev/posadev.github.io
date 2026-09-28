@@ -19,6 +19,10 @@ import mexAiLogo from "@/img/communities/2026/edited_mex_ai.png"
 import gluchLogo from "@/img/communities/2026/gluch.png"
 import chidasLogo from "@/img/communities/2026/chidas-tech.png"
 import awsColimaLogo from "@/img/communities/2026/aws-colima.png"
+import rainbowLogo from "@/img/communities/2026/rainbow.png"
+import gdgTijuanaLogo from "@/img/communities/2026/gdgtijuana.png"
+import oxcLogo from "@/img/communities/2026/oxc.png"
+import adaLogo from "@/img/communities/2026/ada.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -390,91 +394,68 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.Instagram
             }
         ]
-    }
-    /*,
+    },
     {
-        name: "Comunidad RubyMX",
+        name: "RainbowTechMX",
         description: "",
-        link: "https://comunidadruby.mx/",
-        image: rubymx,
+        link: "https://x.com/rainbowtechmx?s=21",
+        image: rainbowLogo,
         socials: [
             {
-                title: "Facebook",
-                url: "https://www.facebook.com/comunidadrubymx",
-                linkType: LinkType.Facebook
-            },
-            {
-                title: "LinkedIn",
-                url: "https://mx.linkedin.com/company/comunidadrubymx",
-                linkType: LinkType.LinkedIn
-            },
-            {
-                title: "Twitter",
-                url: "https://x.com/comunidadrubymx",
-                linkType: LinkType.Twitter
-            },
-            {
                 title: "Instagram",
-                url: "https://www.instagram.com/comunidadrubymx",
+                url: "https://instagram.com/rainbowtechmx",
                 linkType: LinkType.Instagram
             }
         ]
     },
     {
-        name: "WebDevTalks",
+        name: "GDG Tijuana",
         description: "",
-        link: "https://webdevtalks.mx",
-        image: webdevtalksLogo,
+        link: "https://gdg.community.dev/gdg-tijuana/",
+        image: gdgTijuanaLogo,
         socials: [
             {
                 title: "Instagram",
-                url: "https://www.instagram.com/webdevtalksmx",
+                url: "https://www.instagram.com/gdg_tijuana/",
                 linkType: LinkType.Instagram
-            },
-            {
-                title: "Facebook",
-                url: "https://www.facebook.com/ColimaWebDevTalks",
-                linkType: LinkType.Facebook
-            },
-            {
-                title: "LinkedIn",
-                url: "https://www.linkedin.com/company/web-dev-talks",
-                linkType: LinkType.LinkedIn
             }
         ]
     },
     {
-        name: "Kubernetes Community Day México",
+        name: "0xc",
         description: "",
-        link: "https://community.cncf.io/kcd-guadalajara/",
-        image: kcdLogo,
-        sticker: false,
+        link: "https://linktr.ee/0xCommunity?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAacniRVme_DHMsOATVy2Ez-6sPYE-Q3wXXNMD1ish4YqNSLEJkaGS6UTI4-nnw_aem_M3CXsKGSsye1kAPNh8u99A",
+        image: oxcLogo,
         socials: [
             {
-                title: "Facebook",
-                url: "https://www.facebook.com/kcdmexico/",
-                linkType: LinkType.Facebook
-            },
-            {
                 title: "Instagram",
-                url: "https://www.instagram.com/kcdmexico/",
+                url: "https://www.instagram.com/0xc.ommunity/",
                 linkType: LinkType.Instagram
             },
             {
-                title: "LinkedIn",
-                url: "https://www.linkedin.com/showcase/kcd-m%C3%A9xico/",
-                linkType: LinkType.LinkedIn
-            },
-            {
-                title: "Twitter",
-                url: "https://x.com/kcd_mexico",
-                linkType: LinkType.Twitter
-            },
-            {
-                title: "Tiktok",
-                url: "https://www.tiktok.com/@kcdmexico",
+                title: "TikTok",
+                url: "https://www.tiktok.com/@0xcommunity?_r=1&_t=zs-925w4zgmzbu",
                 linkType: LinkType.TikTok
             }
         ]
-    }*/
+    },
+    {
+        name: "Proyecto Ada",
+        description: "",
+        link: "https://www.instagram.com/proyecto.ada?stkn=MWNnNmJ5eWJkdDVvMw==",
+        image: adaLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/proyecto.ada?stkn=MWNnNmJ5eWJkdDVvMw==",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/proyecto-ada/",
+                linkType: LinkType.LinkedIn
+            }
+        ]
+    }
 ];

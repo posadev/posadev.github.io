@@ -1,32 +1,52 @@
-import Gradient from "@/components/Gradient.tsx";
-import StarIcon from "@/components/ui/starIcon.tsx";
-import Carousel, {GridConfig} from "@/components/Carousel.tsx";
-import {organizers} from "@/data/organizers.ts";
-import Community from "@/components/Community.tsx";
-import React from "react";
-import {ICommunity} from "@/types/types.ts";
+import React from 'react';
+import Win from '@/components/Win';
+import { organizers } from '@/data/organizers';
 
-const Organizers = () => {
-    const grid: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
-
-  return (
-      <Gradient
-          id="organizadores"
-          className="w-full mx-auto px-10 pt-40 gap-6 flex flex-col justify-center items-center pb-16 md:pb-10"
-      >
-          <div className="flex items-center justify-center gap-1.5 lg:gap-8 pb-4">
-              <StarIcon className="hidden md:block"/>
-              <h2 className="text-3xl md:text-5xl font-bold text-center">Comunidades organizadoras</h2>
-              <StarIcon className="hidden md:block"/>
+const Organizers = () => (
+  <Win
+    title="👥 Organizadores.txt"
+    footer={
+      <>
+        <span>{organizers.length} organizadores</span>
+        <span>edición 2026</span>
+      </>
+    }
+  >
+    <div className="sec-head">
+      <h2>Quién<br />organiza<em>.</em></h2>
+      <p className="sec-sub">
+        Las personas comprometidas a organizar Posadev durante todo el año para que
+        podamos tener Posadev en esta edicion, creada por y para las
+        comunidades tech.
+      </p>
+    </div>
+    <div className="organizer-grid">
+      {organizers.map((organizer) => (
+        <div className="organizer-card" key={organizer.name}>
+          <div className="organizer-photo-frame">
+            <img src={organizer.image} alt={organizer.name} />
           </div>
-          <div className="w-28 md:w-60 mb-8 h-1 bg-gradient-to-r from-posadev-darkPink to-posadev-brightPink mx-auto rounded-full"></div>
-          <p className="text-xl text-gray-600 text-center pb-20 w-3/4">
-              Quienes lo organizamos lo hacemos por amor al arte y porque creemos que el conocimiento debe compartirse 👩‍💻 🧑‍💻 y esto es el motor que nos mueve.
-              <br/>
-              Un evento creado por y para las comunidades 🎄🎅🏼
-          </p>
-          <Carousel className="carousel__cell" gridLg={grid} gridMd={grid} gridSm={grid} items={organizers} renderItem={(community: ICommunity) => <Community community={community} key={community.name} />} autoplayInterval={3000} />
-      </Gradient>
-  )
-}
-export default Organizers
+          <div className="organizer-name">{organizer.name}</div>
+          <div className="organizer-role">{organizer.role}</div>
+          <div className="organizer-divider" aria-hidden="true" />
+          <div className="organizer-communities-label">· Comunidades</div>
+          <ul className="organizer-communities-list">
+            {organizer.communities.map((community) => (
+              <li key={community.name}>
+                {community.link ? (
+                  <a href={community.link} target="_blank" rel="noopener noreferrer">
+                    → {community.name}
+                  </a>
+                ) : (
+                  <span>→ {community.name}</span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </Win>
+);
+
+export default Organizers;

@@ -16,6 +16,18 @@ export interface IImage {
     title: string
 }
 
+export interface IOrganizerCommunity {
+    name: string;
+    link?: string;
+}
+
+export interface IOrganizer {
+    name: string;
+    role: string;
+    image: string;
+    communities: IOrganizerCommunity[];
+}
+
 export interface ISponsor {
     id: string;
     name: string;
