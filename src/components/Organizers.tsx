@@ -24,7 +24,7 @@ const Organizers = () => (
       {organizers.map((organizer) => (
         <div className="organizer-card" key={organizer.name}>
           <div className="organizer-photo-frame">
-            <img src={organizer.image} alt={organizer.name} />
+            <img src={organizer.image} alt={organizer.name} loading="lazy" decoding="async" />
           </div>
           <div className="organizer-name">{organizer.name}</div>
           <div className="organizer-role">{organizer.role}</div>

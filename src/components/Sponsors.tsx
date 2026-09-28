@@ -22,7 +22,7 @@ const Sponsors = () => {
           <h2>Nuestros<br />Sponsors<em>.</em></h2>
         </div>
         <img
-          src="/media-kit/posadev-duck.png"
+          src="/media-kit/posadev-duck.webp"
           alt=""
           aria-hidden="true"
           className="sponsors-duck"
