@@ -4,8 +4,8 @@ import Gallery from '@/components/Gallery';
 import { useLocation } from 'react-router-dom';
 import BecomeSponsor from '@/components/BecomeSponsor';
 import Sponsors from '@/components/Sponsors';
+import Organizers from '@/components/Organizers';
 import CommunityAllies from '@/components/CommunityAllies';
-import Estadisticas from '@/pages/Estadisticas';
 
 const STRIPE_ITEMS = [
   'POSADEV 2026',
@@ -56,9 +56,11 @@ const Index = () => {
       <div className="desktop-wrap">
         <Hero />
         <Stripe />
-        <Estadisticas />
         <section id="sponsors">
           <Sponsors />
+        </section>
+        <section id="organizadores">
+          <Organizers />
         </section>
         <section id="comunidades">
           <CommunityAllies />

@@ -486,6 +486,53 @@
   .stat-cell:nth-child(4) { border-top: 2px solid var(--ink); }
 }
 
+/* ── Quién organiza ──────────────────────────────────────────────── */
+.organizer-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 32px 24px;
+}
+.organizer-photo-frame {
+  position: relative; aspect-ratio: 1 / 1;
+  border: 8px solid var(--pink-dk);
+}
+.organizer-photo-frame img { width: 100%; height: 100%; object-fit: cover; }
+.organizer-photo-frame::before,
+.organizer-photo-frame::after {
+  content: ""; position: absolute; width: 14px; height: 14px; background: var(--ink);
+}
+.organizer-photo-frame::before { top: -8px; left: -8px; }
+.organizer-photo-frame::after { bottom: -8px; right: -8px; }
+
+.organizer-name {
+  margin-top: 16px; font-family: "Pixelify Sans", monospace; font-weight: 700;
+  font-size: 18px; color: var(--ink); text-decoration: underline; text-underline-offset: 3px;
+}
+.organizer-role {
+  font-family: "Space Grotesk", sans-serif; font-size: 14px; color: var(--ink-2);
+  margin-top: 2px;
+}
+.organizer-divider {
+  border-top: 1px dashed var(--ink-2); margin: 12px 0 10px; opacity: 0.5;
+}
+.organizer-communities-label {
+  font-family: "Pixelify Sans", monospace; font-weight: 700;
+  font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2);
+  margin-bottom: 4px;
+}
+.organizer-communities-list { display: flex; flex-direction: column; gap: 2px; }
+.organizer-communities-list a,
+.organizer-communities-list span {
+  font-family: "Space Grotesk", sans-serif; font-size: 14px; color: var(--ink);
+  text-decoration: underline; text-underline-offset: 2px;
+}
+.organizer-communities-list span { text-decoration: none; color: var(--ink-2); }
+@media (max-width: 768px) {
+  .organizer-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .organizer-grid { grid-template-columns: 1fr; }
+}
+
 /* ── Comunidades aliadas ─────────────────────────────────────────── */
 .ally-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
