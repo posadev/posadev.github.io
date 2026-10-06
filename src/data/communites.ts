@@ -23,6 +23,7 @@ import rainbowLogo from "@/img/communities/2026/rainbow.webp"
 import gdgTijuanaLogo from "@/img/communities/2026/gdgtijuana.webp"
 import oxcLogo from "@/img/communities/2026/oxc.webp"
 import adaLogo from "@/img/communities/2026/ada.webp"
+import oaxacaCiberseguro from "@/img/communities/2026/OaxacaCiberseguro.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -48,7 +49,7 @@ export const communitiesAllies: Array<ICommunity> = [
             title: "LinkedIn",
             url: "https://www.linkedin.com/company/gdgguadalajara",
             linkType: LinkType.LinkedIn
-        },{
+        }, {
             title: "Instagram",
             url: "https://www.instagram.com/gdg_guadalajara/",
             linkType: LinkType.Instagram
@@ -63,23 +64,23 @@ export const communitiesAllies: Array<ICommunity> = [
         sticker: false,
         socials: [
             {
-                title:"Facebook",
-                url:"https://www.facebook.com/playasontech",
+                title: "Facebook",
+                url: "https://www.facebook.com/playasontech",
                 linkType: LinkType.Facebook
             },
             {
-                title:"Instagram",
-                url:"https://www.instagram.com/playasontech_mzo/",
+                title: "Instagram",
+                url: "https://www.instagram.com/playasontech_mzo/",
                 linkType: LinkType.Instagram
             },
             {
-                title:"LinkedIn",
-                url:"https://www.linkedin.com/company/playasontech",
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/playasontech",
                 linkType: LinkType.LinkedIn
             },
             {
-                title:"TikTok",
-                url:"https://www.tiktok.com/@playasontech",
+                title: "TikTok",
+                url: "https://www.tiktok.com/@playasontech",
                 linkType: LinkType.TikTok
             }
         ]
@@ -93,11 +94,11 @@ export const communitiesAllies: Array<ICommunity> = [
             title: "Facebook",
             url: "https://www.facebook.com/61576410909269",
             linkType: LinkType.Facebook
-        },{
+        }, {
             title: "Instagram",
             url: "https://www.instagram.com/mobiledevelopercommunity/",
             linkType: LinkType.Instagram
-        },{
+        }, {
             title: "LinkedIn",
             url: "https://www.linkedin.com/company/mobile-developer-community/",
             linkType: LinkType.LinkedIn
@@ -113,11 +114,11 @@ export const communitiesAllies: Array<ICommunity> = [
             title: "Facebook",
             url: "https://www.facebook.com/61576410909269",
             linkType: LinkType.Facebook
-        },{
+        }, {
             title: "Instagram",
             url: "https://www.instagram.com/wosec_mx/",
             linkType: LinkType.Instagram
-        },{
+        }, {
             title: "LinkedIn",
             url: "https://www.linkedin.com/company/wosecmexico/?viewAsMember=true",
             linkType: LinkType.LinkedIn
@@ -130,22 +131,22 @@ export const communitiesAllies: Array<ICommunity> = [
         link: "https://calzadacode.dev/",
         image: calzadacode,
         socials: [
-        {
-            title: "Facebook",
-            url: "https://www.facebook.com/share/18KRMKDy6U/",
-            linkType: LinkType.Facebook
-        },
-        {
-            title: "Twitter",
-            url: "https://twitter.com/CalzadaCode",
-            linkType: LinkType.Twitter
-        },
-        {
-            title: "Instagram",
-            url: "https://www.instagram.com/calzada.code",
-            linkType: LinkType.Instagram
-        }
-      ]
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/share/18KRMKDy6U/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "Twitter",
+                url: "https://twitter.com/CalzadaCode",
+                linkType: LinkType.Twitter
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/calzada.code",
+                linkType: LinkType.Instagram
+            }
+        ]
     },
     {
         name: "Linuxeros Zapopan",
@@ -154,18 +155,18 @@ export const communitiesAllies: Array<ICommunity> = [
         image: linuxeroszapopan,
         socials: [
             {
-                title:"Instagram",
-                url:"https://www.instagram.com/lnxzpn/",
+                title: "Instagram",
+                url: "https://www.instagram.com/lnxzpn/",
                 linkType: LinkType.Instagram
             },
             {
-                title:"LinkedIn",
-                url:"https://mx.linkedin.com/company/lnxzpn",
+                title: "LinkedIn",
+                url: "https://mx.linkedin.com/company/lnxzpn",
                 linkType: LinkType.LinkedIn
             },
             {
-                title:"Twitter",
-                url:"https://twitter.com/lnxzpn",
+                title: "Twitter",
+                url: "https://twitter.com/lnxzpn",
                 linkType: LinkType.Twitter
             }
         ]
@@ -193,7 +194,7 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.LinkedIn
             }
         ]
-    },{
+    }, {
         name: "KetherLabs",
         description: "",
         link: "https://www.linkedin.com/company/ketherlabs/",
@@ -230,8 +231,7 @@ export const communitiesAllies: Array<ICommunity> = [
         description: "",
         link: "https://hackergarage.mx/",
         image: hgLogo,
-        socials: [
-        ]
+        socials: []
     },
     {
         name: "Guayaba Devs",
@@ -455,6 +455,29 @@ export const communitiesAllies: Array<ICommunity> = [
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/company/proyecto-ada/",
                 linkType: LinkType.LinkedIn
+            }
+        ]
+    },
+    {
+        name: "OaxacaCiberseguro",
+        description: "",
+        link: "https://www.instagram.com/oaxacaciberseguro7?stkn=MTMzcjV0dGNjdDUwOA==",
+        image: oaxacaCiberseguro,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/oaxacaciberseguro7?stkn=MTMzcjV0dGNjdDUwOA==",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/oaxacaciberseguro/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@oaxacaciberseguro1?_r=1&_t=ZS-9ACyWtNAMEB",
+                linkType: LinkType.TikTok
             }
         ]
     }

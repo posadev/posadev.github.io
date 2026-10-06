@@ -53,7 +53,7 @@ export const organizers: Array<IOrganizer> = [
         role: "Communities & Volunteering",
         image: danielGongora,
         communities: [
-            { name: "Mobile Developer Community", link: "https://linktr.ee/mdcommunity" },
+            { name: "KUG GDL", link: "https://x.com/KUG_GDL" },
         ],
     },
 ];
