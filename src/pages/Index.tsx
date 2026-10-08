@@ -4,6 +4,7 @@ import Gallery from '@/components/Gallery';
 import { useLocation } from 'react-router-dom';
 import BecomeSponsor from '@/components/BecomeSponsor';
 import Sponsors from '@/components/Sponsors';
+import VenueMap from '@/components/VenueMap';
 import Organizers from '@/components/Organizers';
 import CommunityAllies from '@/components/CommunityAllies';
 
@@ -56,6 +57,9 @@ const Index = () => {
       <div className="desktop-wrap">
         <Hero />
         <Stripe />
+        <section id="sede">
+          <VenueMap />
+        </section>
         <section id="sponsors">
           <Sponsors />
         </section>

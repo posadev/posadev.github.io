@@ -9,7 +9,7 @@ interface SponsorsByTierProps {
 const TIERS: { key: NonNullable<ISponsor["type"]>; label: string; icon: string }[] = [
   { key: "diamond", label: "Diamond", icon: "💎" },
   { key: "gold", label: "Gold", icon: "⭐" },
-  { key: "silver", label: "Silver", icon: "🌟" },
+  { key: "silver", label: "Silver", icon: "🥈" },
   { key: "virtual", label: "Virtual", icon: "🖥" },
 ];
 
