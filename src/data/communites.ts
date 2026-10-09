@@ -24,6 +24,7 @@ import gdgTijuanaLogo from "@/img/communities/2026/gdgtijuana.webp"
 import oxcLogo from "@/img/communities/2026/oxc.webp"
 import adaLogo from "@/img/communities/2026/ada.webp"
 import oaxacaCiberseguro from "@/img/communities/2026/OaxacaCiberseguro.png"
+import tocinoTechLogo from "@/img/communities/2026/tocino-tech.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -477,6 +478,29 @@ export const communitiesAllies: Array<ICommunity> = [
             {
                 title: "TikTok",
                 url: "https://www.tiktok.com/@oaxacaciberseguro1?_r=1&_t=ZS-9ACyWtNAMEB",
+                linkType: LinkType.TikTok
+            }
+        ]
+    },
+    {
+        name: "TocinoTech",
+        description: "",
+        link: "https://x.com/TocinoCode",
+        image: tocinoTechLogo,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/bac0n.comunnity?stkn=eTRqbmQ2ZGgxeDZ2",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "X",
+                url: "https://x.com/TocinoCode",
+                linkType: LinkType.Twitter
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@bacon_comunnity?_r=1&_t=ZS-9AMuBYb369K",
                 linkType: LinkType.TikTok
             }
         ]
