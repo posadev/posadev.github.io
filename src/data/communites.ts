@@ -25,6 +25,7 @@ import oxcLogo from "@/img/communities/2026/oxc.webp"
 import adaLogo from "@/img/communities/2026/ada.webp"
 import oaxacaCiberseguro from "@/img/communities/2026/OaxacaCiberseguro.png"
 import tocinoTechLogo from "@/img/communities/2026/tocino-tech.png"
+import nexisLogo from "@/img/communities/2026/nexis.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -503,6 +504,35 @@ export const communitiesAllies: Array<ICommunity> = [
                 url: "https://www.tiktok.com/@bacon_comunnity?_r=1&_t=ZS-9AMuBYb369K",
                 linkType: LinkType.TikTok
             }
+        ]
+    },
+    {
+        name: "Nexis Oaxaca",
+        description: "",
+        link: "https://www.facebook.com/share/1K6BxCGPag/?mibextid=wwXIfr",
+        image: nexisLogo,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/nexis.oaxaca?stkn=MXFsbWxwMDJrZWMxcw==",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinedIn",
+                url: "https://www.linkedin.com/company/nexisoaxaca/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@nexisoaxaca?_r=1&_t=ZS-9ALMBEKKEwn",
+                linkType: LinkType.TikTok
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/share/1K6BxCGPag/?mibextid=wwXIfr",
+                linkType: LinkType.Facebook
+            }
+
         ]
     }
 ];
