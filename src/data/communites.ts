@@ -26,6 +26,9 @@ import adaLogo from "@/img/communities/2026/ada.webp"
 import oaxacaCiberseguro from "@/img/communities/2026/OaxacaCiberseguro.png"
 import tocinoTechLogo from "@/img/communities/2026/tocino-tech.png"
 import nexisLogo from "@/img/communities/2026/nexis.png"
+import tecnoLatinLogo from "@/img/communities/2026/Logo_lavanda.png"
+import awsMariachiLogo from "@/img/communities/2026/4x.png"
+
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -531,6 +534,66 @@ export const communitiesAllies: Array<ICommunity> = [
                 title: "Facebook",
                 url: "https://www.facebook.com/share/1K6BxCGPag/?mibextid=wwXIfr",
                 linkType: LinkType.Facebook
+            }
+
+        ]
+    },
+    {
+        name: "Tecnolatinas",
+        description: "",
+        link: "https://technolatinas.org/ ",
+        image: tecnoLatinLogo,
+        sticker: true,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/technolatinas/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/technolatinas/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@technolatinas",
+                linkType: LinkType.TikTok
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/technolatinas/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/Technolatinas",
+                linkType: LinkType.Twitter
+            }
+
+        ]
+    },
+    {
+        name: "AWS UG Mariachi Builders",
+        description: "",
+        link: "https://linktr.ee/AWSUG_MB",
+        image: awsMariachiLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/aws_mariachi",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@awsugmariachibuilders",
+                linkType: LinkType.TikTok
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/AWSugMB",
+                linkType: LinkType.Twitter
             }
 
         ]
