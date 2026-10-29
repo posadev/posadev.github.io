@@ -392,7 +392,7 @@
 }
 
 .hero-meta {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(3, 1fr);
   border: 2px solid var(--ink); margin-top: 28px; background: var(--ink);
 }
 .hero-meta-cell { background: var(--paper); padding: 14px 16px; }
@@ -412,7 +412,6 @@
   .hero-meta { grid-template-columns: repeat(2, 1fr); }
   .hero-meta-cell:nth-child(2) { border-left: 2px solid var(--ink); }
   .hero-meta-cell:nth-child(3) { border-top: 2px solid var(--ink); border-left: 0; }
-  .hero-meta-cell:nth-child(4) { border-top: 2px solid var(--ink); }
 }
 
 /* ── Hero primary button square icon ────────────────────────────── */

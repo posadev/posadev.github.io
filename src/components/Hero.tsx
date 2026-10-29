@@ -51,7 +51,7 @@ const Hero = () => (
         </div>
         <div className="hero-meta-cell" role="listitem">
           <div className="hero-meta-key">Cuánto</div>
-          <div className="hero-meta-val">
+          <div className="hero-meta-val" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <a
               href="https://boletos.chrisomlab.com/event/1/posadev-2026"
               target="_blank"
@@ -60,13 +60,14 @@ const Hero = () => (
             >
               <em>$650</em> MXN
             </a>
-          </div>
-        </div>
-        <div className="hero-meta-cell" role="listitem">
-          <div className="hero-meta-key">CFP</div>
-          <div className="hero-meta-val">
-            <a href="https://sessionize.com/posadev-2026/" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--pink)', textDecoration: 'underline' }}>
-              Cierra 30 sep
+            <a
+              href="https://boletos.chrisomlab.com/event/1/posadev-2026"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="retro-btn primary"
+            >
+              <span className="hero-btn-square" aria-hidden="true" />
+              Comprar boleto
             </a>
           </div>
         </div>
@@ -74,16 +75,7 @@ const Hero = () => (
 
       {/* CTAs */}
       <div className="hero-ctas">
-        <a
-          href="https://boletos.chrisomlab.com/event/1/posadev-2026"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="retro-btn primary"
-        >
-          <span className="hero-btn-square" aria-hidden="true" />
-          Comprar boleto
-        </a>
-        <a href="/#patrocinadores" className="retro-btn ghost">
+        <a href="/#patrocinadores" className="retro-btn primary">
           Patrocinar Posadev
         </a>
         {/*<a href="#programa" className="retro-btn ghost">Ver programa</a>*/}
