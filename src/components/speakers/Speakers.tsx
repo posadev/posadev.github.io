@@ -1,31 +1,80 @@
-import React from 'react';
-import Speaker from "@/components/speakers/Speaker.tsx";
-import Carousel, {GridConfig} from "@/components/Carousel.tsx";
-import {useAppContext} from "@/context/AppContext.tsx";
-import {ISpeaker} from "@/types/speakers.ts";
+import React, { useState } from 'react';
+import Win from '@/components/Win';
+import SpeakerCard from '@/components/speakers/SpeakerCard.tsx';
+import SpeakerLightbox from '@/components/speakers/SpeakerLightbox.tsx';
+import { useAppContext } from '@/context/AppContext.tsx';
+import { ISpeaker } from '@/types/speakers.ts';
+
+const PAGE_SIZE = 9;
 
 const Speakers = () => {
-    const {speakers} = useAppContext();
-    const randomSpeakers = speakers.sort(() => 0.5 - Math.random());
+  const { speakers, speakersPage: page, setSpeakersPage: setPage } = useAppContext();
+  const [active, setActive] = useState<{ speaker: ISpeaker; rect: DOMRect } | null>(null);
 
-    const gridLg: GridConfig = {cols: 3, rows: 1, itemsPerSlide: 3};
-    const gridMd: GridConfig = {cols: 2, rows: 1, itemsPerSlide: 2};
-    const gridSm: GridConfig = {cols: 1, rows: 1, itemsPerSlide: 1};
+  if (speakers.length === 0) return null;
 
-    if (speakers.length === 0) return null
+  const totalPages = Math.ceil(speakers.length / PAGE_SIZE);
+  const currentPage = Math.min(page, totalPages - 1);
+  const start = currentPage * PAGE_SIZE;
+  const pageSpeakers = speakers.slice(start, start + PAGE_SIZE);
 
-    return (
-        <section id="speakers"
-                 className="bg-gradient-to-br to-posadev-darkPink from-primary-600 min-h-screen flex items-center justify-center flex-col py-20"
-                 itemScope
-                 itemType="https://schema.org/Event"
-                 aria-labelledby="hero-title"
-        >
-            <h1 className="text-3xl md:text-5xl font-bold text-white">Speakers</h1>
-            <div className="mt-8 mb-20 md:w-60 w-24 h-1 bg-candy-stripes mx-auto rounded-full"></div>
-                <Carousel className="lg:gap-20" gridMd={gridMd} gridSm={gridSm} gridLg={gridLg} hideArrows items={randomSpeakers} renderItem={(speaker: ISpeaker) => <Speaker key={speaker.id} speaker={speaker} /> } />
-        </section>
-    );
+  return (
+    <Win
+      title="Speakers.exe"
+      footer={
+        <>
+          <span>{speakers.length} speakers</span>
+          <span>edición 2026</span>
+        </>
+      }
+    >
+      <div className="sec-head">
+        <h2>Quién<br />dara charla o taller<em>.</em></h2>
+        <p className="sec-sub">
+          Las personas que van a compartir su conocimiento y experiencia en Posadev 2026.
+        </p>
+      </div>
+      <div className="speaker-grid">
+        {pageSpeakers.map((speaker: ISpeaker) => (
+          <SpeakerCard
+            key={speaker.id}
+            speaker={speaker}
+            onOpen={(rect) => setActive({ speaker, rect })}
+          />
+        ))}
+      </div>
+      {totalPages > 1 && (
+        <div className="speaker-pagination">
+          <button
+            type="button"
+            className="retro-btn ghost"
+            onClick={() => setPage((p) => Math.max(0, p - 1))}
+            disabled={currentPage === 0}
+          >
+            Anterior
+          </button>
+          <span className="speaker-pagination-label">
+            Página {currentPage + 1} de {totalPages}
+          </span>
+          <button
+            type="button"
+            className="retro-btn ghost"
+            onClick={() => setPage((p) => Math.min(totalPages - 1, p + 1))}
+            disabled={currentPage === totalPages - 1}
+          >
+            Siguiente
+          </button>
+        </div>
+      )}
+      {active && (
+        <SpeakerLightbox
+          speaker={active.speaker}
+          originRect={active.rect}
+          onClose={() => setActive(null)}
+        />
+      )}
+    </Win>
+  );
 };
 
 export default Speakers;

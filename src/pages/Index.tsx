@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import Hero from '@/components/Hero';
+import Speakers from '@/components/speakers/Speakers';
 import Gallery from '@/components/Gallery';
 import { useLocation } from 'react-router-dom';
 import BecomeSponsor from '@/components/BecomeSponsor';
@@ -57,6 +58,9 @@ const Index = () => {
       <div className="desktop-wrap">
         <Hero />
         <Stripe />
+        <section id="speakers">
+          <Speakers />
+        </section>
         <section id="sede">
           <VenueMap />
         </section>
