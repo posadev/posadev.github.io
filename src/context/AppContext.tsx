@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, Dispatch, SetStateAction } from "react";
 import {IRoom, ISpeaker} from "@/types/speakers.ts";
 import {getAll} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
@@ -21,6 +21,8 @@ interface AppContextType {
     displayAll: boolean;
     setDisplayAll: (displayAll: boolean) => void;
     rooms: IRoom[];
+    speakersPage: number;
+    setSpeakersPage: Dispatch<SetStateAction<number>>;
 }
 
 const AppContext = createContext(null);
@@ -32,6 +34,7 @@ export const AppProvider = ({ children }) => {
     const [displayAll, setDisplayAll] = useState<boolean>(true);
     const [sessions, setSessions] = useState<ISessionInfo[]>([]);
     const [rooms, setRooms] = useState<IRoom[]>([]);
+    const [speakersPage, setSpeakersPage] = useState(0);
     const [error, setError] = useState<Error>(null)
     const [savedSessions, setSavedSessions] = useState<Set<number>>(() => {
         const raw = localStorage.getItem("savedSessions");
@@ -45,7 +48,7 @@ export const AppProvider = ({ children }) => {
     useEffect(() => {
         getAll()
             .then(({categories, sessions, speakers, rooms}) => {
-                const categoriesItems = categories[0].items
+                const categoriesItems = categories[0]?.items ?? []
                 const sessionsInfo = sessions.map(session => addInformationToSession(session, speakers, categoriesItems))
                 const getSpeakersWithSessions = addSessionSpeakers(
                     sessionsInfo,
@@ -73,7 +76,9 @@ export const AppProvider = ({ children }) => {
         agenda,
         appStatus,
         setAppStatus,
-        rooms
+        rooms,
+        speakersPage,
+        setSpeakersPage
     };
 
     return (

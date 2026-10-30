@@ -204,7 +204,7 @@ const BecomeSponsor = () => (
             </span>
             <span style={{
               fontFamily: '"Pixelify Sans", monospace', fontWeight: 700,
-              fontSize: 'clamp(34px, 4.2vw, 52px)', lineHeight: 1,
+              fontSize: 'clamp(22px, 8vw, 52px)', lineHeight: 1,
               textTransform: 'uppercase', display: 'block', color: INK,
             }}>
               Become a<br />

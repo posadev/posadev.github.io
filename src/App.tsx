@@ -19,6 +19,7 @@ import {AppStatus} from "@/types/types.ts";
 import Loading from "@/pages/Loading.tsx";
 import ErrorPage from "@/pages/ErrorPage.tsx";
 import Estadisticas from "@/pages/Estadisticas.tsx";
+import SpeakerBio from "@/pages/SpeakerBio.tsx";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => {
                   <Route path="/kit-de-prensa" element={<PressKit />} />
                   <Route path="session/:sessionId" element={<SessionPage />} />
                 <Route path="/estadisticas" element={<Estadisticas />} />
+                <Route path="/speaker/:speakerId" element={<SpeakerBio />} />
               </Routes>
             </main>
             <Footer />

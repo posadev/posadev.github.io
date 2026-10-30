@@ -28,6 +28,7 @@ const Header = () => {
           <span className="menubar-star" aria-hidden="true" />
         </span>
         <button className="menubar-item" onClick={() => go('/')}>Inicio</button>
+        <button className="menubar-item" onClick={() => go('/#speakers')}>Speakers</button>
         <a
           href="https://boletos.chrisomlab.com/event/1/posadev-2026"
           target="_blank"
@@ -58,6 +59,7 @@ const Header = () => {
       </header>
       <nav id="mobile-nav" className={`mobile-nav${menuOpen ? ' open' : ''}`} aria-label="Menú principal">
         <button className="mobile-nav-item" onClick={() => go('/')}>Inicio</button>
+        <button className="mobile-nav-item" onClick={() => go('/#speakers')}>Speakers</button>
         <a
           href="https://boletos.chrisomlab.com/event/1/posadev-2026"
           target="_blank"
