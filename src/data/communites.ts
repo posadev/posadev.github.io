@@ -28,6 +28,7 @@ import tocinoTechLogo from "@/img/communities/2026/tocino-tech.png"
 import nexisLogo from "@/img/communities/2026/nexis.png"
 import tecnoLatinLogo from "@/img/communities/2026/Logo_lavanda.png"
 import awsMariachiLogo from "@/img/communities/2026/4x.png"
+import codificadasLogo from "@/img/communities/2026/codificadas.png"
 
 
 export const communitiesAllies: Array<ICommunity> = [
@@ -594,6 +595,31 @@ export const communitiesAllies: Array<ICommunity> = [
                 title: "Twitter",
                 url: "https://x.com/AWSugMB",
                 linkType: LinkType.Twitter
+            }
+
+        ]
+    },
+    {
+        name: "Codificadas",
+        description: "",
+        link: "https://www.facebook.com/Codificadas",
+        image: codificadasLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/codificadasmx/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/Codificadas",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/in/codificadas-colima-",
+                linkType: LinkType.LinkedIn
             }
 
         ]
