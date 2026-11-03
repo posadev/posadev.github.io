@@ -23,12 +23,13 @@ import rainbowLogo from "@/img/communities/2026/rainbow.webp"
 import gdgTijuanaLogo from "@/img/communities/2026/gdgtijuana.webp"
 import oxcLogo from "@/img/communities/2026/oxc.webp"
 import adaLogo from "@/img/communities/2026/ada.webp"
-import oaxacaCiberseguro from "@/img/communities/2026/OaxacaCiberseguro.png"
-import tocinoTechLogo from "@/img/communities/2026/tocino-tech.png"
-import nexisLogo from "@/img/communities/2026/nexis.png"
-import tecnoLatinLogo from "@/img/communities/2026/Logo_lavanda.png"
-import awsMariachiLogo from "@/img/communities/2026/4x.png"
-import codificadasLogo from "@/img/communities/2026/codificadas.png"
+import oaxacaCiberseguro from "@/img/communities/2026/OaxacaCiberseguro.webp"
+import tocinoTechLogo from "@/img/communities/2026/tocino-tech.webp"
+import nexisLogo from "@/img/communities/2026/nexis.webp"
+import tecnoLatinLogo from "@/img/communities/2026/Logo_lavanda.webp"
+import awsMariachiLogo from "@/img/communities/2026/4x.webp"
+import codificadasLogo from "@/img/communities/2026/codificadas.webp"
+import hackast from "@/img/communities/2026/hackast-notbg.webp"
 
 
 export const communitiesAllies: Array<ICommunity> = [
@@ -619,6 +620,25 @@ export const communitiesAllies: Array<ICommunity> = [
             {
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/in/codificadas-colima-",
+                linkType: LinkType.LinkedIn
+            }
+
+        ]
+    },
+    {
+        name: "Hackast",
+        description: "",
+        link: "https://www.linkedin.com/company/hackast/",
+        image: hackast,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/hackast.nt/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/hackast/",
                 linkType: LinkType.LinkedIn
             }
 
