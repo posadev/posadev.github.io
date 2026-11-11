@@ -27,7 +27,7 @@ const SpeakerBio = () => {
       <div className="desktop">
         <div className="desktop-wrap">
           <section id="speaker-bio">
-            <Win title="Speaker.bio">
+            <Win title="Speaker">
               <div className="sec-head">
                 <h2>Speaker<br />no encontrado<em>.</em></h2>
                 <p className="sec-sub">No encontramos a este ponente.</p>

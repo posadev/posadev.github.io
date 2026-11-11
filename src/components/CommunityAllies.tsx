@@ -9,7 +9,7 @@ const sortedCommunities = [...communitiesAllies].sort((a, b) =>
 
 const CommunityAllies = () => (
   <Win
-    title="🤝 Comunidades-aliadas.txt"
+    title="🤝 Comunidades-aliadas"
     footer={
       <>
         <span>{sortedCommunities.length} comunidades aliadas</span>

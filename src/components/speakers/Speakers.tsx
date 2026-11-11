@@ -20,7 +20,7 @@ const Speakers = () => {
 
   return (
     <Win
-      title="Speakers.exe"
+      title="Speakers"
       footer={
         <>
           <span>{speakers.length} speakers</span>

@@ -9,7 +9,7 @@ const Sponsors = () => {
 
   return (
     <Win
-      title="💰 Patrocinadores.doc"
+      title="💰 Patrocinadores"
       footer={
         <>
           <span>{paidCount} patrocinadores</span>

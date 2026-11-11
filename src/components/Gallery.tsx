@@ -81,7 +81,7 @@ const Gallery = () => {
   return (
     <section id="galeria" aria-labelledby="gallery-title">
       <Win
-        title="🖼 Galería de momentos.fldr"
+        title="🖼 Galería de momentos"
         footer={
           <>
             <span>{images.length} fotos</span>

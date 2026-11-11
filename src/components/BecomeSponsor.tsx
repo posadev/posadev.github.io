@@ -88,7 +88,7 @@ const BrochureCta = () => {
 /* ── Main component ──────────────────────────────────────────────── */
 const BecomeSponsor = () => (
   <Win
-    title="💰 Patrocina Posadev.pdf"
+    title="💰 Patrocina Posadev"
     footer={
       <>
         <span>Edición IX · 2026</span>

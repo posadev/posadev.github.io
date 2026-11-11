@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, Dispatch, SetStateAction } from "react";
 import {IRoom, ISpeaker} from "@/types/speakers.ts";
-import {getAll} from "@/https/fetch.ts";
+import {getAll, getServiceSessions} from "@/https/fetch.ts";
 import {AppStatus} from "@/types/types.ts";
 import {addInformationToSession, addSessionSpeakers} from "@/lib/utils.ts";
 import {ITimeSlot} from "@/types/agenda.ts";
@@ -46,8 +46,8 @@ export const AppProvider = ({ children }) => {
     }, [savedSessions]);
 
     useEffect(() => {
-        getAll()
-            .then(({categories, sessions, speakers, rooms}) => {
+        Promise.all([getAll(), getServiceSessions().catch(() => [])])
+            .then(([{categories, sessions, speakers, rooms}, serviceSessions]) => {
                 const categoriesItems = categories[0]?.items ?? []
                 const sessionsInfo = sessions.map(session => addInformationToSession(session, speakers, categoriesItems))
                 const getSpeakersWithSessions = addSessionSpeakers(
@@ -56,7 +56,7 @@ export const AppProvider = ({ children }) => {
                 );
                 setRooms(rooms);
                 setSpeakers(getSpeakersWithSessions);
-                setSessions(sessionsInfo);
+                setSessions([...sessionsInfo, ...serviceSessions]);
                 setAppStatus(AppStatus.Success);
             })
             .catch(e => {

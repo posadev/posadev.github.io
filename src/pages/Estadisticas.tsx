@@ -191,7 +191,7 @@ const ChartPanel = ({ title, children }: { title: string; children: React.ReactN
 const Estadisticas = () => (
   <section id="estadisticas" style={{ scrollMarginTop: 40 }}>
     <Win
-      title="📊 Numeralia Posadev 2025.xls"
+      title="📊 Numeralia Posadev 2025"
       footer={
         <>
           <span>4,257+ asistentes · 2017–2025</span>

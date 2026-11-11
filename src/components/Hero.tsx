@@ -5,7 +5,7 @@ import Win from '@/components/Win';
 const Hero = () => (
   <section id="inicio" aria-labelledby="hero-title">
     <Win
-      title="📁 Posadev 2026.app"
+      title="📁 Posadev 2026"
       showScrollbar
       footer={
         <>
