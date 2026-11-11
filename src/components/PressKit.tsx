@@ -39,7 +39,7 @@ const ColorSwatch = ({ name, hex }: { name: string; hex: string }) => {
 
 const PressKit = () => (
   <Win
-    title="📰 Kit-de-prensa.txt"
+    title="📰 Kit-de-prensa"
     footer={
       <>
         <span>{pressKitLogos.length} logos · {pressKitColors.length} colores · {pressKitDecorations.length} decoraciones</span>

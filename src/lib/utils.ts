@@ -59,6 +59,13 @@ export const addInformationToSession = (session: ISessionData, speakers: ISpeake
     }
 }
 
+const LINUX_EXTENSIONS = [
+  '.sh', '.conf', '.service', '.desktop', '.yml', '.log', '.bin', '.so',
+  '.deb', '.AppImage', '.rpm', '.cfg', '.env', '.lock', '.unit', '.rules',
+];
+
+export const randomLinuxExt = () => LINUX_EXTENSIONS[Math.floor(Math.random() * LINUX_EXTENSIONS.length)];
+
 export const formatTiemstamp = (timestamp: string) => {
     return new Date(timestamp).toLocaleTimeString(["en-US"], {hour: '2-digit', minute:'2-digit'})
 }

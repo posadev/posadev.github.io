@@ -15,7 +15,7 @@ const MAP_QUERY = encodeURIComponent(
 
 const VenueMap = () => (
   <Win
-    title="📍 Sede.map"
+    title="📍 Sede"
     footer={
       <>
         <span>Holiday Inn Guadalajara Expo by IHG</span>

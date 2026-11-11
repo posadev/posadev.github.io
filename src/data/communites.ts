@@ -30,6 +30,12 @@ import tecnoLatinLogo from "@/img/communities/2026/Logo_lavanda.webp"
 import awsMariachiLogo from "@/img/communities/2026/4x.webp"
 import codificadasLogo from "@/img/communities/2026/codificadas.webp"
 import hackast from "@/img/communities/2026/hackast-notbg.webp"
+import codeMiuLogo from "@/img/communities/2026/code_miu.png"
+import pythonCdmxLogo from "@/img/communities/2026/logo.png"
+import cyberKittiesLogo from "@/img/communities/2026/cyberkittys.png"
+import n8nLogo from "@/img/communities/2026/n8n_logo.png"
+import blockchainLogo from "@/img/communities/2026/esblockchainw.png"
+import pyTalaveraLogo from "@/img/communities/2026/pytalavera.png"
 
 
 export const communitiesAllies: Array<ICommunity> = [
@@ -640,6 +646,156 @@ export const communitiesAllies: Array<ICommunity> = [
                 title: "LinkedIn",
                 url: "https://www.linkedin.com/company/hackast/",
                 linkType: LinkType.LinkedIn
+            }
+
+        ]
+    },
+    {
+        name: "Code Miu",
+        description: "",
+        link: "https://codemiu.com/",
+        image: codeMiuLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/hola.codemiu/?rdid=tyNGjvrOGRelNiAj",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/code.miu/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "TikTok",
+                url: "https://www.tiktok.com/@code.miu",
+                linkType: LinkType.TikTok
+            }
+
+        ]
+    },
+    {
+        name: "PythonCDMX",
+        description: "",
+        link: "https://pythoncdmx.org‌‌",
+        image: pythonCdmxLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/pythoncdmx/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/pythoncdmx",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "YouTube",
+                url: "https://youtube.com/@pythonmexico",
+                linkType: LinkType.YouTube
+            }
+
+        ]
+    },
+    {
+        name: "Cyberkittys",
+        description: "",
+        link: "https://www.instagram.com/cyberkittys.mx/",
+        image: cyberKittiesLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/cyberkittys.mx/",
+                linkType: LinkType.Instagram
+            }
+
+        ]
+    },
+    {
+        name: "n8n.io",
+        description: "",
+        link: "https://x.com/n8n_io",
+        image: n8nLogo,
+        sticker: true,
+        socials: [
+            {
+                title: "Twitter",
+                url: "https://x.com/n8n_io",
+                linkType: LinkType.Twitter
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/n8n/home/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "YouTube",
+                url: "https://www.youtube.com/c/n8n-io",
+                linkType: LinkType.YouTube
+            }
+
+        ]
+    },
+    {
+        name: "Es Blockchain",
+        description: "",
+        link: "https://esblockchain.org/",
+        image: blockchainLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Twitter",
+                url: "https://x.com/3sBlockchain",
+                linkType: LinkType.Twitter
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/3sblockchain/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/3sblockchain_/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "YouTube",
+                url: "https://www.youtube.com/channel/UC7rw5fctH5OSJE75NH4Kkuw",
+                linkType: LinkType.YouTube
+            }
+
+        ]
+    },
+    {
+        name: "PyTalavera",
+        description: "",
+        link: "https://pytalavera.github.io/comunidad/index.html",
+        image: pyTalaveraLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/p/PyTalavera-61559788469426/",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/pytalavera/posts/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/pytalavera/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "YouTube",
+                url: "https://www.youtube.com/@pytalavera",
+                linkType: LinkType.YouTube
             }
 
         ]

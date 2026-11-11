@@ -1,6 +1,6 @@
 import {ILink, LinkType} from "@/types/speakers.ts";
 import React from "react";
-import {Instagram, Twitter, Linkedin, Github, FacebookIcon} from "lucide-react";
+import {Instagram, Twitter, Linkedin, Github, FacebookIcon, Youtube} from "lucide-react";
 import TikTok from "@/components/ui/tiktok.tsx";
 
 interface SocialMediaProps {
@@ -54,6 +54,14 @@ const SocialMedia: React.FC<SocialMediaProps> = ({link, className}) => {
             return (
                 <a href={link.url} target="_blank" rel="noopener noreferrer" className={`hover:text-alternative-400 transition-colors ${className}`}>
                     <TikTok />
+                </a>
+            )
+        case LinkType.YouTube:
+            return (
+                <a href={link.url} target="_blank" rel="noopener noreferrer" className={`hover:text-alternative-400 transition-colors ${className}`}>
+                    <Youtube href={link.url} target="_blank" height={26} width={26} className={`hover:underline ${className}`}>
+                        <title>YouTube</title>
+                    </Youtube>
                 </a>
             )
         default:

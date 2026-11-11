@@ -1,5 +1,5 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
+import React, { useMemo } from 'react';
+import { cn, randomLinuxExt } from '@/lib/utils';
 
 interface WinProps {
   title: string;
@@ -13,11 +13,13 @@ interface WinProps {
 
 const Win: React.FC<WinProps> = ({
   title, footer, dark, showScrollbar, className, bodyClassName, children
-}) => (
+}) => {
+  const ext = useMemo(() => randomLinuxExt(), []);
+  return (
   <div className={cn('win', dark && 'dark', className)}>
     <div className="win-title">
       <span className="win-close" aria-hidden="true" />
-      <span className="win-name">{title}</span>
+      <span className="win-name">{title}{ext}</span>
       <span className="win-zoom" aria-hidden="true" />
     </div>
     <div className={cn('win-body', bodyClassName)}>
@@ -32,6 +34,7 @@ const Win: React.FC<WinProps> = ({
       </div>
     )}
   </div>
-);
+  );
+};
 
 export default Win;

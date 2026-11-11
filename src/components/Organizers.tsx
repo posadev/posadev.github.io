@@ -4,7 +4,7 @@ import { organizers } from '@/data/organizers';
 
 const Organizers = () => (
   <Win
-    title="👥 Organizadores.txt"
+    title="👥 Organizadores"
     footer={
       <>
         <span>{organizers.length} organizadores</span>
