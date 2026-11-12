@@ -46,11 +46,11 @@ const CommunityAllyLogo: React.FC<CommunityAllyLogoProps> = ({ community }) => {
       {coin}
     </button>
   ) : community.link ? (
-    <a href={community.link} target="_blank" rel="noopener noreferrer" aria-label={community.name}>
+    <a href={community.link} target="_blank" rel="noopener noreferrer" className="ally-circle-button" aria-label={community.name}>
       {coin}
     </a>
   ) : (
-    coin
+    <div className="ally-circle-button">{coin}</div>
   );
 
   return (
