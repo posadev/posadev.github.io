@@ -36,7 +36,9 @@ import cyberKittiesLogo from "@/img/communities/2026/cyberkittys.png"
 import n8nLogo from "@/img/communities/2026/n8n_logo.png"
 import blockchainLogo from "@/img/communities/2026/esblockchainw.png"
 import pyTalaveraLogo from "@/img/communities/2026/pytalavera.png"
-
+import pleblabLogo from "@/img/communities/2026/pleblab.png"
+import movairaLogo from "@/img/communities/2026/movaira_orca.png"
+import upiitaLog from "@/img/communities/2026/LofoV.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -798,6 +800,82 @@ export const communitiesAllies: Array<ICommunity> = [
                 linkType: LinkType.YouTube
             }
 
+        ]
+    },
+    {
+        name: "Pleblab",
+        description: "",
+        link: "https://www.pleblab.dev",
+        image: pleblabLogo,
+        sticker: false,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/pleblab/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "YouTube",
+                url: "https://www.youtube.com/@pleblab",
+                linkType: LinkType.YouTube
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/pleblab",
+                linkType: LinkType.Twitter
+            }
+        ]
+    },
+    {
+        name: "Movaira",
+        description: "",
+        link: "https://movaira.tech/",
+        image: movairaLogo,
+        sticker: true,
+        socials: [
+            {
+                title: "Facebook",
+                url: "https://www.facebook.com/movaira.mzo",
+                linkType: LinkType.Facebook
+            },{
+                title: "Instagram",
+                url: "https://www.instagram.com/movaira_mzo/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "YouTube",
+                url: "https://www.youtube.com/@pleblab",
+                linkType: LinkType.YouTube
+            },
+            {
+                title: "Twitter",
+                url: "https://x.com/pleblab",
+                linkType: LinkType.Twitter
+            }
+        ]
+    },
+    {
+        name: "Open Source UPIITA",
+        description: "",
+        link: "https://os.upiita.ipn.mx/",
+        image: upiitaLog,
+        sticker: true,
+        socials: [
+            {
+                title: "Facebook",
+                url: " https://www.facebook.com/os.upiita.ipn",
+                linkType: LinkType.Facebook
+            },
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/open-source-upiita",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/os_upiita_ipn/",
+                linkType: LinkType.Instagram
+            }
         ]
     }
 ];
