@@ -39,6 +39,8 @@ import pyTalaveraLogo from "@/img/communities/2026/pytalavera.png"
 import pleblabLogo from "@/img/communities/2026/pleblab.png"
 import movairaLogo from "@/img/communities/2026/movaira_orca.png"
 import upiitaLog from "@/img/communities/2026/LofoV.png"
+import sudoCienciasLogo from "@/img/communities/2026/sudo-fciencias-high-res.png"
+import awsUnamLogo from "@/img/communities/2026/badge_sbg_unam.png"
 
 export const communitiesAllies: Array<ICommunity> = [
     {
@@ -874,6 +876,49 @@ export const communitiesAllies: Array<ICommunity> = [
             {
                 title: "Instagram",
                 url: "https://www.instagram.com/os_upiita_ipn/",
+                linkType: LinkType.Instagram
+            }
+        ]
+    },
+    {
+        name: "Sudo FCiencias",
+        description: "",
+        link: "https://linkedin.com/company/sudo-fciencias/",
+        image: sudoCienciasLogo,
+        sticker: true,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://linkedin.com/company/sudo-fciencias/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/sudo_fciencias/",
+                linkType: LinkType.Instagram
+            },
+            {
+                title: "Youtube",
+                url: "https://www.youtube.com/channel/UC1wNeaodwBNFaeB3-dJoL6Q",
+                linkType: LinkType.YouTube
+            }
+        ]
+    },
+    {
+        name: "AWS Student Builder Group UNAM",
+        description: "",
+        link: "https://builder.aws.com/community/student-builder-groups",
+        image: awsUnamLogo,
+        sticker: true,
+        socials: [
+            {
+                title: "LinkedIn",
+                url: "https://www.linkedin.com/company/aws-sbg-unam/home/",
+                linkType: LinkType.LinkedIn
+            },
+            {
+                title: "Instagram",
+                url: "https://www.instagram.com/aws.unam/",
                 linkType: LinkType.Instagram
             }
         ]
